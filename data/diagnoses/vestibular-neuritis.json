@@ -1,0 +1,55 @@
+{
+  "id": "vestibular-neuritis",
+  "type": "dx",
+  "region": "ear",
+  "title": "Vestibular Neuritis and Labyrinthitis",
+  "desc": "Acute inflammation of the vestibular nerve (neuritis) or the entire labyrinth (labyrinthitis) — typically post-viral.",
+  "blocks": [
+    {
+      "id": "465d04cf",
+      "type": "p",
+      "content": "Vestibular neuritis is acute inflammation of the vestibular nerve, most commonly following a viral illness. Labyrinthitis is the same process but also involving the cochlea — it produces accompanying hearing loss and tinnitus in addition to vertigo."
+    },
+    {
+      "id": "be3c9d9c",
+      "type": "h3",
+      "content": "Symptoms"
+    },
+    {
+      "id": "3cc41e27",
+      "type": "p",
+      "content": "Sudden onset of severe, continuous vertigo lasting days to weeks. Nausea and vomiting are often severe in the first 24–48 hours. The patient typically cannot walk without support acutely. There is no ear pain, no neurological deficit, and no headache — if any of those are present, consider central cause. The vertigo gradually improves over days as the brain compensates for the asymmetric vestibular input (central compensation)."
+    },
+    {
+      "id": "58aac98e",
+      "type": "h3",
+      "content": "Treatment"
+    },
+    {
+      "id": "e2c8cea0",
+      "type": "li",
+      "content": "Vestibular suppressants short-term only — meclizine, diazepam, ondansetron for nausea; tapered off within a few days as they slow central compensation"
+    },
+    {
+      "id": "bd0d96e1",
+      "type": "li",
+      "content": "Oral corticosteroids — methylprednisolone or prednisone; may improve recovery if started within the first week"
+    },
+    {
+      "id": "459cdf6b",
+      "type": "li",
+      "content": "Vestibular rehabilitation therapy (VRT) — the most important long-term treatment; referral to vestibular physical therapy is indicated once acute symptoms begin to settle"
+    },
+    {
+      "id": "fc5403df",
+      "type": "alert-warn",
+      "content": "Meclizine should not continue past a few days. Patients with vestibular neuritis are often initially seen in the ED and arrive in ENT during the recovery phase asking why they still feel unsteady weeks later. The answer is that central compensation takes weeks to months and is accelerated by activity and vestibular rehabilitation — not by continued meclizine, which actively delays recovery by suppressing the signals the brain needs to recalibrate. Patients still on meclizine at four weeks need this conversation."
+    }
+  ],
+  "related": [
+    "bppv",
+    "meniere"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

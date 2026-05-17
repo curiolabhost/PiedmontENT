@@ -1,0 +1,156 @@
+{
+  "id": "audiogram-tympanogram",
+  "type": "proc",
+  "region": "ear",
+  "title": "Reading an Audiogram and Tympanogram",
+  "desc": "Reference for interpreting audiograms and tympanograms — types of hearing loss, symbols, frequency patterns, and tympanogram curves.",
+  "blocks": [
+    {
+      "id": "a85111fe",
+      "type": "h3",
+      "content": "The audiogram"
+    },
+    {
+      "id": "8cf3f5f6",
+      "type": "p",
+      "content": "An audiogram is a graph that plots a patient's hearing thresholds — the softest sounds they can detect — across a range of frequencies. Understanding how to read one is essential in ENT because nearly every ear patient will have one in their chart, and the provider will reference it constantly during the visit."
+    },
+    {
+      "id": "83577dff",
+      "type": "p",
+      "content": "The axes: Frequency (pitch) runs along the horizontal axis from low frequencies on the left (250 Hz) to high on the right (8000 Hz). Intensity (loudness) runs along the vertical axis in decibels hearing level (dB HL), with softer sounds at the top and louder sounds toward the bottom. Normal hearing thresholds fall between 0 and 25 dB HL. Any threshold below that line means the patient needs more sound intensity to detect that frequency — that is hearing loss."
+    },
+    {
+      "id": "0f61fdde",
+      "type": "h3",
+      "content": "The symbols"
+    },
+    {
+      "id": "9ea46dd3",
+      "type": "li",
+      "content": "Right ear air conduction: O (circle), plotted in red"
+    },
+    {
+      "id": "7e2c0ba7",
+      "type": "li",
+      "content": "Left ear air conduction: X, plotted in blue"
+    },
+    {
+      "id": "caf9f5a0",
+      "type": "li",
+      "content": "Right ear bone conduction: < (bracket), plotted in red"
+    },
+    {
+      "id": "e9e56f0f",
+      "type": "li",
+      "content": "Left ear bone conduction: > (bracket), plotted in blue"
+    },
+    {
+      "id": "96855911",
+      "type": "p",
+      "content": "Air conduction tests the entire hearing pathway. Bone conduction bypasses the outer and middle ear and stimulates the cochlea directly. The comparison between air and bone conduction thresholds tells you where the hearing loss originates."
+    },
+    {
+      "id": "5e8572be",
+      "type": "h3",
+      "content": "Types of hearing loss"
+    },
+    {
+      "id": "06eec995",
+      "type": "p",
+      "content": "<strong>Conductive hearing loss</strong> — the problem is in the outer or middle ear. The cochlea is normal. On the audiogram: bone conduction is normal (0–25 dB), air conduction is elevated, creating an air-bone gap. A gap of 15 dB or more is significant. Common causes: cerumen impaction, otitis media with effusion, tympanic membrane perforation, ossicular discontinuity, otosclerosis (Carhart's notch at 2000 Hz), cholesteatoma."
+    },
+    {
+      "id": "d10be5a9",
+      "type": "p",
+      "content": "<strong>Sensorineural hearing loss (SNHL)</strong> — the problem is at the cochlea or auditory nerve. On the audiogram: both air and bone conduction are equally elevated with no significant gap. The shape of the loss matters:"
+    },
+    {
+      "id": "0545ff7a",
+      "type": "li",
+      "content": "High-frequency sloping loss — classic presbycusis and noise-induced hearing loss pattern"
+    },
+    {
+      "id": "6ea47ec9",
+      "type": "li",
+      "content": "Flat loss — seen in SSNHL, autoimmune inner ear disease, some Ménière's"
+    },
+    {
+      "id": "f8630bb4",
+      "type": "li",
+      "content": "Low-frequency loss — classic early Ménière's, uncommon, should immediately prompt suspicion for endolymphatic hydrops"
+    },
+    {
+      "id": "3ac82f76",
+      "type": "li",
+      "content": "4000 Hz notch — hallmark of noise-induced hearing loss (NIHL)"
+    },
+    {
+      "id": "1d804754",
+      "type": "p",
+      "content": "Common causes: presbycusis, noise-induced, SSNHL, Ménière's, acoustic neuroma (often with disproportionately poor word recognition score), ototoxicity (aminoglycosides, cisplatin, loop diuretics)."
+    },
+    {
+      "id": "6ae1f43f",
+      "type": "p",
+      "content": "<strong>Mixed hearing loss</strong> — both conductive and sensorineural components present. Bone conduction is elevated but air conduction is even further elevated. Seen in advanced chronic otitis media or late-stage otosclerosis."
+    },
+    {
+      "id": "45959508",
+      "type": "h3",
+      "content": "Word recognition score (WRS)"
+    },
+    {
+      "id": "f6d5d58e",
+      "type": "p",
+      "content": "A percentage reflecting the patient's ability to understand speech at comfortable loudness. Normal is 90–100%. Poor WRS out of proportion to pure tone thresholds is a red flag for retrocochlear pathology — acoustic neuroma classically produces this mismatch. A score below 50% suggests the nerve is too damaged for amplification to be meaningfully helpful."
+    },
+    {
+      "id": "6f089c5d",
+      "type": "h3",
+      "content": "The tympanogram"
+    },
+    {
+      "id": "7607a952",
+      "type": "p",
+      "content": "The tympanogram measures compliance (mobility) of the tympanic membrane and middle ear system as air pressure is varied in the sealed ear canal. It tests middle ear function, not hearing."
+    },
+    {
+      "id": "8ea634f9",
+      "type": "li",
+      "content": "<strong>Type A — Normal:</strong> Peak near 0 daPa, compliance 0.3–1.6 mL"
+    },
+    {
+      "id": "b383c44b",
+      "type": "li",
+      "content": "<strong>Type As — Stiffness:</strong> Peak at 0 daPa but shallow (&lt; 0.3 mL). Seen in otosclerosis and tympanosclerosis"
+    },
+    {
+      "id": "1a9ea74e",
+      "type": "li",
+      "content": "<strong>Type Ad — Hypermobility:</strong> Peak at 0 daPa but abnormally tall (&gt; 1.6 mL). Seen in ossicular discontinuity"
+    },
+    {
+      "id": "7be3a873",
+      "type": "li",
+      "content": "<strong>Type B — Flat:</strong> No peak at all. Causes: middle ear effusion (small ear canal volume), tympanic membrane perforation (large ear canal volume &gt; 2.0 mL), or impacted cerumen blocking the probe"
+    },
+    {
+      "id": "eea32523",
+      "type": "li",
+      "content": "<strong>Type C — Negative pressure:</strong> Peak shifted left, more negative than -100 daPa. The eardrum is being sucked inward. This is the tympanogram of eustachian tube dysfunction. Left untreated, Type C evolves toward Type B as effusion develops"
+    },
+    {
+      "id": "1417e436",
+      "type": "alert-note",
+      "content": "The ear canal volume number distinguishes effusion from perforation in a Type B curve: small volume (&lt; 1.5 mL) = effusion, large volume (&gt; 2.0 mL) = perforation."
+    }
+  ],
+  "related": [
+    "ssnhl",
+    "meniere",
+    "scd"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "epley",
+  "type": "proc",
+  "title": "Epley Maneuver",
+  "desc": "Particle repositioning maneuver for posterior canal BPPV. ~80% effective on first treatment.",
+  "blocks": [
+    {
+      "id": "da6229ccce97bab3",
+      "type": "h3",
+      "content": "Prerequisite"
+    },
+    {
+      "id": "63fd797a50dab359",
+      "type": "p",
+      "content": "Confirm <strong>positive Dix-Hallpike</strong> first identifying the affected ear."
+    },
+    {
+      "id": "d79166e255edb28f",
+      "type": "alert-warn",
+      "content": "<strong>STOP if Dix-Hallpike shows central red flags:</strong> non-fatigable, purely vertical, or direction-changing nystagmus. Do not proceed with Epley."
+    },
+    {
+      "id": "d3d30e74ae151350",
+      "type": "h3",
+      "content": "Right-ear Epley sequence"
+    },
+    {
+      "id": "c03e96dc78883895",
+      "type": "li",
+      "content": "<strong>(1)</strong> Dix-Hallpike right — head turned 45° right, lay back with head hanging. Wait for nystagmus to <strong>fully resolve</strong>."
+    },
+    {
+      "id": "b2349f8cccb741f0",
+      "type": "li",
+      "content": "<strong>(2)</strong> Rotate head 90° to the left, still hanging off table. Hold <strong>30 seconds</strong>."
+    },
+    {
+      "id": "23e128820a878660",
+      "type": "li",
+      "content": "<strong>(3)</strong> Roll the entire body to the left, face now pointing toward the floor. Hold <strong>30 seconds</strong>."
+    },
+    {
+      "id": "846eaaf2dd461a00",
+      "type": "li",
+      "content": "<strong>(4)</strong> Slowly sit up with chin tucked slightly down."
+    },
+    {
+      "id": "85004b4136160aeb",
+      "type": "h3",
+      "content": "Aftercare"
+    },
+    {
+      "id": "c1e2e3755feb748c",
+      "type": "li",
+      "content": "Observe patient seated 3–5 minutes before standing"
+    },
+    {
+      "id": "500e4eba6b691cf2",
+      "type": "li",
+      "content": "Mild residual unsteadiness for the day is normal"
+    },
+    {
+      "id": "e42ec8b5a23fd2bd",
+      "type": "li",
+      "content": "Provide home Epley handout for recurrent cases"
+    }
+  ],
+  "related": [
+    "bppv",
+    "dix-hallpike",
+    "ma-epley"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "region": "ear"
+}

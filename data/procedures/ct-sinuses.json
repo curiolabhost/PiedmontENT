@@ -1,0 +1,77 @@
+{
+  "id": "ct-sinuses",
+  "type": "proc",
+  "region": "nose",
+  "title": "CT Scan of the Sinuses",
+  "desc": "Non-contrast CT of the paranasal sinuses — imaging standard for CRS evaluation and surgical planning.",
+  "blocks": [
+    {
+      "id": "080079e3",
+      "type": "p",
+      "content": "CT of the paranasal sinuses — not a head CT, not a CT with contrast — is the imaging standard for CRS evaluation and surgical planning. For image-guided surgery (IGS), the scan parameters matter: typically a fine-cut non-contrast protocol, approximately 20 seconds acquisition time. American Health Imaging is a facility known to offer IGS-compatible CT protocols — confirm with the facility that the scan meets navigation system specifications before sending the patient."
+    },
+    {
+      "id": "7b46f679",
+      "type": "h3",
+      "content": "Protocol"
+    },
+    {
+      "id": "f102de99",
+      "type": "li",
+      "content": "Non-contrast — contrast adds nothing for mucosal sinus disease"
+    },
+    {
+      "id": "de05e663",
+      "type": "li",
+      "content": "Coronal and axial planes reviewed; sagittal reconstructions useful for frontal recess anatomy"
+    },
+    {
+      "id": "b80be33d",
+      "type": "li",
+      "content": "Fine cuts (≤1 mm) for surgical planning; 3 mm cuts adequate for initial diagnostic evaluation"
+    },
+    {
+      "id": "43dfa72a",
+      "type": "li",
+      "content": "For IGS, the CT must be acquired per the specific navigation system's protocol — coordinate with the OR before scheduling the scan"
+    },
+    {
+      "id": "78e52599",
+      "type": "h3",
+      "content": "What is on the report"
+    },
+    {
+      "id": "194b7546",
+      "type": "li",
+      "content": "Ostiomeatal complex (OMC) — the central drainage pathway for the frontal, maxillary, and anterior ethmoid sinuses; OMC obstruction is the anatomic root of most CRS"
+    },
+    {
+      "id": "22d69285",
+      "type": "li",
+      "content": "Mucosal thickening — extent and distribution"
+    },
+    {
+      "id": "0ad50779",
+      "type": "li",
+      "content": "Air-fluid levels — suggest acute superimposed infection on chronic disease"
+    },
+    {
+      "id": "588faeb3",
+      "type": "li",
+      "content": "Orbital walls and skull base — critical safety landmarks for FESS planning"
+    },
+    {
+      "id": "6220db14",
+      "type": "alert-note",
+      "content": "When ordering, verify the correct protocol (without contrast, sinus-specific, not head CT). If the patient had imaging at an outside facility, obtain the DICOM files — not just the written report. The surgeon needs the actual images for surgical planning. A report without images is not usable."
+    }
+  ],
+  "related": [
+    "chronic-sinusitis",
+    "nasal-polyps",
+    "fess",
+    "ma-ct"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

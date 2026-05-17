@@ -1,0 +1,85 @@
+{
+  "id": "ssnhl",
+  "type": "dx",
+  "region": "ear",
+  "title": "Sudden Sensorineural Hearing Loss (SSNHL)",
+  "desc": "Unexplained sensorineural hearing loss of at least 30 dB across three consecutive frequencies within 72 hours — a medical urgency.",
+  "blocks": [
+    {
+      "id": "0e2ae2ca",
+      "type": "alert-warn",
+      "content": "<strong>This is a medical urgency.</strong> Recognize it and act on it immediately."
+    },
+    {
+      "id": "265573fb",
+      "type": "h3",
+      "content": "Definition"
+    },
+    {
+      "id": "550b44c2",
+      "type": "p",
+      "content": "Unexplained sensorineural hearing loss of at least 30 dB across three consecutive frequencies, occurring within 72 hours. Almost always unilateral."
+    },
+    {
+      "id": "4a328a8c",
+      "type": "h3",
+      "content": "Why it matters"
+    },
+    {
+      "id": "76bc76b6",
+      "type": "p",
+      "content": "SSNHL is most often idiopathic but causes include viral cochleitis, microvascular event, autoimmune disease, and — in about 1–2% of cases — acoustic neuroma (vestibular schwannoma). Without treatment, roughly one-third of patients recover spontaneously, one-third recover partially, and one-third have permanent loss. The treatment window is approximately 2–4 weeks from onset. After that, steroids are unlikely to change the outcome."
+    },
+    {
+      "id": "1523a696",
+      "type": "alert-warn",
+      "content": "When a patient calls reporting sudden hearing loss in one ear — regardless of how they describe it, whether \"my ear went out,\" \"everything sounds muffled,\" or \"I woke up deaf in one ear\" — do not schedule them for a routine appointment weeks out. Get the provider on the line before that patient hangs up."
+    },
+    {
+      "id": "1a56b2a2",
+      "type": "h3",
+      "content": "Workup"
+    },
+    {
+      "id": "8ec130d5",
+      "type": "li",
+      "content": "Audiogram — pure tone thresholds, word recognition score, tympanogram to rule out middle ear effusion as the cause, acoustic reflexes"
+    },
+    {
+      "id": "5fb0f997",
+      "type": "li",
+      "content": "MRI brain with IAC protocol and gadolinium — required in all cases to rule out acoustic neuroma; this is not optional even when hearing recovers fully. Recovery on steroids alone does not rule out a structural lesion — an acoustic neuroma can produce a temporary steroid-responsive pattern"
+    },
+    {
+      "id": "7a5563fb",
+      "type": "li",
+      "content": "Labs: CBC, comprehensive metabolic panel, RPR, ANA, ESR; Lyme titers in endemic areas"
+    },
+    {
+      "id": "2a230e5f",
+      "type": "h3",
+      "content": "Treatment"
+    },
+    {
+      "id": "91bbb52b",
+      "type": "li",
+      "content": "Oral prednisone — first-line; high-dose course (72 pills) with taper"
+    },
+    {
+      "id": "87986a60",
+      "type": "li",
+      "content": "Repeat audiogram approximately one week after completing the prednisone course"
+    },
+    {
+      "id": "1e0f098c",
+      "type": "li",
+      "content": "Intratympanic dexamethasone — used when oral steroids are contraindicated (diabetes, immunocompromised) or as salvage after incomplete recovery; series of 3–4 weekly injections with audiogram after the series"
+    }
+  ],
+  "related": [
+    "it-injection",
+    "audiogram-tympanogram"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

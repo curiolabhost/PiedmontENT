@@ -1,0 +1,132 @@
+{
+  "id": "meniere",
+  "type": "dx",
+  "region": "ear",
+  "title": "Ménière's Disease",
+  "desc": "Endolymphatic hydrops — chronic relapsing inner ear disorder with episodic vertigo, fluctuating SNHL, tinnitus, and aural fullness.",
+  "blocks": [
+    {
+      "id": "45eef996",
+      "type": "p",
+      "content": "Ménière's disease is caused by endolymphatic hydrops — excess fluid accumulation in the membranous labyrinth of the inner ear, causing distension of the endolymphatic compartment. It is a chronic, relapsing condition with no cure — management is aimed at reducing attack frequency and severity and preserving hearing."
+    },
+    {
+      "id": "65ac513f",
+      "type": "h3",
+      "content": "The classic tetrad"
+    },
+    {
+      "id": "c33fdf5c",
+      "type": "li",
+      "content": "Episodic vertigo — attacks lasting 20 minutes to several hours, distinguishing it from BPPV (seconds) and vestibular neuritis (days)"
+    },
+    {
+      "id": "2510a029",
+      "type": "li",
+      "content": "Fluctuating sensorineural hearing loss — characteristically worse in the low frequencies early in the disease"
+    },
+    {
+      "id": "0538e99d",
+      "type": "li",
+      "content": "Tinnitus — often low-pitched, roaring quality, worsens before and during attacks"
+    },
+    {
+      "id": "b99584e9",
+      "type": "li",
+      "content": "Aural fullness — a pressure or stuffed sensation in the affected ear"
+    },
+    {
+      "id": "08299342",
+      "type": "p",
+      "content": "Not all four are present in every patient, particularly early in the disease. Diagnosis is clinical, supported by audiometric documentation of low-frequency SNHL."
+    },
+    {
+      "id": "dbc8be47",
+      "type": "h3",
+      "content": "Triggers"
+    },
+    {
+      "id": "7cf80a31",
+      "type": "p",
+      "content": "High-sodium diet, caffeine, alcohol, stress, poor sleep, barometric pressure changes, and hormonal fluctuation in women. Dietary triggers are real and counseling patients on this is part of management."
+    },
+    {
+      "id": "b674babc",
+      "type": "h3",
+      "content": "Medical management"
+    },
+    {
+      "id": "5d630a08",
+      "type": "li",
+      "content": "Low-sodium diet — typically less than 1500–2000 mg per day; this is the cornerstone of conservative management and patients need specific dietary counseling, not just a verbal instruction to \"watch the salt\""
+    },
+    {
+      "id": "a2dc32dd",
+      "type": "li",
+      "content": "Diuretics — hydrochlorothiazide or acetazolamide to reduce endolymph volume"
+    },
+    {
+      "id": "b4547717",
+      "type": "li",
+      "content": "Vestibular suppressants for acute attacks — meclizine (Antivert), diazepam, or promethazine; for symptomatic relief only — do not use chronically as they inhibit vestibular compensation"
+    },
+    {
+      "id": "f18f85b3",
+      "type": "li",
+      "content": "Betahistine — widely used in Europe, limited FDA approval in the US"
+    },
+    {
+      "id": "600f771c",
+      "type": "li",
+      "content": "Intratympanic dexamethasone — for attack frequency reduction and hearing preservation"
+    },
+    {
+      "id": "10adf5d4",
+      "type": "h3",
+      "content": "Procedural management when medical therapy fails"
+    },
+    {
+      "id": "2823f541",
+      "type": "li",
+      "content": "Meniett device — low-pressure pulse generator applied to a ventilation tube; requires a patent PE tube"
+    },
+    {
+      "id": "158886c2",
+      "type": "li",
+      "content": "Endolymphatic sac decompression — hearing-preserving surgery with variable long-term efficacy"
+    },
+    {
+      "id": "534fb41f",
+      "type": "li",
+      "content": "Vestibular nerve section — cuts the vestibular nerve while preserving the cochlear nerve and hearing; highly effective for vertigo control but requires neurotologic-neurosurgical collaboration"
+    },
+    {
+      "id": "07d1d1e3",
+      "type": "li",
+      "content": "Labyrinthectomy — surgical destruction of the inner ear; eliminates both hearing and vestibular function; reserved for patients with no serviceable hearing in the affected ear"
+    },
+    {
+      "id": "244e7463",
+      "type": "li",
+      "content": "Intratympanic gentamicin (chemical labyrinthectomy) — not performed at our practice"
+    },
+    {
+      "id": "67abfcc7",
+      "type": "h3",
+      "content": "Long-term course"
+    },
+    {
+      "id": "426dd4ca",
+      "type": "p",
+      "content": "Ménière's is progressive. Over years, the fluctuating hearing loss becomes a fixed permanent loss. The vertigo attacks often burn out in late-stage disease, but the patient is left with permanent hearing loss, chronic tinnitus, and sometimes disequilibrium. Bilateral involvement occurs in 30–50% of patients over time."
+    }
+  ],
+  "related": [
+    "it-injection",
+    "ma-it",
+    "audiogram-tympanogram",
+    "ttube"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "allergic-rhinitis",
+  "type": "dx",
+  "region": "nose",
+  "title": "Allergic Rhinitis",
+  "desc": "IgE-mediated inflammation of the nasal mucosa triggered by allergen exposure.",
+  "blocks": [
+    {
+      "id": "9a8e6163",
+      "type": "p",
+      "content": "Allergic rhinitis (AR) is IgE-mediated inflammation of the nasal mucosa triggered by allergen exposure. It is classified as seasonal (pollens — trees in spring, grasses in summer, ragweed in fall) or perennial (dust mites, mold, pet dander, cockroach). Many patients have both. It affects roughly 20–30% of the general population and is a major driver of CRS, otitis media with effusion, and eustachian tube dysfunction."
+    },
+    {
+      "id": "6268e40d",
+      "type": "h3",
+      "content": "Symptoms"
+    },
+    {
+      "id": "f9ac0d68",
+      "type": "p",
+      "content": "Classic triad of rhinorrhea, sneezing, and nasal congestion, plus nasal itching. Ocular symptoms (itchy, watery eyes) are common in seasonal AR. On endoscopy, findings include pale or bluish boggy turbinate hypertrophy, posterior pharyngeal cobblestoning from lymphoid tissue hypertrophy, and in some patients tonsillar hypertrophy."
+    },
+    {
+      "id": "b069acb9",
+      "type": "h3",
+      "content": "Diagnosis"
+    },
+    {
+      "id": "36082b40",
+      "type": "p",
+      "content": "Primarily clinical. Allergy skin prick testing is the gold standard for identifying specific triggers. Specific IgE blood testing (ImmunoCAP, formerly RAST) is the alternative when skin testing is contraindicated — this includes patients with severe eczema who cannot produce an interpretable wheal response, patients who cannot hold antihistamines, patients on beta blockers (epinephrine is less effective in anaphylaxis if skin testing provokes a systemic reaction and the patient is beta-blocked), and patients on sedating medications they cannot safely stop."
+    },
+    {
+      "id": "81c3a4f2",
+      "type": "h3",
+      "content": "Medical treatment"
+    },
+    {
+      "id": "d7e9c69f",
+      "type": "li",
+      "content": "Intranasal corticosteroids (Ryaltris, Flonase) — first-line, most effective single agent for AR"
+    },
+    {
+      "id": "cae29601",
+      "type": "li",
+      "content": "Oral antihistamines — second-generation preferred: cetirizine (Zyrtec), fexofenadine (Allegra), loratadine (Claritin); first-generation: diphenhydramine (Benadryl), chlorpheniramine (Chlor-Trimeton) — sedating"
+    },
+    {
+      "id": "b9e2cb83",
+      "type": "li",
+      "content": "Intranasal antihistamines — azelastine, olopatadine (Patanase); faster onset than oral"
+    },
+    {
+      "id": "e3473589",
+      "type": "li",
+      "content": "Leukotriene receptor antagonists — montelukast (Singulair); modest efficacy; FDA boxed warning for neuropsychiatric events including depression and suicidal ideation — patients must be counseled before starting"
+    },
+    {
+      "id": "46be1251",
+      "type": "alert-warn",
+      "content": "Montelukast (Singulair) carries an FDA boxed warning for neuropsychiatric events including depression and suicidal ideation — patients must be counseled before starting."
+    },
+    {
+      "id": "302da527",
+      "type": "h3",
+      "content": "Immunotherapy"
+    },
+    {
+      "id": "03b1eda5",
+      "type": "p",
+      "content": "Allergen immunotherapy is the only disease-modifying treatment for allergic rhinitis. Available as subcutaneous injections (allergy shots) or sublingual drops/tablets. Duration is tailored to disease severity:"
+    },
+    {
+      "id": "573d7165",
+      "type": "li",
+      "content": "Mild: approximately 3 years"
+    },
+    {
+      "id": "8298a9e0",
+      "type": "li",
+      "content": "Moderate: approximately 4 years"
+    },
+    {
+      "id": "6654d75d",
+      "type": "li",
+      "content": "Severe: approximately 5 years"
+    },
+    {
+      "id": "1f125f04",
+      "type": "li",
+      "content": "Extremely severe: 5 years or longer, individualized"
+    }
+  ],
+  "related": [
+    "chronic-sinusitis",
+    "nasal-polyps",
+    "rhinaer",
+    "steroid-inj"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

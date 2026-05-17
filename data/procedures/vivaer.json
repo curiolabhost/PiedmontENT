@@ -1,0 +1,96 @@
+{
+  "id": "vivaer",
+  "type": "proc",
+  "region": "nose",
+  "title": "Vivaer",
+  "desc": "In-office radiofrequency treatment for nasal airway obstruction caused by internal nasal valve collapse.",
+  "blocks": [
+    {
+      "id": "4b42dac1",
+      "type": "p",
+      "content": "Vivaer (Aerin Medical) is an in-office radiofrequency treatment for nasal airway obstruction caused by nasal valve collapse — specifically the internal nasal valve, where the cartilaginous lateral wall collapses inward on inhalation and limits airflow. This is a structural problem, not a secretomotor or mucosal problem — that distinction determines patient selection."
+    },
+    {
+      "id": "90180dc9",
+      "type": "h3",
+      "content": "Mechanism"
+    },
+    {
+      "id": "4437aad7",
+      "type": "p",
+      "content": "A handheld RF wand delivers controlled thermal energy to the internal nasal valve region. The heat remodels the cartilage and soft tissue — stiffening the lateral wall so it no longer collapses dynamically with inhalation. No tissue is cut or removed. The remodeling response develops over 4–6 weeks as fibrosis sets in. Patients should not judge results immediately after the procedure."
+    },
+    {
+      "id": "956cf97a",
+      "type": "h3",
+      "content": "Patient selection"
+    },
+    {
+      "id": "c201020f",
+      "type": "p",
+      "content": "The Cottle maneuver is used as a quick screen — the examiner gently pulls the patient's cheek laterally to manually support the nasal valve; if breathing improves significantly with this maneuver, nasal valve collapse is likely contributing. A Breathe Right strip trial at home is another low-tech confirmation."
+    },
+    {
+      "id": "0642c2ab",
+      "type": "h3",
+      "content": "Procedure"
+    },
+    {
+      "id": "1ac5bf46",
+      "type": "li",
+      "content": "Topical anesthetic — lidocaine-soaked pledgets placed for 10 minutes; followed by local injection of 1% or 2% lidocaine with epinephrine at treatment sites"
+    },
+    {
+      "id": "91f14120",
+      "type": "li",
+      "content": "The Vivaer wand is positioned at the internal nasal valve — upper lateral cartilage region"
+    },
+    {
+      "id": "6bc8c564",
+      "type": "li",
+      "content": "RF energy delivered in controlled pulses, typically 3–5 spots per side"
+    },
+    {
+      "id": "4083fd38",
+      "type": "li",
+      "content": "Patient feels warmth or mild pressure; should not be painful with adequate anesthesia"
+    },
+    {
+      "id": "d06a6af2",
+      "type": "li",
+      "content": "Total time 15–20 minutes; patient leaves same day"
+    },
+    {
+      "id": "65ce7673",
+      "type": "h3",
+      "content": "Post-procedure"
+    },
+    {
+      "id": "28d5dfe5",
+      "type": "p",
+      "content": "Mild swelling and crusting for a few days. Saline spray. Full results at 4–6 weeks."
+    },
+    {
+      "id": "549e5409",
+      "type": "h3",
+      "content": "Insurance"
+    },
+    {
+      "id": "7ba2426a",
+      "type": "alert-info",
+      "content": "Not covered by commercial insurance. Covered by Medicare. Patients must be informed of out-of-pocket cost before the procedure is scheduled."
+    },
+    {
+      "id": "93d1963c",
+      "type": "alert-warn",
+      "content": "Confirm the disposable Vivaer wand is in stock before the patient arrives — this is a per-case cost item and the procedure cannot proceed without it."
+    }
+  ],
+  "related": [
+    "rhinaer",
+    "ma-vivaer",
+    "septoplasty"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

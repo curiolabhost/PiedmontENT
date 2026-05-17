@@ -1,0 +1,86 @@
+{
+  "id": "steroid-inj",
+  "type": "proc",
+  "region": "nose",
+  "title": "Steroid Injection — Intramuscular (Kenalog and Decadron)",
+  "desc": "IM injection of corticosteroids (triamcinolone or dexamethasone) into the gluteal muscle for severe allergic disease, polyps, or perioperative inflammation.",
+  "blocks": [
+    {
+      "id": "fccd21d6",
+      "type": "p",
+      "content": "These are administered as intramuscular (IM) injections into the gluteal (buttock) muscle — not intranasally."
+    },
+    {
+      "id": "6d2f1a8c",
+      "type": "h3",
+      "content": "Triamcinolone acetonide (Kenalog-40, 40 mg/mL)"
+    },
+    {
+      "id": "1a88e1b9",
+      "type": "p",
+      "content": "<strong>Triamcinolone acetonide (Kenalog-40, 40 mg/mL)</strong> is a long-acting depot corticosteroid used for patients with significant allergic disease, nasal polyps, or severe inflammatory flares where a sustained steroid effect over weeks is needed. The depot effect provides anti-inflammatory action for 3–6 weeks — useful when oral steroids are not tolerated or when sustained release is preferable to a short burst."
+    },
+    {
+      "id": "2d3b333b",
+      "type": "h3",
+      "content": "Dexamethasone (Decadron, 4 mg/mL)"
+    },
+    {
+      "id": "1dbb6d50",
+      "type": "p",
+      "content": "<strong>Dexamethasone (Decadron, 4 mg/mL)</strong> is a shorter-acting, water-soluble corticosteroid used IM or IV perioperatively to reduce postoperative edema, nausea, and inflammation. Also used in the office for acute inflammatory flares where rapid but not prolonged effect is desired."
+    },
+    {
+      "id": "20512743",
+      "type": "h3",
+      "content": "IM injection procedure (gluteal)"
+    },
+    {
+      "id": "fe9fd008",
+      "type": "li",
+      "content": "Confirm the medication, dose, and concentration with the provider before drawing"
+    },
+    {
+      "id": "fca0372a",
+      "type": "li",
+      "content": "Needle: typically 1.5 inch, 21–23 gauge depending on patient body habitus"
+    },
+    {
+      "id": "235cd683",
+      "type": "li",
+      "content": "Injection site: ventrogluteal (preferred) or dorsogluteal; clean with alcohol and allow to dry"
+    },
+    {
+      "id": "33f3346b",
+      "type": "li",
+      "content": "Aspirate before injecting — confirm no blood return"
+    },
+    {
+      "id": "6f1e1265",
+      "type": "li",
+      "content": "Inject slowly, withdraw, apply pressure"
+    },
+    {
+      "id": "0298424c",
+      "type": "li",
+      "content": "Document lot number, expiration date, injection site, and administering staff"
+    },
+    {
+      "id": "d0207f61",
+      "type": "h3",
+      "content": "Systemic considerations"
+    },
+    {
+      "id": "15b35619",
+      "type": "alert-warn",
+      "content": "Both medications represent meaningful systemic steroid exposure. Diabetic patients must be warned — blood glucose can rise significantly for days to weeks, particularly with triamcinolone. Document all prior steroid injections regardless of specialty (dermatology, orthopedics, ophthalmology) because cumulative steroid burden matters."
+    }
+  ],
+  "related": [
+    "allergic-rhinitis",
+    "nasal-polyps",
+    "ma-steroid"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "ma-vivaer",
+  "type": "ma",
+  "region": "nose",
+  "title": "MA Protocol: Vivaer / RhinAer Setup",
+  "desc": "MA setup checklist for Vivaer and RhinAer in-office radiofrequency procedures.",
+  "blocks": [
+    {
+      "id": "fd8011ee",
+      "type": "alert-warn",
+      "content": "<strong>Critical first step:</strong> Confirm which procedure or combination is scheduled — Vivaer, RhinAer, or both. They require different wands. Do not assume."
+    },
+    {
+      "id": "b4a73027",
+      "type": "h2",
+      "content": "Day before or morning of"
+    },
+    {
+      "id": "25c4a829",
+      "type": "checklist-step",
+      "content": "Confirm correct disposable wand(s) are in stock: Vivaer wand and/or RhinAer wand. These are per-case cost items — no wand means the procedure cannot proceed"
+    },
+    {
+      "id": "7560d6dc",
+      "type": "checklist-step",
+      "content": "Confirm Aerin console is charged and powers on"
+    },
+    {
+      "id": "59306214",
+      "type": "h2",
+      "content": "Room setup"
+    },
+    {
+      "id": "5a61a628",
+      "type": "checklist-step",
+      "content": "Lidocaine-soaked pledgets prepared for topical anesthesia"
+    },
+    {
+      "id": "0d98198e",
+      "type": "checklist-step",
+      "content": "1% or 2% lidocaine with epinephrine drawn for local injection"
+    },
+    {
+      "id": "f268df38",
+      "type": "checklist-step",
+      "content": "Place pledgets — start 10-minute timer before provider enters room"
+    },
+    {
+      "id": "2f77cc32",
+      "type": "checklist-step",
+      "content": "Patient seated in chair in comfortable reclined position"
+    },
+    {
+      "id": "4d790aff",
+      "type": "h2",
+      "content": "Post-procedure instructions to give patient"
+    },
+    {
+      "id": "ae4cea76",
+      "type": "checklist-step",
+      "content": "Saline spray beginning today, several times daily"
+    },
+    {
+      "id": "08ab2893",
+      "type": "checklist-step",
+      "content": "Mild swelling and crusting for a few days — expected and normal"
+    },
+    {
+      "id": "91f764c8",
+      "type": "checklist-step",
+      "content": "Full results take 4–6 weeks — advise patient not to judge outcome immediately"
+    },
+    {
+      "id": "a0217dbc",
+      "type": "checklist-step",
+      "content": "Schedule follow-up appointment before patient leaves"
+    }
+  ],
+  "related": [
+    "vivaer",
+    "rhinaer"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

@@ -1,0 +1,147 @@
+{
+  "id": "ma-it",
+  "type": "ma",
+  "region": "ear",
+  "title": "MA Protocol: Intratympanic Injection",
+  "desc": "MA workflow for SSNHL order creation, day-of intratympanic injection setup, EMR documentation, and follow-up scheduling.",
+  "blocks": [
+    {
+      "id": "3dde4282",
+      "type": "h2",
+      "content": "When SSNHL is suspected — same day or initial visit"
+    },
+    {
+      "id": "dbfacd84",
+      "type": "p",
+      "content": "When a patient presents with sudden hearing loss, the physician will prescribe a high-dose prednisone taper. At that visit, create an order in the EMR."
+    },
+    {
+      "id": "b1c0fc2b",
+      "type": "li",
+      "content": "Impression: \"Sudden hearing loss\""
+    },
+    {
+      "id": "4334b327",
+      "type": "li",
+      "content": "Plan: \"Order in-office procedure\""
+    },
+    {
+      "id": "db61317c",
+      "type": "li",
+      "content": "Under procedure details: select intratympanic membrane injection"
+    },
+    {
+      "id": "d0bda537",
+      "type": "li",
+      "content": "Task the order to the in-office procedure insurance coordinator for verification"
+    },
+    {
+      "id": "55ed9634",
+      "type": "alert-note",
+      "content": "Intratympanic injection is only performed after the patient completes the prednisone course and returns for a repeat audiogram approximately one week later. Whether injection proceeds depends on the patient's audiogram response to prednisone."
+    },
+    {
+      "id": "53dd4336",
+      "type": "h2",
+      "content": "Day of injection — before the procedure"
+    },
+    {
+      "id": "be7acb3f",
+      "type": "checklist-step",
+      "content": "Confirm the procedure has been insurance-verified by the coordinator — check the order and its notes before doing anything else. Do not proceed if verification is not confirmed."
+    },
+    {
+      "id": "44607560",
+      "type": "checklist-step",
+      "content": "Obtain signed consent form — located in the PDF manager in the EMR, searchable as \"chemical labyrinthotomy\""
+    },
+    {
+      "id": "ca2bba4d",
+      "type": "checklist-step",
+      "content": "Draw dexamethasone 10 mg/mL, 0.4 mL into a 1 mL syringe using a 22-gauge needle, then switch to a 27-gauge needle for the physician to inject with"
+    },
+    {
+      "id": "86150bfd",
+      "type": "checklist-step",
+      "content": "Place 1–2 drops of phenol into a small cup using the phenol dropper"
+    },
+    {
+      "id": "71fc7447",
+      "type": "checklist-step",
+      "content": "Grab the phenol applicator"
+    },
+    {
+      "id": "ce6d0a75",
+      "type": "checklist-step",
+      "content": "Place the vial, loaded syringe, cup with phenol, and phenol applicator together in a basin and hand it to the physician"
+    },
+    {
+      "id": "e4731ece",
+      "type": "h3",
+      "content": "EMR documentation at time of procedure"
+    },
+    {
+      "id": "e2c667c9",
+      "type": "checklist-step",
+      "content": "Use diagnosis \"Sudden hearing loss\" with plan \"chemical labyrinthotomy\""
+    },
+    {
+      "id": "f9b18a39",
+      "type": "checklist-step",
+      "content": "Under procedure details, make sure to include the medication used — enter \"dexamethasone\" explicitly. If the medication is not entered, it will not be charged with the procedure.",
+      "note": "Missing medication entry = lost charge"
+    },
+    {
+      "id": "2ffff19b",
+      "type": "h2",
+      "content": "After the injection"
+    },
+    {
+      "id": "29f6d73e",
+      "type": "checklist-step",
+      "content": "Patient must lie flat with the injected ear facing the ceiling for 30 minutes — this keeps the steroid in the middle ear space for absorption. Set a timer."
+    },
+    {
+      "id": "885b2a05",
+      "type": "checklist-step",
+      "content": "After 30 minutes, fit the patient with Doc's Proplugs earplug"
+    },
+    {
+      "id": "42c4d4e9",
+      "type": "checklist-step",
+      "content": "Confirm with patient: any side effects, dizziness? Intermittent ear muffling is expected from the medication — reassure the patient this is normal"
+    },
+    {
+      "id": "b155ce01",
+      "type": "checklist-step",
+      "content": "Emphasize wearing the Doc's plug in the shower for the next several weeks until the eardrum perforation is fully healed"
+    },
+    {
+      "id": "5262fda3",
+      "type": "h2",
+      "content": "Scheduling and follow-up"
+    },
+    {
+      "id": "3ed4ac2a",
+      "type": "checklist-step",
+      "content": "Patient is required to complete a brain MRI with IAC protocol"
+    },
+    {
+      "id": "e61885ce",
+      "type": "checklist-step",
+      "content": "Schedule a follow-up in 1 week with audiology first, then the physician — for possible repeat intratympanic injection if hearing has not returned"
+    },
+    {
+      "id": "448de46d",
+      "type": "checklist-step",
+      "content": "Recommend the patient book weekly appointments for 3 weeks to ensure they are in the schedule, each with audiology first followed by the physician visit"
+    }
+  ],
+  "related": [
+    "it-injection",
+    "ssnhl",
+    "meniere"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

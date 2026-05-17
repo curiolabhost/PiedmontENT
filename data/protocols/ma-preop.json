@@ -1,0 +1,186 @@
+{
+  "id": "ma-preop",
+  "type": "ma",
+  "region": "general",
+  "title": "MA Protocol: Pre-Op and Post-Op",
+  "desc": "Comprehensive pre-op and post-op MA checklists for FESS, septoplasty, and other surgical cases.",
+  "blocks": [
+    {
+      "id": "13d54df5",
+      "type": "h2",
+      "content": "Pre-Op Appointment Checklist"
+    },
+    {
+      "id": "92c7acaa",
+      "type": "h3",
+      "content": "EMR protocol"
+    },
+    {
+      "id": "cba90731",
+      "type": "checklist-step",
+      "content": "Apply the pre-op protocol in the EMR — there is a standard pre-op protocol template; use it as the starting point"
+    },
+    {
+      "id": "2ee0d702",
+      "type": "h3",
+      "content": "Three required forms"
+    },
+    {
+      "id": "263a6946",
+      "type": "checklist-step",
+      "content": "Consent form — obtain and have the patient sign in clinic at this visit. Do NOT obtain for the first time on the day of surgery."
+    },
+    {
+      "id": "c8a7db29",
+      "type": "checklist-step",
+      "content": "Medications form — document the prescriptions that will be issued: hydrocodone (pain management post-op) and ondansetron (nausea management post-op)"
+    },
+    {
+      "id": "96f371fa",
+      "type": "h3",
+      "content": "Patient health confirmation"
+    },
+    {
+      "id": "5dc46797",
+      "type": "checklist-step",
+      "content": "Confirm the patient is feeling overall well — no fever, no active upper respiratory infection, no new illness since the last visit. If the patient is sick, alert the provider before proceeding — surgery may need to be postponed."
+    },
+    {
+      "id": "c8b40c98",
+      "type": "checklist-step",
+      "content": "Confirm any current blood thinner medications — document name, dose, and when the patient last took it. The provider will advise on the hold protocol."
+    },
+    {
+      "id": "8dfadfa0",
+      "type": "checklist-step",
+      "content": "Confirm known sleep apnea — if yes, confirm whether the patient uses a CPAP and whether they will bring it to the surgery center"
+    },
+    {
+      "id": "0e2bc99f",
+      "type": "h3",
+      "content": "Standard medication management"
+    },
+    {
+      "id": "28e6c027",
+      "type": "checklist-step",
+      "content": "ASA/NSAIDs: hold 7 days before surgery"
+    },
+    {
+      "id": "d139a587",
+      "type": "checklist-step",
+      "content": "Plavix: hold 5 days before surgery"
+    },
+    {
+      "id": "0d58cc35",
+      "type": "checklist-step",
+      "content": "NOACs: hold per drug-specific protocol — confirm with provider and PCP"
+    },
+    {
+      "id": "1ba4f847",
+      "type": "checklist-step",
+      "content": "Metformin: hold the day of surgery"
+    },
+    {
+      "id": "004afa1a",
+      "type": "checklist-step",
+      "content": "Antihypertensives: continue with a small sip of water the morning of surgery"
+    },
+    {
+      "id": "e13aff7c",
+      "type": "checklist-step",
+      "content": "Insulin: adjusted for NPO status — patient's PCP or endocrinology advises"
+    },
+    {
+      "id": "ad0bb99a",
+      "type": "checklist-step",
+      "content": "Herbal supplements: hold — garlic, ginkgo, fish oil, and St. John's wort all affect bleeding and anesthesia"
+    },
+    {
+      "id": "cf43b7a4",
+      "type": "h3",
+      "content": "Patient counseling"
+    },
+    {
+      "id": "63d1494a",
+      "type": "checklist-step",
+      "content": "NPO after midnight — give written instructions. Some anesthesia groups allow clear liquids until 2 hours prior — confirm with the facility and specify in the instructions."
+    },
+    {
+      "id": "731d6ba2",
+      "type": "checklist-step",
+      "content": "Responsible adult driver confirmed — not a rideshare; must be physically present at discharge"
+    },
+    {
+      "id": "441a988f",
+      "type": "checklist-step",
+      "content": "No jewelry, nail polish, or contact lenses on the day of surgery"
+    },
+    {
+      "id": "932f129a",
+      "type": "checklist-step",
+      "content": "No smoking — ideally 4+ weeks prior; minimum 24 hours before"
+    },
+    {
+      "id": "21d2994f",
+      "type": "checklist-step",
+      "content": "Schedule the post-op follow-up appointment before the patient leaves today"
+    },
+    {
+      "id": "e807ee10",
+      "type": "h2",
+      "content": "Post-Op Visit Checklist"
+    },
+    {
+      "id": "dd9fbc29",
+      "type": "h3",
+      "content": "EMR protocol"
+    },
+    {
+      "id": "d76047d0",
+      "type": "checklist-step",
+      "content": "Use the post-op protocol in the EMR — this charges only for post-op nasal endoscopy with debridement bilaterally. Do not charge a visit time code for post-op visits."
+    },
+    {
+      "id": "1150f8a3",
+      "type": "h3",
+      "content": "Patient check-in"
+    },
+    {
+      "id": "0a4fed61",
+      "type": "checklist-step",
+      "content": "Confirm whether the patient is currently on any prescription medication from the physician after surgery — particularly if FESS was performed"
+    },
+    {
+      "id": "b692ecf3",
+      "type": "checklist-step",
+      "content": "Check for any culture or MicroGen PCR results from the surgery — the physician may have collected intraoperative samples and results may be back; these guide post-surgical antibiotic selection. Flag any results for the provider before they enter the room."
+    },
+    {
+      "id": "73623eac",
+      "type": "h3",
+      "content": "Instrument setup"
+    },
+    {
+      "id": "a6b3f1a5",
+      "type": "checklist-step",
+      "content": "Always use the rigid scope — preferably the 30-degree scope for full sinus visualization in FESS patients"
+    },
+    {
+      "id": "bd1af425",
+      "type": "checklist-step",
+      "content": "Set up: curved suction, size 8 and size 10 straight suctions, and plentiful 4×4 gauze for yourself, and a cup of water"
+    },
+    {
+      "id": "0d35dabe",
+      "type": "checklist-step",
+      "content": "For patients who underwent septoplasty: they typically have bilateral septal splints. Prepare iris scissors and a hemostat, and a small basin to catch the splint upon removal by the physician."
+    }
+  ],
+  "related": [
+    "fess",
+    "septoplasty",
+    "ttube"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

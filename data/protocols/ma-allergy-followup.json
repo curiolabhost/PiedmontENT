@@ -1,0 +1,40 @@
+{
+  "id": "ma-allergy-followup",
+  "type": "ma",
+  "region": "nose",
+  "title": "MA Protocol: Allergic Rhinitis — Immunotherapy Follow-Up",
+  "desc": "MA workflow for follow-up visits after initiation of allergy immunotherapy.",
+  "blocks": [
+    {
+      "id": "067bbed3",
+      "type": "h2",
+      "content": "Follow-up schedule"
+    },
+    {
+      "id": "6a4001a2",
+      "type": "li",
+      "content": "Patient makes a 4-month follow-up after initiation of immunotherapy with the physician"
+    },
+    {
+      "id": "8188b270",
+      "type": "li",
+      "content": "Subsequent follow-ups are yearly"
+    },
+    {
+      "id": "0f4881f4",
+      "type": "h2",
+      "content": "At yearly follow-up visits, confirm"
+    },
+    {
+      "id": "7adf2434",
+      "type": "checklist-step",
+      "content": "Whether the patient's epinephrine auto-injector needs renewal — these typically expire after 1 year and patients frequently do not notice. Check the expiration date and flag for the provider if renewal is needed."
+    }
+  ],
+  "related": [
+    "allergic-rhinitis",
+    "ma-allergic-rhinitis"
+  ],
+  "createdAt": "2026-05-03T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

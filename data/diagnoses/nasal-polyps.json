@@ -1,0 +1,82 @@
+{
+  "id": "nasal-polyps",
+  "type": "dx",
+  "region": "nose",
+  "title": "Nasal Polyps",
+  "desc": "Benign, non-cancerous, grape-like outgrowths of the sinonasal mucosa that develop in the setting of chronic inflammation.",
+  "blocks": [
+    {
+      "id": "e88b14b0",
+      "type": "p",
+      "content": "Nasal polyps are benign, non-cancerous, grape-like outgrowths of the sinonasal mucosa that develop in the setting of chronic inflammation. They are almost always bilateral — a unilateral polyp should raise concern and warrants further workup to rule out inverted papilloma or malignancy. Polyps are the hallmark of CRSwNP and represent a more severe, eosinophilic, type-2 inflammatory phenotype. Patients with nasal polyps frequently have comorbid allergic rhinitis and asthma."
+    },
+    {
+      "id": "7bc8dc9d",
+      "type": "alert-warn",
+      "content": "A unilateral polyp should raise concern and warrants further workup to rule out inverted papilloma or malignancy."
+    },
+    {
+      "id": "6c914843",
+      "type": "h3",
+      "content": "Symptoms"
+    },
+    {
+      "id": "3d625386",
+      "type": "p",
+      "content": "Nasal obstruction is often profound and bilateral. Loss of smell (anosmia) is a prominent feature — more so than in CRS without polyps. Patients frequently describe not being able to smell anything for months or years. Postnasal drip, facial pressure, and recurrent infections are also common."
+    },
+    {
+      "id": "1015acb0",
+      "type": "h3",
+      "content": "Diagnosis"
+    },
+    {
+      "id": "a94dc09d",
+      "type": "p",
+      "content": "Nasal endoscopy will show pale, gelatinous masses arising typically from the middle meatus. CT sinuses will show soft tissue density filling the sinuses, often extensively. Polyps cannot be definitively distinguished from mucosal thickening on CT alone, but the pattern and clinical picture together make the diagnosis clear in most cases."
+    },
+    {
+      "id": "d59407d5",
+      "type": "h3",
+      "content": "Medical management"
+    },
+    {
+      "id": "d2dcd13b",
+      "type": "p",
+      "content": "Intranasal corticosteroids are the backbone of maintenance therapy. Oral steroid bursts (Medrol dose packs or prednisone tapers) provide temporary reduction but polyps regrow. When polyps are severe, refractory, or unresponsive to both systemic steroids and topical steroid treatment — including budesonide irrigation and intranasal sprays like Flonase — biologics are the next step. Surgery (FESS) is appropriate for debulking but polyps recur without addressing the underlying inflammation. Biologics are significantly changing the long-term management picture."
+    },
+    {
+      "id": "2a02caea",
+      "type": "h3",
+      "content": "Biologics"
+    },
+    {
+      "id": "6e422f86",
+      "type": "p",
+      "content": "<strong>Dupilumab (Dupixent)</strong> is the most established biologic for CRSwNP and the one most commonly used in ENT. It is a monoclonal antibody targeting the IL-4 receptor alpha subunit, blocking both IL-4 and IL-13 signaling — the central drivers of type-2 eosinophilic inflammation. FDA-approved for CRSwNP, atopic dermatitis, and asthma, making it particularly useful for patients carrying all three diagnoses. Administered subcutaneously — 600 mg loading dose (two 300 mg injections at the first visit), then 300 mg every 2 weeks. Patients self-inject at home after initial training. Clinical trials showed significant polyp reduction, improvement in nasal obstruction, and meaningful recovery of smell. It does not cure polyps — patients must stay on it to maintain benefit."
+    },
+    {
+      "id": "32b8c9b5",
+      "type": "p",
+      "content": "<strong>Tezepelumab (Tezspire)</strong> targets TSLP (thymic stromal lymphopoietin), an epithelial cytokine that sits upstream of the IL-4/IL-13/IL-5 cascade, making it a broader-acting biologic. FDA-approved for severe asthma and has shown benefit in CRSwNP, particularly in patients with comorbid asthma. Less established in ENT than Dupixent but increasingly relevant. Administered as 210 mg subcutaneously every 4 weeks."
+    },
+    {
+      "id": "1c28c949",
+      "type": "p",
+      "content": "<strong>Mepolizumab (Nucala)</strong> targets IL-5, the primary cytokine driving eosinophil production and survival. FDA-approved for severe eosinophilic asthma and CRSwNP. A good choice when eosinophil counts are markedly elevated and the patient has eosinophilic disease across multiple organ systems. Administered as 100 mg subcutaneously every 4 weeks."
+    },
+    {
+      "id": "ffc5e429",
+      "type": "alert-info",
+      "content": "Insurance prior authorization is required for all three. Diagnosis code J33.0. Documentation requirements include confirmed endoscopic polyps, failed intranasal corticosteroids for at least 4 weeks, failed oral corticosteroids, and surgical history or documented contraindication to surgery."
+    }
+  ],
+  "related": [
+    "chronic-sinusitis",
+    "allergic-rhinitis",
+    "fess",
+    "steroid-inj"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

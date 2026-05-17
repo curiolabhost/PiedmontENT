@@ -1,0 +1,252 @@
+{
+  "id": "ma-biologics",
+  "type": "ma",
+  "region": "nose",
+  "title": "MA Protocol: Biologics — Prior Authorization and Enrollment",
+  "desc": "Step-by-step workflow for enrolling patients in biologic therapy and managing prior authorization through CoverMyMeds.",
+  "blocks": [
+    {
+      "id": "e8d30b12",
+      "type": "checklist-step",
+      "content": "Have the patient sign the biologic enrollment form. The form is located in the PDF manager in the EMR — search by the medication name (Dupixent, Nucala, or Tezspire). Ensure the physician signature is also obtained on the form before faxing."
+    },
+    {
+      "id": "00c4cbcb",
+      "type": "checklist-step",
+      "content": "Before initiating any prior authorization, confirm that the following pharmacy benefit fields are present on the insurance card uploaded in the patient’s EMR chart."
+    },
+    {
+      "id": "28e9d8c5",
+      "type": "li",
+      "content": "RxBIN"
+    },
+    {
+      "id": "d423e6de",
+      "type": "li",
+      "content": "Member ID"
+    },
+    {
+      "id": "65c38249",
+      "type": "li",
+      "content": "RxPCN"
+    },
+    {
+      "id": "420cc5d6",
+      "type": "li",
+      "content": "RxGroup"
+    },
+    {
+      "id": "5712a8d9",
+      "type": "p",
+      "content": "These numbers are for pharmacy benefits and are distinct from the medical benefit numbers used for office visits."
+    },
+    {
+      "id": "c38d15e3",
+      "type": "checklist-step",
+      "content": "Fax the completed and signed enrollment form to the fax number printed on the enrollment form itself — each manufacturer has a different fax number, so use the one on the specific form."
+    },
+    {
+      "id": "7b70208d",
+      "type": "p",
+      "content": "Also fax a copy of the patient’s insurance card that contains the pharmacy benefit numbers (RxBIN, RxPCN, RxGroup, Member ID) along with the enrollment form. Both documents go together in the same fax."
+    },
+    {
+      "id": "3648958d",
+      "type": "checklist-step",
+      "content": "Log into CoverMyMeds and initiate a new PA for the prescribed medication. Use the following specifications per drug."
+    },
+    {
+      "id": "5fd7cddd",
+      "type": "h3",
+      "content": "Dupixent (dupilumab)"
+    },
+    {
+      "id": "1ed9ffbc",
+      "type": "li",
+      "content": "Dose: 300 mg"
+    },
+    {
+      "id": "54bd8527",
+      "type": "li",
+      "content": "Form: auto-injector or syringe (per physician order)"
+    },
+    {
+      "id": "3d4ca4ad",
+      "type": "li",
+      "content": "Quantity: 2 per 30 days"
+    },
+    {
+      "id": "4c66d317",
+      "type": "li",
+      "content": "Diagnosis code: J33.0 for nasal polyps of the nasal cavity, or J32.8 for allergic fungal rhinosinusitis (AFRS)"
+    },
+    {
+      "id": "1ca1d408",
+      "type": "h3",
+      "content": "Nucala (mepolizumab)"
+    },
+    {
+      "id": "f2650c96",
+      "type": "li",
+      "content": "Dose: 100 mg"
+    },
+    {
+      "id": "24f4355d",
+      "type": "li",
+      "content": "Form: auto-injector or syringe (per physician order)"
+    },
+    {
+      "id": "41334630",
+      "type": "li",
+      "content": "Quantity: 1 per 30 days"
+    },
+    {
+      "id": "f7a58e0d",
+      "type": "li",
+      "content": "Diagnosis code: J33.0 for nasal polyps of the nasal cavity"
+    },
+    {
+      "id": "e5170ffc",
+      "type": "h3",
+      "content": "Tezspire (tezepelumab)"
+    },
+    {
+      "id": "d6f38403",
+      "type": "li",
+      "content": "Dose: 210 mg"
+    },
+    {
+      "id": "4f5ea8d7",
+      "type": "li",
+      "content": "Form: auto-injector"
+    },
+    {
+      "id": "1b5967a5",
+      "type": "li",
+      "content": "Quantity: 1 per 30 days"
+    },
+    {
+      "id": "0a933a85",
+      "type": "li",
+      "content": "Diagnosis code: J33.0 for nasal polyps of the nasal cavity"
+    },
+    {
+      "id": "00f3a6ec",
+      "type": "p",
+      "content": "Fill out all clinical documentation fields in CoverMyMeds thoroughly. Payers require documented evidence of medical necessity — this typically includes confirmed nasal polyp diagnosis by endoscopy or CT, failed intranasal corticosteroids (minimum 4 weeks of documented use including budesonide irrigation), failed oral corticosteroids, and prior surgical history or documented surgical contraindication. Missing documentation is the most common reason for first-pass denial. Do not leave clinical fields blank."
+    },
+    {
+      "id": "909e0043",
+      "type": "checklist-step",
+      "content": "After submission, place the PA case key in the patient’s task notes in the EMR so it can be found easily by anyone following up.",
+      "note": "CoverMyMeds case number"
+    },
+    {
+      "id": "c0c2deb0",
+      "type": "p",
+      "content": "Check CoverMyMeds every 1–2 days for any status updates, additional information requests, or payer decisions. Payers may request additional clinical documentation mid-review."
+    },
+    {
+      "id": "1bc0232a",
+      "type": "checklist-step",
+      "content": "When a decision is reached — whether approved or denied — locate the results letter in CoverMyMeds. Download it as a PDF and print it for the chart."
+    },
+    {
+      "id": "dbacf272",
+      "type": "alert-warn",
+      "content": "<strong>Critical:</strong> Fax the decision letter to the respective manufacturer’s fax number. The manufacturer’s hub program (Dupixent MyWay, Nucala Connect, Tezspire Together) requires the decision letter to proceed with next steps for the patient."
+    },
+    {
+      "id": "e4422e3f",
+      "type": "p",
+      "content": "Manufacturer fax numbers can be found on the enrollment form or on the manufacturer’s provider portal. Keep a reference list of these numbers."
+    },
+    {
+      "id": "ebef093c",
+      "type": "checklist-step",
+      "content": "Contact the patient promptly once a decision is received. Do not wait for their next appointment."
+    },
+    {
+      "id": "4cc239f5",
+      "type": "h3",
+      "content": "If approved"
+    },
+    {
+      "id": "ce311aca",
+      "type": "p",
+      "content": "Inform the patient that their biologic has been approved. Instruct the patient to contact the biologic manufacturer directly using the service phone number found on the manufacturer’s website — the hub program will walk the patient through next steps including specialty pharmacy coordination, copay assistance programs, and injection training. Provide the patient with the manufacturer’s contact number if you have it available."
+    },
+    {
+      "id": "bfe6e9a9",
+      "type": "h3",
+      "content": "If denied"
+    },
+    {
+      "id": "2319930a",
+      "type": "p",
+      "content": "Locate the reason for denial in the results letter or PDF — insurers are required to state the reason. Common denial reasons include insufficient documentation of treatment failure, missing endoscopy confirmation, incomplete steroid trial documentation, or the payer applying the wrong indication criteria."
+    },
+    {
+      "id": "0857cf72",
+      "type": "p",
+      "content": "Write a formal appeal letter. Use the letterhead template found in the PDF manager in the EMR under letter templates. The appeal letter should directly address the stated reason for denial — if the payer said the steroid trial was insufficient, the appeal letter should cite the documented dates of intranasal steroid use from the chart. If the payer said polyps were not confirmed, attach the endoscopy note and CT report. Be specific, be thorough, and cite the chart documentation explicitly."
+    },
+    {
+      "id": "0a49f880",
+      "type": "p",
+      "content": "Fax the appeal letter to the respective manufacturer or payer fax number indicated in the denial letter."
+    },
+    {
+      "id": "c40dc091",
+      "type": "h3",
+      "content": "If the appeal is exhausted and the patient cannot afford out-of-pocket cost"
+    },
+    {
+      "id": "23a3ed53",
+      "type": "p",
+      "content": "All three manufacturers offer patient assistance programs for uninsured or underinsured patients. Contact the manufacturer’s hub directly."
+    },
+    {
+      "id": "6f99d575",
+      "type": "li",
+      "content": "Dupixent MyWay: 1-844-DUPIXENT (1-844-387-4936)"
+    },
+    {
+      "id": "b90ec65c",
+      "type": "li",
+      "content": "Nucala One: found on gsk.com"
+    },
+    {
+      "id": "6479edd2",
+      "type": "li",
+      "content": "Tezspire Together: found on tezspire.com"
+    },
+    {
+      "id": "228a426f",
+      "type": "p",
+      "content": "These programs can reduce or eliminate out-of-pocket cost for eligible patients. Enrollment goes through the same hub contact as the standard program."
+    },
+    {
+      "id": "a1f2c301",
+      "type": "h2",
+      "content": "Sample Appeal Letter Template"
+    },
+    {
+      "id": "a1f2c302",
+      "type": "alert-note",
+      "content": "Use the letterhead template in the PDF manager in the EMR. Fill in all bracketed fields before faxing. Keep a copy in the patient's chart."
+    },
+    {
+      "id": "571e9469",
+      "type": "letter",
+      "content": "[PRACTICE NAME]\n[PRACTICE ADDRESS]\n[PRACTICE PHONE] | [PRACTICE FAX]\n[DATE]\n\nRE: Prior Authorization Appeal\nPatient: [PATIENT FULL NAME] | DOB: [DOB] | Member ID: [MEMBER ID]\nMedication: [MEDICATION NAME AND DOSE]\nPA Reference #: [COVERMYMEDS CASE NUMBER]\nPrescribing Physician: [PHYSICIAN NAME]\n\nTo the Medical Director,\n\nWe are appealing the denial dated [DATE OF DENIAL] for [MEDICATION NAME] for the above patient. Denial reason stated: [COPY DENIAL REASON EXACTLY].\n\nClinical Summary\n\n[PATIENT NAME] is a [AGE]-year-old with confirmed chronic rhinosinusitis with nasal polyps (J33.0), documented by nasal endoscopy on [DATE] showing [BRIEF FINDING] and CT sinuses on [DATE] showing [BRIEF FINDING].\n\nFailed Prior Treatment\n\n- Intranasal corticosteroids: [MEDICATION] used from [DATE] to [DATE] — [OUTCOME]\n- Oral corticosteroids: [MEDICATION] completed [DATE] to [DATE] — [OUTCOME]\n- Surgery: [FESS on [DATE] with recurrence by [DATE] / Not indicated because [REASON]]\n- [ADD ANY OTHER FAILED TREATMENTS]\n\nResponse to Denial\n\n[WRITE 1–3 SENTENCES DIRECTLY ADDRESSING THE STATED DENIAL REASON]\n\nMedical Necessity\n\n[MEDICATION NAME] is FDA-approved for CRSwNP and directly indicated for this patient based on confirmed diagnosis, documented treatment failures, and disease severity. Continued denial will result in ongoing polyp recurrence, persistent anosmia, and repeated need for surgical intervention.\n\n[IF AVAILABLE: Blood eosinophil count [NUMBER] cells/µL on [DATE] supports eosinophilic phenotype.]\n\nWe respectfully request approval. If peer-to-peer review would assist, [PHYSICIAN NAME] is available at [PHONE].\n\nSincerely,\n\n[PHYSICIAN NAME, DEGREE]\n[PHYSICIAN NPI]\n[PRACTICE PHONE] | [PRACTICE FAX]\n\nEnclosures: Endoscopy report [DATE] · CT report [DATE] · Chart notes"
+    }
+  ],
+  "related": [
+    "nasal-polyps",
+    "allergic-rhinitis",
+    "ma-allergic-rhinitis"
+  ],
+  "createdAt": "2026-05-03T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

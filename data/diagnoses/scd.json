@@ -1,0 +1,55 @@
+{
+  "id": "scd",
+  "type": "dx",
+  "region": "ear",
+  "title": "Superior Canal Dehiscence (SCD)",
+  "desc": "Thinning or absence of bone overlying the superior semicircular canal, creating an abnormal third mobile window into the inner ear.",
+  "blocks": [
+    {
+      "id": "50243a9e",
+      "type": "p",
+      "content": "Superior canal dehiscence is a thinning or absence of the bone overlying the superior (anterior) semicircular canal, creating an abnormal third mobile window into the inner ear. Relatively rare but increasingly recognized as CT imaging becomes more common."
+    },
+    {
+      "id": "5526a677",
+      "type": "h3",
+      "content": "Symptoms"
+    },
+    {
+      "id": "dd5011e7",
+      "type": "p",
+      "content": "Sound-induced vertigo (Tullio phenomenon) — patients feel dizzy or off-balance in response to loud sounds, their own voice, or straining. Autophony — hearing their own voice, heartbeat, or eye movements abnormally loudly. Low-frequency conductive hearing loss on audiogram despite a normal-looking tympanic membrane and middle ear. This combination — conductive loss with normal tympanogram and normal otoscopy — is a SCD red flag."
+    },
+    {
+      "id": "829275c8",
+      "type": "alert-note",
+      "content": "Conductive loss with normal tympanogram and normal otoscopy is a SCD red flag."
+    },
+    {
+      "id": "b8d1cc0c",
+      "type": "h3",
+      "content": "Diagnosis"
+    },
+    {
+      "id": "34f68b13",
+      "type": "p",
+      "content": "High-resolution CT of the temporal bones with dedicated temporal bone protocol and fine cuts; not standard sinus CT. Dehiscence is often best seen on coronal reformats. VEMP testing (vestibular evoked myogenic potentials) shows abnormally low thresholds on the affected side."
+    },
+    {
+      "id": "5ae7fbde",
+      "type": "h3",
+      "content": "Treatment"
+    },
+    {
+      "id": "9b50e072",
+      "type": "p",
+      "content": "Conservative for mild symptoms — avoiding triggers, reassurance. Surgical repair (middle fossa craniotomy or transmastoid approach to resurface or plug the canal) for disabling symptoms."
+    }
+  ],
+  "related": [
+    "audiogram-tympanogram",
+    "meniere"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

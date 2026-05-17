@@ -1,0 +1,85 @@
+{
+  "id": "cauterization",
+  "type": "proc",
+  "region": "nose",
+  "title": "Nasal Cauterization — Chemical and Electrical",
+  "desc": "In-office cauterization for epistaxis using silver nitrate or electrocautery to ablate the bleeding vessel.",
+  "blocks": [
+    {
+      "id": "7755dcb5",
+      "type": "p",
+      "content": "Cauterization is used primarily for epistaxis — to ablate the bleeding vessel. Local anesthetic used is typically 1% or 2% lidocaine with epinephrine 1:100,000 — the epinephrine provides vasoconstriction that reduces active bleeding and improves visualization of the vessel."
+    },
+    {
+      "id": "861ba04e",
+      "type": "h3",
+      "content": "Chemical cauterization — silver nitrate"
+    },
+    {
+      "id": "a232f8f8",
+      "type": "p",
+      "content": "Agent: 75% silver nitrate applicator stick."
+    },
+    {
+      "id": "1b5821e4",
+      "type": "li",
+      "content": "Obtain signed consent"
+    },
+    {
+      "id": "b875f9b0",
+      "type": "li",
+      "content": "Apply topical anesthetic — lidocaine or tetracaine to the nasal mucosa; allow adequate dwell time"
+    },
+    {
+      "id": "ffc314b1",
+      "type": "li",
+      "content": "Identify the bleeding site"
+    },
+    {
+      "id": "2819b869",
+      "type": "li",
+      "content": "Apply the silver nitrate tip directly to the vessel, rolling gently for a few seconds until a gray-white eschar forms — do not press hard or hold too long"
+    },
+    {
+      "id": "e20688b2",
+      "type": "li",
+      "content": "Cut a small piece of Surgicel (approximately 1.5 cm x 1.5 cm), coat with mupirocin ointment, and apply over the cauterized area"
+    },
+    {
+      "id": "e34152bc",
+      "type": "li",
+      "content": "Do not cauterize both sides of the septum in the same session — bilateral ischemia risks perforation"
+    },
+    {
+      "id": "82f214eb",
+      "type": "li",
+      "content": "Post-procedure: no nose blowing 24–48 hours, no nose picking, nasal gel spray, no strenuous activity, no massage or chiropractic manipulation"
+    },
+    {
+      "id": "05d44e3c",
+      "type": "h3",
+      "content": "Electrical cauterization (electrocautery)"
+    },
+    {
+      "id": "a42ec1c7",
+      "type": "p",
+      "content": "Used when chemical cauterization has failed, the vessel is too large for silver nitrate, or the bleed is posterior and beyond Little's area. A bipolar or monopolar electrocautery unit is used under endoscopic visualization — in-office under local anesthesia or in the OR under general for posterior or arterial-level bleeds."
+    },
+    {
+      "id": "44c809a7",
+      "type": "p",
+      "content": "Posterior bleeds involve the sphenopalatine artery territory and may ultimately require OR-level electrocautery, endoscopic sphenopalatine artery ligation, or interventional radiology embolization in severe or recurrent cases."
+    },
+    {
+      "id": "00d9a869",
+      "type": "alert-note",
+      "content": "For monopolar cautery: the grounding pad is placed on the patient's back or thigh. Know where the unit is, confirm it powers on, and have it set up before the provider enters the room."
+    }
+  ],
+  "related": [
+    "epistaxis",
+    "ma-cautery"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

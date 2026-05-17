@@ -1,0 +1,126 @@
+{
+  "id": "ma-ct",
+  "type": "ma",
+  "region": "nose",
+  "title": "MA Protocol: CT Sinuses",
+  "desc": "MA workflow for performing in-office CT sinus scans: insurance/ABN, patient preparation, positioning, and scanner settings.",
+  "blocks": [
+    {
+      "id": "8580ac92",
+      "type": "h2",
+      "content": "Performing the CT scan in office"
+    },
+    {
+      "id": "42d0ff18",
+      "type": "p",
+      "content": "CT scanning is typically done for post-treatment evaluation — after completion of antibiotic and/or steroid therapy for chronic sinusitis or nasal polyposis."
+    },
+    {
+      "id": "6293c08a",
+      "type": "h3",
+      "content": "Insurance and ABN"
+    },
+    {
+      "id": "33f8ad5d",
+      "type": "checklist-step",
+      "content": "If the patient is NOT on Medicare, confirm the in-office CT has been insurance-verified before proceeding"
+    },
+    {
+      "id": "39285cf6",
+      "type": "checklist-step",
+      "content": "If the patient is not on Medicare and insurance has not been verified, have the patient sign the ABN form — located in the PDF manager in the EMR. Out-of-pocket cost is $350."
+    },
+    {
+      "id": "da97d3db",
+      "type": "checklist-step",
+      "content": "It is best practice to contact the CT insurance coordinator promptly to run the insurance first and wait for results before having the patient sign the ABN — however this can take 20–40 minutes. Communicate the wait time to the patient."
+    },
+    {
+      "id": "5ca696d9",
+      "type": "h3",
+      "content": "Patient preparation"
+    },
+    {
+      "id": "66eee6bf",
+      "type": "checklist-step",
+      "content": "Confirm with the patient when their last saline irrigation was — best if more than 24 hours before the visit. Note this in the chart."
+    },
+    {
+      "id": "f66ac4cb",
+      "type": "checklist-step",
+      "content": "Place the radiation protection jacket on the patient with velcro closure"
+    },
+    {
+      "id": "5c76414b",
+      "type": "checklist-step",
+      "content": "Place the neck guard on the patient"
+    },
+    {
+      "id": "5e7dce1a",
+      "type": "h3",
+      "content": "Patient positioning"
+    },
+    {
+      "id": "40773d68",
+      "type": "checklist-step",
+      "content": "Seat the patient in the CT chair with their head all the way back to touch the headrest"
+    },
+    {
+      "id": "9b38ba3d",
+      "type": "checklist-step",
+      "content": "Adjust the chair height vertically so the vertical laser line sits at the midline of the patient's face and the horizontal laser line sits 1–2 inches below the lower eyelid"
+    },
+    {
+      "id": "4d0a3a8d",
+      "type": "checklist-step",
+      "content": "Place one foam head sponge on each side of the patient's head"
+    },
+    {
+      "id": "a1ef177a",
+      "type": "checklist-step",
+      "content": "Strap the patient's forehead securely"
+    },
+    {
+      "id": "bce314df",
+      "type": "h3",
+      "content": "CT settings"
+    },
+    {
+      "id": "b5a27bfe",
+      "type": "checklist-step",
+      "content": "Enter the patient's MSN number as the Patient ID, along with date of birth, full name, and sex"
+    },
+    {
+      "id": "4f4c4daf",
+      "type": "checklist-step",
+      "content": "Standard protocol: 20 seconds, 600 — image-guided setting — unless the physician directs otherwise"
+    },
+    {
+      "id": "0d50be92",
+      "type": "h3",
+      "content": "Calibrating the CT scanner"
+    },
+    {
+      "id": "baf28d90",
+      "type": "p",
+      "content": "Protocol to be written."
+    },
+    {
+      "id": "ba0c1010",
+      "type": "h3",
+      "content": "Carbon copying CT to disc"
+    },
+    {
+      "id": "56727d33",
+      "type": "p",
+      "content": "Protocol to be written."
+    }
+  ],
+  "related": [
+    "ct-sinuses",
+    "fess",
+    "chronic-sinusitis"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2026-05-04T03:52:42.412Z"
+}

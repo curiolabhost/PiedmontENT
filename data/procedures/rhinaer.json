@@ -1,0 +1,81 @@
+{
+  "id": "rhinaer",
+  "type": "proc",
+  "region": "nose",
+  "title": "RhinAer",
+  "desc": "In-office radiofrequency treatment for vasomotor rhinitis, targeting the posterior nasal nerve.",
+  "blocks": [
+    {
+      "id": "bc6f7bf1",
+      "type": "p",
+      "content": "RhinAer (Aerin Medical) treats vasomotor rhinitis — chronic runny nose, congestion, and postnasal drip driven by parasympathetic hypersecretion — by targeting the posterior nasal nerve, a branch of the vidian nerve that carries parasympathetic fibers to the nasal mucosa."
+    },
+    {
+      "id": "b6744d29",
+      "type": "h3",
+      "content": "Mechanism"
+    },
+    {
+      "id": "7da48f4f",
+      "type": "p",
+      "content": "RF energy is delivered along the posterior inferior turbinate where the posterior nasal nerve runs. The controlled thermal injury disrupts the parasympathetic signaling responsible for excess mucus production and mucosal engorgement. The effect is functionally similar to a surgical vidian neurectomy but done in-office and far less invasive. Best results are in non-allergic (vasomotor) rhinitis — patients whose rhinorrhea and congestion are nerve-mediated rather than IgE-driven. Allergy workup should be completed before RhinAer to confirm the picture."
+    },
+    {
+      "id": "d4c05220",
+      "type": "h3",
+      "content": "Procedure"
+    },
+    {
+      "id": "97784c1b",
+      "type": "li",
+      "content": "Same anesthesia setup as Vivaer — topical lidocaine pledgets then local lidocaine with epinephrine"
+    },
+    {
+      "id": "68213a4b",
+      "type": "li",
+      "content": "RhinAer wand positioned along the posterior inferior turbinate"
+    },
+    {
+      "id": "a1a291f4",
+      "type": "li",
+      "content": "RF pulses delivered along the treatment path"
+    },
+    {
+      "id": "853c4666",
+      "type": "li",
+      "content": "15–20 minutes; outpatient"
+    },
+    {
+      "id": "70819cca",
+      "type": "alert-warn",
+      "content": "<strong>Critical distinction to keep clear:</strong> Vivaer treats structural valve collapse causing obstruction. RhinAer treats nerve-mediated secretion causing rhinorrhea and drip. These are different problems requiring different wands. Some patients have both and undergo both procedures in the same session — always confirm which procedure or combination is scheduled and ensure the correct wands are available before the patient arrives."
+    },
+    {
+      "id": "5e87b4e0",
+      "type": "h3",
+      "content": "Insurance"
+    },
+    {
+      "id": "d3e3c133",
+      "type": "alert-info",
+      "content": "Not covered by commercial insurance. Covered by Medicare."
+    },
+    {
+      "id": "b0891c7f",
+      "type": "h3",
+      "content": "Post-procedure"
+    },
+    {
+      "id": "b18cd256",
+      "type": "p",
+      "content": "Mild crusting and swelling, saline spray, results develop over weeks."
+    }
+  ],
+  "related": [
+    "vivaer",
+    "ma-vivaer",
+    "allergic-rhinitis"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

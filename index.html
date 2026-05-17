@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ENT Clinical Reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/styles/main.css"/>
+  <link rel="stylesheet" href="/styles/sidebar.css"/>
+  <link rel="stylesheet" href="/styles/viewer.css"/>
+  <link rel="stylesheet" href="/styles/editor.css"/>
+  <link rel="stylesheet" href="/styles/components.css"/>
+</head>
+<body>
+  <div id="topbar"></div>
+  <div id="layout">
+    <div id="sidebar"></div>
+    <div id="main">
+      <div id="breadcrumb"></div>
+      <div id="content"></div>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+
+  <div id="format-toolbar" class="format-toolbar" style="display:none;">
+    <div class="ft-group">
+      <select class="ft-block-type" title="Text style">
+        <option value="p">Text</option>
+        <option value="h2">Heading 1</option>
+        <option value="h3">Heading 2</option>
+        <option value="li">List item</option>
+        <option value="alert-warn">⚠ Warning</option>
+        <option value="alert-info">→ Info</option>
+        <option value="alert-note">→ Note</option>
+        <option value="letter">✉ Letter</option>
+      </select>
+    </div>
+
+    <div class="ft-divider"></div>
+
+    <div class="ft-group">
+      <button class="ft-btn" data-format="bold" title="Bold"><strong>B</strong></button>
+      <button class="ft-btn" data-format="italic" title="Italic"><em>I</em></button>
+      <button class="ft-btn" data-format="underline" title="Underline"><u>U</u></button>
+      <button class="ft-btn" data-format="strikeThrough" title="Strikethrough"><s>S</s></button>
+    </div>
+
+    <div class="ft-divider"></div>
+
+    <div class="ft-group">
+      <div class="ft-label">A</div>
+      <div class="ft-colors">
+        <div class="ft-color" data-text-color="#1a1917" style="background:#1a1917" title="Default"></div>
+        <div class="ft-color" data-text-color="#1a6b8a" style="background:#1a6b8a" title="Blue"></div>
+        <div class="ft-color" data-text-color="#1e7a3e" style="background:#1e7a3e" title="Green"></div>
+        <div class="ft-color" data-text-color="#b85c1a" style="background:#b85c1a" title="Orange"></div>
+        <div class="ft-color" data-text-color="#c0392b" style="background:#c0392b" title="Red"></div>
+        <div class="ft-color" data-text-color="#5e3d9e" style="background:#5e3d9e" title="Purple"></div>
+        <div class="ft-color" data-text-color="#92600a" style="background:#92600a" title="Amber"></div>
+        <div class="ft-color" data-text-color="#6b6860" style="background:#6b6860" title="Gray"></div>
+      </div>
+    </div>
+
+    <div class="ft-divider"></div>
+
+    <div class="ft-group">
+      <div class="ft-label" style="background:#fff3cd;padding:0 4px;border-radius:2px;">H</div>
+      <div class="ft-colors">
+        <div class="ft-color ft-highlight" data-highlight="transparent" style="background:white;border:1px solid #ddd" title="No highlight">✕</div>
+        <div class="ft-color ft-highlight" data-highlight="#fff3cd" style="background:#fff3cd" title="Yellow"></div>
+        <div class="ft-color ft-highlight" data-highlight="#d4edda" style="background:#d4edda" title="Green"></div>
+        <div class="ft-color ft-highlight" data-highlight="#d1ecf1" style="background:#d1ecf1" title="Blue"></div>
+        <div class="ft-color ft-highlight" data-highlight="#f8d7da" style="background:#f8d7da" title="Red"></div>
+        <div class="ft-color ft-highlight" data-highlight="#e2d9f3" style="background:#e2d9f3" title="Purple"></div>
+        <div class="ft-color ft-highlight" data-highlight="#fde8d8" style="background:#fde8d8" title="Orange"></div>
+      </div>
+    </div>
+
+    <div class="ft-divider"></div>
+
+    <button class="ft-btn ft-clear" data-action="clear" title="Clear formatting">✕ Clear</button>
+  </div>
+
+  <script type="module" src="/scripts/app.js"></script>
+</body>
+</html>

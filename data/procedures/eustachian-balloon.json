@@ -1,0 +1,26 @@
+{
+  "id": "eustachian-balloon",
+  "type": "proc",
+  "region": "ear",
+  "title": "Balloon Eustachian Tube Dilation",
+  "desc": "OR procedure under general anesthesia that dilates a dysfunctional eustachian tube using an inflatable balloon catheter.",
+  "blocks": [
+    {
+      "id": "5e7dce1b",
+      "type": "h3",
+      "content": "MA setup for balloon eustachian tube dilation"
+    },
+    {
+      "id": "5c76414c",
+      "type": "alert-note",
+      "content": "This is an OR procedure performed under general anesthesia. The MA's role is pre-op preparation and documentation, not intraoperative setup. Refer to the Pre-Op protocol for general surgical preparation. No additional in-office instrument setup is required beyond the standard pre-op checklist."
+    }
+  ],
+  "related": [
+    "ttube",
+    "meniere",
+    "ma-preop"
+  ],
+  "createdAt": "2026-05-03T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "bppv",
+  "type": "dx",
+  "region": "ear",
+  "title": "BPPV and Vertigo",
+  "desc": "Benign Paroxysmal Positional Vertigo — brief, intense spinning triggered by position change, caused by displaced otoliths in the semicircular canals.",
+  "blocks": [
+    {
+      "id": "1276b19e",
+      "type": "p",
+      "content": "Vertigo is the false sensation of movement — the patient feels that they, or the world around them, is spinning when neither is actually moving. It is not dizziness in the vague sense, and the distinction matters when rooming patients. A patient who says \"I feel dizzy\" needs to be asked specifically: does the room spin, or do you feel lightheaded and unsteady? Spinning is vertigo. Lightheadedness without spinning is more likely presyncope, orthostatic hypotension, or anxiety."
+    },
+    {
+      "id": "004b91d9",
+      "type": "h3",
+      "content": "Peripheral vs. central vertigo — the key distinction"
+    },
+    {
+      "id": "7813b36a",
+      "type": "p",
+      "content": "Peripheral vertigo comes from the labyrinth (inner ear) or the vestibular nerve. It tends to be intense, often triggered by position change, associated with nausea and vomiting, and has accompanying nystagmus that follows predictable rules. The patient is miserable but neurologically intact."
+    },
+    {
+      "id": "4d1316ad",
+      "type": "p",
+      "content": "Central vertigo comes from the brainstem or cerebellum. It may be less intense than peripheral vertigo but is more dangerous. Red flags requiring immediate escalation: new onset headache with vertigo, diplopia, dysphagia, dysarthria, facial numbness, limb ataxia, inability to walk, or any frank neurological deficit. Nystagmus in central vertigo does not follow predictable peripheral rules — it may be purely vertical, direction-changing, or not suppressed by visual fixation."
+    },
+    {
+      "id": "c42ecc00",
+      "type": "alert-warn",
+      "content": "<strong>Central vertigo red flags requiring immediate escalation:</strong> new onset headache with vertigo, diplopia, dysphagia, dysarthria, facial numbness, limb ataxia, inability to walk, or any frank neurological deficit."
+    },
+    {
+      "id": "b6226705",
+      "type": "h3",
+      "content": "BPPV"
+    },
+    {
+      "id": "b195fefd",
+      "type": "p",
+      "content": "Benign Paroxysmal Positional Vertigo is the most common cause of vertigo seen in ENT. It is caused by otoliths — calcium carbonate crystals that normally sit on the otolith membrane in the utricle — becoming dislodged and migrating into one of the three semicircular canals. When the head moves, these free-floating crystals move within the canal fluid and generate an abnormal signal to the brain, producing a brief but intense spinning sensation."
+    },
+    {
+      "id": "0d9ab685",
+      "type": "p",
+      "content": "The posterior canal is affected in approximately 85–90% of BPPV cases. Horizontal canal BPPV accounts for most of the remaining cases. Anterior canal BPPV is rare."
+    },
+    {
+      "id": "020ebb9f",
+      "type": "p",
+      "content": "Symptoms: brief, intense spinning triggered by specific position changes — lying down, rolling in bed, looking up, or bending forward. Episodes last seconds to under a minute. Between episodes the patient feels completely normal or mildly unsteady. There is no hearing loss, no tinnitus, and no neurological symptoms in uncomplicated BPPV. If any of those are present, the diagnosis needs reassessment."
+    },
+    {
+      "id": "a299cffb",
+      "type": "p",
+      "content": "BPPV is common after head trauma (even minor), after prolonged bed rest, after inner ear infection, in osteoporosis, and increasingly with age. It frequently resolves spontaneously but recurs in roughly 50% of patients over 5 years."
+    }
+  ],
+  "related": [
+    "dix-hallpike",
+    "epley",
+    "ma-epley",
+    "vestibular-neuritis"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "balloon-sinus",
+  "type": "proc",
+  "region": "nose",
+  "title": "Balloon Sinus Dilation",
+  "desc": "Minimally invasive in-office or OR procedure that dilates the sinus ostia using an inflatable balloon catheter without removing tissue.",
+  "blocks": [
+    {
+      "id": "f66ac4cc",
+      "type": "h3",
+      "content": "Overview"
+    },
+    {
+      "id": "40773d69",
+      "type": "p",
+      "content": "Balloon sinus dilation (also called sinuplasty) is a minimally invasive procedure for patients with CRS who have failed medical management but have disease that is amenable to ostial dilation rather than full FESS. A small flexible catheter with an inflatable balloon is guided into the blocked sinus ostium under fluoroscopic or endoscopic guidance, inflated to restructure and open the drainage pathway, then removed. No tissue is cut or removed."
+    },
+    {
+      "id": "9b38ba3e",
+      "type": "h3",
+      "content": "Indications"
+    },
+    {
+      "id": "4d0a3a8e",
+      "type": "p",
+      "content": "Appropriate for patients with maxillary, frontal, or sphenoid sinusitis where the primary issue is ostial blockage without significant polyp burden or ethmoid disease. Not appropriate for patients with significant nasal polyps, ethmoid disease, or anatomy requiring direct tissue removal — those patients need FESS."
+    },
+    {
+      "id": "a1ef177b",
+      "type": "h3",
+      "content": "In-office vs. OR"
+    },
+    {
+      "id": "b5a27bff",
+      "type": "p",
+      "content": "Balloon sinus dilation can be performed in-office under local anesthesia for appropriately selected patients, or in the OR under general anesthesia — often combined with FESS when multiple sinuses are involved and some require dilation while others require removal of disease."
+    },
+    {
+      "id": "4f4c4db0",
+      "type": "h3",
+      "content": "Key distinction from FESS"
+    },
+    {
+      "id": "0d50be93",
+      "type": "p",
+      "content": "FESS removes tissue to open drainage pathways. Balloon dilation reshapes the existing ostium without removing tissue. They address different disease patterns and are sometimes performed together in the same case."
+    },
+    {
+      "id": "baf28d91",
+      "type": "h3",
+      "content": "Post-procedure"
+    },
+    {
+      "id": "ba0c1011",
+      "type": "p",
+      "content": "Saline irrigation beginning the day after the procedure. Follow-up as directed by the physician. Recovery is typically faster than FESS because no tissue is removed and debridement visits are not required."
+    }
+  ],
+  "related": [
+    "fess",
+    "chronic-sinusitis",
+    "nasal-polyps",
+    "ct-sinuses"
+  ],
+  "createdAt": "2026-05-03T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

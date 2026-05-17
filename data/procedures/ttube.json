@@ -1,0 +1,90 @@
+{
+  "id": "ttube",
+  "type": "proc",
+  "title": "Tympanostomy Tubes",
+  "desc": "Pressure-equalization tubes for failed eustachian tube ventilation. In-office for adults; OR for pediatrics.",
+  "blocks": [
+    {
+      "id": "5359c5a2c6d64610",
+      "type": "h3",
+      "content": "Indications"
+    },
+    {
+      "id": "eedc304b11a9427b",
+      "type": "li",
+      "content": "<strong>OME ≥3 months</strong> with hearing loss"
+    },
+    {
+      "id": "7cc4250259b81869",
+      "type": "li",
+      "content": "<strong>Recurrent AOM</strong> — 3+ episodes in 6 months OR 4+ in one year"
+    },
+    {
+      "id": "47826de38d81db89",
+      "type": "li",
+      "content": "Chronic ETD with persistent negative middle ear pressure"
+    },
+    {
+      "id": "aa21710025705621",
+      "type": "h3",
+      "content": "Adult in-office technique"
+    },
+    {
+      "id": "c99cce998e942c99",
+      "type": "li",
+      "content": "Phenol applicator to TM for anesthesia"
+    },
+    {
+      "id": "d1e7fc07d1e45d6b",
+      "type": "li",
+      "content": "<strong>Myringotomy incision</strong> in anterior-inferior or posterior-inferior quadrant"
+    },
+    {
+      "id": "a2e20da22a033856",
+      "type": "li",
+      "content": "Suction effusion — <strong>note character</strong> (serous, mucoid, purulent)"
+    },
+    {
+      "id": "71ddfabb0db91e50",
+      "type": "li",
+      "content": "Insert tube with alligator forceps"
+    },
+    {
+      "id": "993c52ba8f85fb7d",
+      "type": "li",
+      "content": "<strong>Ofloxacin or cipro/dex drops immediately</strong>"
+    },
+    {
+      "id": "700323c569f857b2",
+      "type": "h3",
+      "content": "Tube types"
+    },
+    {
+      "id": "40c9185ac39c181d",
+      "type": "li",
+      "content": "<strong>Short-term</strong> (Shepard, Armstrong) — 6–18 months, extrudes spontaneously"
+    },
+    {
+      "id": "77dcac1afc11e1f0",
+      "type": "li",
+      "content": "<strong>Long-term / T-tube</strong> — for chronic ETD; can stay years; requires OR removal"
+    },
+    {
+      "id": "063a39997b3dbf47",
+      "type": "h3",
+      "content": "Aftercare"
+    },
+    {
+      "id": "cf1fb4b71c928cb4",
+      "type": "p",
+      "content": "Doc's Proplugs in shower. <strong>No swimming</strong> (especially lake/pool water)."
+    }
+  ],
+  "related": [
+    "ma-preop",
+    "meniere"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "region": "ear"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "ma-cautery",
+  "type": "ma",
+  "region": "nose",
+  "title": "MA Protocol: Nasal Cauterization Setup",
+  "desc": "MA setup checklist for chemical and electrical cautery procedures and patient discharge instructions.",
+  "blocks": [
+    {
+      "id": "e188e906",
+      "type": "h2",
+      "content": "Before the procedure"
+    },
+    {
+      "id": "9d68d76f",
+      "type": "checklist-step",
+      "content": "Obtain signed consent form first — locate it in the PDF manager in the EMR, searchable under \"cauterization\""
+    },
+    {
+      "id": "55cff5b2",
+      "type": "checklist-step",
+      "content": "Silver nitrate sticks on tray (75% silver nitrate applicator)"
+    },
+    {
+      "id": "43549404",
+      "type": "checklist-step",
+      "content": "Topical anesthetic ready — lidocaine or tetracaine on cotton pledgets"
+    },
+    {
+      "id": "3291d4b5",
+      "type": "checklist-step",
+      "content": "1% or 2% lidocaine with epinephrine 1:100,000 drawn and labeled"
+    },
+    {
+      "id": "040cc0f9",
+      "type": "checklist-step",
+      "content": "Surgicel cut to 1.5 cm × 1.5 cm — mupirocin ointment applied to one side"
+    },
+    {
+      "id": "aa2bcfd7",
+      "type": "h3",
+      "content": "Electrical cautery — additional setup"
+    },
+    {
+      "id": "aa2bcfd8",
+      "type": "checklist-step",
+      "content": "Electrocautery unit powered on and tested before provider enters"
+    },
+    {
+      "id": "aa2bcfd9",
+      "type": "checklist-step",
+      "content": "Grounding pad placed on patient back or thigh (monopolar only)"
+    },
+    {
+      "id": "7577fa1f",
+      "type": "h2",
+      "content": "Post-procedure instructions to give patient"
+    },
+    {
+      "id": "cfe20e77",
+      "type": "checklist-step",
+      "content": "No nose blowing for 24–48 hours"
+    },
+    {
+      "id": "9fab50ac",
+      "type": "checklist-step",
+      "content": "No nose picking"
+    },
+    {
+      "id": "85164124",
+      "type": "checklist-step",
+      "content": "Nasal gel spray to keep the area moist"
+    },
+    {
+      "id": "6b36c5ca",
+      "type": "checklist-step",
+      "content": "No strenuous activity, massage, or chiropractic manipulation"
+    }
+  ],
+  "related": [
+    "cauterization",
+    "epistaxis"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

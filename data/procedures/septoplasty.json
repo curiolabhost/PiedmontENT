@@ -1,0 +1,62 @@
+{
+  "id": "septoplasty",
+  "type": "proc",
+  "region": "nose",
+  "title": "Septoplasty and Turbinate Reduction",
+  "desc": "Surgical correction of a deviated nasal septum and reduction of hypertrophied turbinates causing functional nasal obstruction.",
+  "blocks": [
+    {
+      "id": "1a3cd69e",
+      "type": "h3",
+      "content": "Septoplasty"
+    },
+    {
+      "id": "a07d363d",
+      "type": "p",
+      "content": "<strong>Septoplasty</strong> corrects a deviated nasal septum causing functional obstruction. Cosmetic nasal reshaping is rhinoplasty — septoplasty is strictly internal and the two are completely different procedures. Frequently combined with turbinate reduction or FESS in the same case. General anesthesia, outpatient, approximately 60 minutes."
+    },
+    {
+      "id": "f1afd51c",
+      "type": "p",
+      "content": "Insurance requires documented medical necessity — obstruction, failed conservative management, and functional impact on breathing. Prior authorization documentation is largely the MA's responsibility: symptom duration, prior treatments, and imaging must all be clearly in the chart before submitting."
+    },
+    {
+      "id": "34a79a6a",
+      "type": "p",
+      "content": "Complications: septal perforation (rare but serious), bleeding, septal hematoma (a post-op emergency that must be recognized and drained urgently — present as fluctuant bulging of the septum, painful, within the first 24–48 hours), saddle nose deformity from excessive cartilage removal, and persistent deviation."
+    },
+    {
+      "id": "cc9783f9",
+      "type": "alert-warn",
+      "content": "<strong>Septal hematoma is a post-op emergency.</strong> Present as fluctuant bulging of the septum, painful, within the first 24–48 hours. Must be recognized and drained urgently."
+    },
+    {
+      "id": "3679fc44",
+      "type": "h3",
+      "content": "Turbinate reduction"
+    },
+    {
+      "id": "f836b3d9",
+      "type": "p",
+      "content": "<strong>Turbinate reduction:</strong> The inferior turbinates regulate airflow and humidify inspired air. In chronic AR or vasomotor rhinitis they become chronically hypertrophied and obstruct breathing. In our practice, in-office turbinate reduction is performed with the RhinAer device (radiofrequency). In the OR, turbinate reduction is performed concurrently with septoplasty or FESS using a microdebrider or electrocautery technique."
+    },
+    {
+      "id": "f6f994e1",
+      "type": "p",
+      "content": "Two important cautions: First, patients with underlying allergies can experience a flare of turbinate hypertrophy even after surgical reduction — the now-wider nasal airway exposes the mucosa to greater allergen load, triggering renewed inflammatory swelling. Second, for this reason, many patients undergo allergy skin testing and are placed on appropriate allergy treatment concurrently with or prior to surgery, unless the septal deviation is severe enough to make surgery the immediate priority regardless."
+    },
+    {
+      "id": "b35518bb",
+      "type": "alert-warn",
+      "content": "Always submucosal reduction — over-resection of the turbinate causes empty nose syndrome, a debilitating and irreversible condition where the nose is anatomically wide open but the patient feels constant suffocating obstruction because the normal sensory feedback from turbinate airflow is permanently lost."
+    }
+  ],
+  "related": [
+    "fess",
+    "ma-preop",
+    "allergic-rhinitis",
+    "rhinaer"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

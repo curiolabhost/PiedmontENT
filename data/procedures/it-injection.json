@@ -1,0 +1,96 @@
+{
+  "id": "it-injection",
+  "type": "proc",
+  "title": "Intratympanic Steroid Injection",
+  "desc": "In-office middle-ear steroid delivery for SSNHL, Ménière's, and autoimmune inner ear disease.",
+  "blocks": [
+    {
+      "id": "1060d5ce4d493173",
+      "type": "h3",
+      "content": "Medication"
+    },
+    {
+      "id": "08fc01199e2024aa",
+      "type": "p",
+      "content": "<strong>Dexamethasone 10 mg/mL</strong>, 0.4 mL slowly through TM into middle ear."
+    },
+    {
+      "id": "cab03d5295551f32",
+      "type": "h3",
+      "content": "Indications"
+    },
+    {
+      "id": "0e9e620a016cb805",
+      "type": "li",
+      "content": "SSNHL — primary therapy or salvage after oral steroids"
+    },
+    {
+      "id": "432f784f625f34ef",
+      "type": "li",
+      "content": "Ménière's disease — attack frequency reduction"
+    },
+    {
+      "id": "728b3a77b2e8d25d",
+      "type": "li",
+      "content": "Autoimmune inner ear disease"
+    },
+    {
+      "id": "35f5e5baf64ecb4b",
+      "type": "h3",
+      "content": "Technique"
+    },
+    {
+      "id": "f905dd9fc2c08c74",
+      "type": "li",
+      "content": "Patient supine, affected ear up"
+    },
+    {
+      "id": "c7d96f99e777cf01",
+      "type": "li",
+      "content": "Phenol applicator to TM for anesthesia (or EMLA 45–60 min preop)"
+    },
+    {
+      "id": "5a40c9c64513654e",
+      "type": "li",
+      "content": "27-gauge needle through <strong>posterior-inferior quadrant</strong>"
+    },
+    {
+      "id": "8f86902e1db41f7e",
+      "type": "li",
+      "content": "Inject 0.4 mL slowly"
+    },
+    {
+      "id": "0479cbd99eaddc57",
+      "type": "li",
+      "content": "Patient remains supine <strong>30 minutes</strong>, instructed not to swallow excessively"
+    },
+    {
+      "id": "3f157b78355a1272",
+      "type": "h3",
+      "content": "Discharge"
+    },
+    {
+      "id": "e5f98d5b585e7343",
+      "type": "li",
+      "content": "Doc's Proplugs fitted before discharge"
+    },
+    {
+      "id": "8692d123120fd2b6",
+      "type": "li",
+      "content": "<strong>No swimming</strong>; shower with plug"
+    },
+    {
+      "id": "a0b7512d45c2f2b7",
+      "type": "li",
+      "content": "Brief dizziness (caloric response) is normal — counsel"
+    }
+  ],
+  "related": [
+    "ssnhl",
+    "meniere",
+    "ma-it"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "region": "ear"
+}

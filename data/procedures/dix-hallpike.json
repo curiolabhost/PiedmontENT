@@ -1,0 +1,81 @@
+{
+  "id": "dix-hallpike",
+  "type": "proc",
+  "title": "Dix-Hallpike Test",
+  "desc": "Bedside provocation test for posterior canal BPPV.",
+  "blocks": [
+    {
+      "id": "ed572085449ecbc4",
+      "type": "h3",
+      "content": "Technique"
+    },
+    {
+      "id": "b76d543f83074284",
+      "type": "li",
+      "content": "Patient sits upright with legs extended"
+    },
+    {
+      "id": "af1d9fd3f5ede161",
+      "type": "li",
+      "content": "Turn head 45° toward the tested ear"
+    },
+    {
+      "id": "c4b9a7fe1622c040",
+      "type": "li",
+      "content": "Move <strong>quickly</strong> to supine with head hanging 20–30° below the table edge"
+    },
+    {
+      "id": "a996caae7984c3d3",
+      "type": "li",
+      "content": "Observe for 30–60 seconds"
+    },
+    {
+      "id": "0ca0230707949f9a",
+      "type": "li",
+      "content": "Return slowly to sitting; observe again"
+    },
+    {
+      "id": "f723a4f4919706a0",
+      "type": "li",
+      "content": "Repeat for the contralateral ear"
+    },
+    {
+      "id": "69ff5736b26c3601",
+      "type": "h3",
+      "content": "Positive findings (peripheral / BPPV)"
+    },
+    {
+      "id": "27cc2405429504d1",
+      "type": "li",
+      "content": "<strong>Upbeat torsional nystagmus</strong>"
+    },
+    {
+      "id": "c117824027cc9005",
+      "type": "li",
+      "content": "Latency 5–20 seconds"
+    },
+    {
+      "id": "b2aae4325d287b3d",
+      "type": "li",
+      "content": "Duration <strong>under 60 seconds</strong>"
+    },
+    {
+      "id": "ec5aa9ab71a1a853",
+      "type": "li",
+      "content": "<strong>Fatigues</strong> with repeated testing"
+    },
+    {
+      "id": "70f6aaa26fce6325",
+      "type": "alert-warn",
+      "content": "<strong>Central red flags — STOP and refer:</strong> non-fatigable nystagmus, purely vertical nystagmus, or direction-changing nystagmus. Do not proceed to Epley."
+    }
+  ],
+  "related": [
+    "bppv",
+    "epley",
+    "ma-epley"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z",
+  "region": "ear"
+}

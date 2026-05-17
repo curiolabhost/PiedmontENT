@@ -1,0 +1,60 @@
+{
+  "id": "ma-steroid",
+  "type": "ma",
+  "region": "nose",
+  "title": "MA Protocol: Steroid Injection (IM)",
+  "desc": "MA workflow for IM steroid injection including verification, technique, and documentation.",
+  "blocks": [
+    {
+      "id": "d9164c38",
+      "type": "h2",
+      "content": "Preparation"
+    },
+    {
+      "id": "3b8726ab",
+      "type": "checklist-step",
+      "content": "Prepare Kenalog-40 (triamcinolone acetonide, 40 mg/mL) and Decadron (dexamethasone, 4 mg/mL)"
+    },
+    {
+      "id": "48e4621c",
+      "type": "checklist-step",
+      "content": "Draw 1 mL from each vial using a 22-gauge needle in 3mL Syringe — total volume 2 mL (40 mg triamcinolone + 4 mg dexamethasone). Change the needle to a long 24G for injection. "
+    },
+    {
+      "id": "d1ec73bd",
+      "type": "checklist-step",
+      "content": "Check vial: medication name, concentration, lot number, expiration date"
+    },
+    {
+      "id": "641f73b8",
+      "type": "h2",
+      "content": "Injection"
+    },
+    {
+      "id": "02447b4d",
+      "type": "checklist-step",
+      "content": "Position the patient facing a wall and have them lean forward with their hands resting against it (to prevent movement). Then request access to either the ventrogluteal or dorsogluteal injection site."
+    },
+    {
+      "id": "e06eb4bc",
+      "type": "checklist-step",
+      "content": "Clean site with alcohol"
+    },
+    {
+      "id": "b8225ded",
+      "type": "checklist-step",
+      "content": "Aspirate before injecting — confirm no blood return"
+    },
+    {
+      "id": "d9b48606",
+      "type": "checklist-step",
+      "content": "Inject slowly and withdraw"
+    }
+
+  ],
+  "related": [
+    "steroid-inj"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}

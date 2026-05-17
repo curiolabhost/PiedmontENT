@@ -1,0 +1,94 @@
+{
+  "id": "fess",
+  "type": "proc",
+  "region": "nose",
+  "title": "Functional Endoscopic Sinus Surgery (FESS)",
+  "desc": "Surgical treatment for CRS that has failed adequate medical management, restoring sinus drainage by opening the natural ostia.",
+  "blocks": [
+    {
+      "id": "57249c41",
+      "type": "p",
+      "content": "FESS is the surgical treatment for CRS that has failed adequate medical management. The goal is to restore normal sinus drainage by opening the natural ostia — not to strip all mucosa, which is a common patient misconception. Done under general anesthesia, outpatient. Image guidance (IGS/CT-guided navigation) is used in complex anatomy or revision cases."
+    },
+    {
+      "id": "174f0ebb",
+      "type": "h3",
+      "content": "What is actually done"
+    },
+    {
+      "id": "bb05ad45",
+      "type": "p",
+      "content": "The surgeon works entirely through the nostrils with an endoscope — no external incisions. Depending on which sinuses are involved:"
+    },
+    {
+      "id": "910efafa",
+      "type": "li",
+      "content": "Maxillary antrostomy — widening the maxillary sinus opening into the nasal cavity, allowing drainage of the largest sinus"
+    },
+    {
+      "id": "033c0976",
+      "type": "li",
+      "content": "Anterior and/or posterior ethmoidectomy — opening the ethmoid air cells, which sit between the orbit and the nasal cavity; often described as opening a honeycomb of small interconnected cavities"
+    },
+    {
+      "id": "248b0166",
+      "type": "li",
+      "content": "Sphenoidotomy — opening the sphenoid sinus, which sits at the posterior skull base"
+    },
+    {
+      "id": "118f0c1a",
+      "type": "li",
+      "content": "Frontal sinusotomy — opening the frontal sinus drainage pathway; the most technically demanding portion of the case because the frontal recess anatomy is highly variable and the skull base and orbit are immediately adjacent"
+    },
+    {
+      "id": "247e0f35",
+      "type": "p",
+      "content": "The more sinuses involved, the longer the case. A full four-sinus FESS runs 90 minutes to over two hours."
+    },
+    {
+      "id": "23d7ca7c",
+      "type": "h3",
+      "content": "Surgical risks"
+    },
+    {
+      "id": "9d7c765f",
+      "type": "p",
+      "content": "Orbital injury (the lamina papyracea — the medial orbital wall — is paper thin and separates the ethmoid cells from the orbit), CSF leak from skull base entry, optic nerve injury, epiphora from nasolacrimal duct injury, anosmia, and bleeding."
+    },
+    {
+      "id": "dc6e8f27",
+      "type": "h3",
+      "content": "Intraoperative culture"
+    },
+    {
+      "id": "b5265cba",
+      "type": "p",
+      "content": "If culture or MicroGen PCR testing is performed during surgery, the patient is placed on antibiotics based on the result. In some cases, antibiotics are intentionally held until surgery — prior antibiotic exposure can suppress organisms and make culture results unreliable or misleading, so holding allows for a clean intraoperative sample."
+    },
+    {
+      "id": "fe88775c",
+      "type": "h3",
+      "content": "Post-operative follow-up"
+    },
+    {
+      "id": "0291aeae",
+      "type": "p",
+      "content": "The patient is seen weekly for approximately three weeks following surgery for in-office debridement — removal of crusts, dried blood, and fibrinous material that accumulates as the surgical cavities heal. This is not optional. Debridement is a critical part of the healing process and directly affects the long-term outcome of the surgery."
+    },
+    {
+      "id": "5187bc29",
+      "type": "alert-note",
+      "content": "Debridement is not optional. It is a critical part of the healing process and directly affects the long-term outcome of the surgery."
+    }
+  ],
+  "related": [
+    "chronic-sinusitis",
+    "nasal-polyps",
+    "ct-sinuses",
+    "septoplasty",
+    "ma-preop",
+    "ma-ct"
+  ],
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

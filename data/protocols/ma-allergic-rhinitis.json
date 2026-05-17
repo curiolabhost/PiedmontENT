@@ -1,0 +1,166 @@
+{
+  "id": "ma-allergic-rhinitis",
+  "type": "ma",
+  "region": "nose",
+  "title": "MA Protocol: Allergic Rhinitis — Initial Presentation",
+  "desc": "MA workflow for rooming a patient presenting with allergic rhinitis: contraindications, skin testing setup, and SLIT vs SCIT immunotherapy counseling.",
+  "blocks": [
+    {
+      "id": "6f2c01a1",
+      "type": "p",
+      "content": "When a patient presents with allergic rhinitis symptoms, confirm the following at rooming before the provider enters."
+    },
+    {
+      "id": "ca609184",
+      "type": "h2",
+      "content": "Rooming confirmations"
+    },
+    {
+      "id": "e184576d",
+      "type": "checklist-step",
+      "content": "History of food allergies or insect bite allergies"
+    },
+    {
+      "id": "46dce96a",
+      "type": "checklist-step",
+      "content": "History of asthma"
+    },
+    {
+      "id": "81642a9e",
+      "type": "checklist-step",
+      "content": "Currently taking beta blockers — this is a contraindication to allergy skin testing and must be flagged",
+      "note": "Beta blockade reduces the effectiveness of epinephrine if anaphylaxis occurs"
+    },
+    {
+      "id": "19638eb7",
+      "type": "checklist-step",
+      "content": "Currently taking any sedating medications (benzodiazepines, sleep aids, certain anxiety medications) — these may need to be held before skin testing"
+    },
+    {
+      "id": "04634f2e",
+      "type": "alert-note",
+      "content": "Prepare flexible laryngoscopy setup unless the patient also presents with sinusitis symptoms, in which case follow the sinusitis rooming protocol instead."
+    },
+    {
+      "id": "f04769e7",
+      "type": "checklist-step",
+      "content": "Set up for allergy skin testing (intradermal/prick testing per ITF protocol)"
+    },
+    {
+      "id": "350f2b09",
+      "type": "h2",
+      "content": "HPI documentation"
+    },
+    {
+      "id": "8809f960",
+      "type": "p",
+      "content": "Present the patient's allergy skin testing results in words for the provider to incorporate into the HPI note."
+    },
+    {
+      "id": "41378545",
+      "type": "checklist-step",
+      "content": "Confirm the patient's current allergy medications — antihistamines, nasal sprays, and irrigation. Document what they are currently using and compliance."
+    },
+    {
+      "id": "a214f5c8",
+      "type": "h2",
+      "content": "Immunotherapy counseling"
+    },
+    {
+      "id": "7e5d9b39",
+      "type": "p",
+      "content": "Briefly explain both options to the patient before the provider enters so the provider visit is efficient. Document which option the patient prefers in the HPI."
+    },
+    {
+      "id": "e2434f51",
+      "type": "h3",
+      "content": "SLIT (Sublingual Immunotherapy)"
+    },
+    {
+      "id": "2a81ca76",
+      "type": "li",
+      "content": "Not covered by insurance"
+    },
+    {
+      "id": "4b0bb74d",
+      "type": "li",
+      "content": "Cost is approximately $150 per 2-month supply, pay as they go"
+    },
+    {
+      "id": "e970bd9f",
+      "type": "li",
+      "content": "A few drops placed under the tongue each day, held for 1–2 minutes, then swallowed"
+    },
+    {
+      "id": "fac101ba",
+      "type": "li",
+      "content": "No food or drink for 30 minutes after application"
+    },
+    {
+      "id": "c5edae55",
+      "type": "li",
+      "content": "Patient must carry an epinephrine auto-injector at all times for the first new dose every 2 months"
+    },
+    {
+      "id": "c62f437c",
+      "type": "li",
+      "content": "The patient's very first dose is administered in our allergy department — patient sits for 20 minutes of observation, then takes the vial home"
+    },
+    {
+      "id": "51d77c4b",
+      "type": "li",
+      "content": "Patient must bring their epinephrine injector to the first allergy appointment"
+    },
+    {
+      "id": "187078a6",
+      "type": "h3",
+      "content": "SCIT (Subcutaneous Immunotherapy — Allergy Shots)"
+    },
+    {
+      "id": "7afca205",
+      "type": "li",
+      "content": "Mostly covered by insurance — verify coverage under Chart Notes in the EMR before counseling"
+    },
+    {
+      "id": "87d7706a",
+      "type": "li",
+      "content": "Weekly injection schedule"
+    },
+    {
+      "id": "60048592",
+      "type": "li",
+      "content": "Patient must have a responsible adult present who can drive them to the ER in case of anaphylactic reaction — patients who live alone or cannot guarantee an adult driver are not candidates for shots"
+    },
+    {
+      "id": "89e53797",
+      "type": "li",
+      "content": "Serum must be refrigerated at all times — not advised for frequent travelers"
+    },
+    {
+      "id": "1a6efc5f",
+      "type": "li",
+      "content": "A test wheal (mini skin test) with the allergy serum is required before starting; this is done weekly for the first month with our allergy department"
+    },
+    {
+      "id": "3a5d2ad0",
+      "type": "li",
+      "content": "Serum can be delivered to the patient's home but shipping costs apply"
+    },
+    {
+      "id": "a30c7ea1",
+      "type": "li",
+      "content": "Patient must bring their epinephrine injector to the first allergy appointment for the test wheal"
+    },
+    {
+      "id": "c4a644a6",
+      "type": "alert-note",
+      "content": "Document the patient's preferred therapy option in the HPI."
+    }
+  ],
+  "related": [
+    "allergic-rhinitis",
+    "ma-allergy-followup"
+  ],
+  "createdAt": "2026-05-03T00:00:00.000Z",
+  "updatedAt": "2026-05-03T00:00:00.000Z"
+}
