@@ -222,10 +222,13 @@ function renderBlocks(blocks, container) {
 
     if (b.type === 'image') {
       const fig = document.createElement('figure');
-      fig.className = 'media-figure';
+      const sizeClass = `size-${b.size || 'full'}`;
+      const floatClass = `float-${b.float || 'none'}`;
+      fig.className = `media-figure ${sizeClass} ${floatClass}`;
       const img = document.createElement('img');
       img.src = b.src || '';
       img.alt = b.caption || '';
+      img.loading = 'lazy';
       fig.appendChild(img);
       if (b.caption) {
         const cap = document.createElement('figcaption');
@@ -233,6 +236,11 @@ function renderBlocks(blocks, container) {
         fig.appendChild(cap);
       }
       container.appendChild(fig);
+      if (b.float && b.float !== 'none' && b.float !== 'center') {
+        const clearfix = document.createElement('div');
+        clearfix.className = 'block-clearfix';
+        container.appendChild(clearfix);
+      }
       i++;
       continue;
     }

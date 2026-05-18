@@ -645,3 +645,43 @@ body.editor-active .entry-region-pill:hover {
 .meta-popover-opt.active[data-type="proc"] { background: var(--orange-bg); color: var(--orange); border-color: var(--orange-border); }
 .meta-popover-opt.active[data-type="ma"] { background: var(--purple-bg); color: var(--purple); border-color: var(--purple-border); }
 .meta-popover-opt.active[data-region] { background: var(--accent-light); color: var(--accent); border-color: var(--accent-border); }
+
+.image-size-picker {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0 6px;
+}
+
+.image-size-btn {
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border2);
+  background: var(--surface2);
+  color: var(--text3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.image-size-btn:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.image-size-btn.active {
+  border-color: var(--accent-border);
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.image-picker-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 4px;
+  margin-top: 10px;
+}

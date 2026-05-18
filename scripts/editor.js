@@ -430,6 +430,8 @@ function setupPasteUpload(rootEl) {
         filename: result.filename,
         sizeBytes: result.sizeBytes,
         isUrl: false,
+        size: 'full',
+        float: 'none',
       };
 
       const focusedBlock = document.activeElement?.closest?.('[data-block-id]');
@@ -889,6 +891,20 @@ function renderMediaBlock(block, opts) {
     container.appendChild(replaceBtn);
     container.appendChild(fig);
 
+    if (block.type === 'image') {
+      const sizeLabel = document.createElement('div');
+      sizeLabel.className = 'image-picker-label';
+      sizeLabel.textContent = 'Size';
+      container.appendChild(sizeLabel);
+      container.appendChild(buildImageSizePicker(block));
+
+      const posLabel = document.createElement('div');
+      posLabel.className = 'image-picker-label';
+      posLabel.textContent = 'Position';
+      container.appendChild(posLabel);
+      container.appendChild(buildImagePositionPicker(block, fig));
+    }
+
     const cap = document.createElement('input');
     cap.className = 'media-caption-input';
     cap.placeholder = 'Add caption…';
@@ -927,7 +943,11 @@ function renderMediaBlock(block, opts) {
       if (typeof res.sizeBytes === 'number') block.sizeBytes = res.sizeBytes;
       if (res.fileType) block.fileType = res.fileType;
       if (block.type === 'video') block.isEmbed = false;
-      if (block.type === 'image') block.isUrl = false;
+      if (block.type === 'image') {
+        block.isUrl = false;
+        if (!block.size) block.size = 'full';
+        if (!block.float) block.float = 'none';
+      }
       markDirty();
       showRendered();
     } catch (e) {
@@ -945,7 +965,9 @@ function renderMediaBlock(block, opts) {
 
 function renderImageFigure(b) {
   const fig = document.createElement('figure');
-  fig.className = 'media-figure';
+  const sizeClass = `size-${b.size || 'full'}`;
+  const floatClass = `float-${b.float || 'none'}`;
+  fig.className = `media-figure ${sizeClass} ${floatClass}`;
   const img = document.createElement('img');
   img.src = b.src || '';
   img.alt = b.caption || '';
@@ -956,6 +978,75 @@ function renderImageFigure(b) {
     fig.appendChild(fc);
   }
   return fig;
+}
+
+function buildImageSizePicker(block) {
+  const sizePicker = document.createElement('div');
+  sizePicker.className = 'image-size-picker';
+  ['small', 'medium', 'full'].forEach(size => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'image-size-btn' + ((block.size || 'full') === size ? ' active' : '');
+    btn.textContent = size.charAt(0).toUpperCase() + size.slice(1);
+    btn.title = size === 'small' ? '300px' : size === 'medium' ? '500px' : 'Full width';
+    btn.addEventListener('mousedown', (e) => e.preventDefault());
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      block.size = size;
+      sizePicker.querySelectorAll('.image-size-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const wrap = btn.closest('[data-block-id]');
+      const figure = wrap?.querySelector('.media-figure');
+      if (figure) {
+        figure.className = figure.className
+          .replace(/\bsize-\S+/g, '')
+          .replace(/\s+/g, ' ')
+          .trim() + ` size-${size}`;
+      }
+      markDirty();
+    });
+    sizePicker.appendChild(btn);
+  });
+  return sizePicker;
+}
+
+function buildImagePositionPicker(block, figure) {
+  const picker = document.createElement('div');
+  picker.className = 'image-size-picker';
+
+  const options = [
+    { value: 'none',   label: 'Default',  title: 'No float — full block' },
+    { value: 'left',   label: '← Left',   title: 'Float left, text wraps right' },
+    { value: 'center', label: 'Center',   title: 'Centered, no text wrap' },
+    { value: 'right',  label: 'Right →',  title: 'Float right, text wraps left' },
+  ];
+
+  options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'image-size-btn' + ((block.float || 'none') === opt.value ? ' active' : '');
+    btn.textContent = opt.label;
+    btn.title = opt.title;
+    btn.addEventListener('mousedown', (e) => e.preventDefault());
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      block.float = opt.value;
+      picker.querySelectorAll('.image-size-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const wrap = btn.closest('[data-block-id]');
+      const fig = figure || wrap?.querySelector('.media-figure');
+      if (fig) {
+        fig.className = fig.className
+          .replace(/\bfloat-\S+/g, '')
+          .replace(/\s+/g, ' ')
+          .trim() + ` float-${opt.value}`;
+      }
+      markDirty();
+    });
+    picker.appendChild(btn);
+  });
+
+  return picker;
 }
 
 function renderVideoFigure(b) {
@@ -1035,7 +1126,7 @@ function renderImageBlock(block) {
     hint: 'PNG, JPG, GIF, WebP — up to 10 MB',
     allowUrl: true,
     urlPlaceholder: 'Or paste an image URL…',
-    onUrl: (v) => ({ src: v, isUrl: true }),
+    onUrl: (v) => ({ src: v, isUrl: true, size: 'full', float: 'none' }),
     renderRendered: renderImageFigure,
   });
 }
