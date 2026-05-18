@@ -162,6 +162,22 @@ app.delete('/api/entries/:id', requireAuth, async (req, res) => {
   }
 });
 
+// Allowed upload types. Max is in MB. Anything not in this map is rejected.
+// NOTE: orphaned-file cleanup is out of scope — files referenced by a deleted block
+// remain on disk. Could be addressed later with a sweeper that diffs media/ against
+// referenced URLs in data/**.
+const MIME_TO_KIND = {
+  'image/png':    { kind: 'image', max: 10  },
+  'image/jpeg':   { kind: 'image', max: 10  },
+  'image/gif':    { kind: 'image', max: 10  },
+  'image/webp':   { kind: 'image', max: 10  },
+  'application/pdf': { kind: 'pdf', max: 25 },
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': { kind: 'doc', max: 25 },
+  'video/mp4':       { kind: 'video', max: 100 },
+  'video/quicktime': { kind: 'video', max: 100 },
+  'video/webm':      { kind: 'video', max: 100 },
+};
+
 const upload = multer({
   storage: multer.diskStorage({
     destination: (_req, _file, cb) => cb(null, MEDIA_DIR),
@@ -170,14 +186,38 @@ const upload = multer({
       cb(null, `${Date.now()}-${safe}`);
     },
   }),
-  limits: { fileSize: 50 * 1024 * 1024 },
+  limits: { fileSize: 100 * 1024 * 1024 },
+  fileFilter: (_req, file, cb) => {
+    if (!MIME_TO_KIND[file.mimetype]) {
+      return cb(new Error('Unsupported file type'), false);
+    }
+    cb(null, true);
+  },
 });
 
-app.post('/api/media/upload', requireAuth, upload.single('file'), (req, res) => {
-  if (!req.file) return res.status(400).json({ error: 'No file' });
-  const url = `/media/${req.file.filename}`;
-  const kind = (req.file.mimetype || '').startsWith('video/') ? 'video' : 'image';
-  res.json({ filename: req.file.filename, url, type: kind });
+app.post('/api/media/upload', requireAuth, (req, res) => {
+  upload.single('file')(req, res, async (err) => {
+    if (err) return res.status(400).json({ error: err.message || 'Upload failed' });
+    if (!req.file) return res.status(400).json({ error: 'No file' });
+    const entry = MIME_TO_KIND[req.file.mimetype];
+    if (!entry) {
+      await fse.remove(req.file.path).catch(() => {});
+      return res.status(400).json({ error: 'Unsupported file type' });
+    }
+    if (req.file.size > entry.max * 1024 * 1024) {
+      await fse.remove(req.file.path).catch(() => {});
+      return res.status(400).json({ error: `File too large. Max is ${entry.max}mb for this file type.` });
+    }
+    const response = {
+      filename: req.file.filename,
+      url: `/media/${req.file.filename}`,
+      kind: entry.kind,
+      mime: req.file.mimetype,
+      sizeBytes: req.file.size,
+    };
+    if (entry.kind === 'doc') response.fileType = 'docx';
+    res.json(response);
+  });
 });
 
 app.delete('/api/media/:filename', requireAuth, async (req, res) => {

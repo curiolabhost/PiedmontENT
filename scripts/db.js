@@ -48,16 +48,40 @@ export const search = {
   query: (q) => request('GET', `/search?q=${encodeURIComponent(q)}`),
 };
 
-export async function uploadMedia(file) {
-  const form = new FormData();
-  form.append('file', file);
-  const res = await fetch(API + '/media/upload', {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${authToken}` },
-    body: form,
+export function uploadMedia(file, { onProgress } = {}) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    const form = new FormData();
+    form.append('file', file);
+
+    xhr.open('POST', API + '/media/upload');
+    xhr.setRequestHeader('Authorization', `Bearer ${authToken}`);
+
+    if (onProgress) {
+      xhr.upload.addEventListener('progress', (e) => {
+        if (e.lengthComputable) {
+          onProgress(Math.round((e.loaded / e.total) * 100));
+        }
+      });
+    }
+
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          resolve(JSON.parse(xhr.responseText));
+        } catch (e) {
+          reject(new Error('Invalid server response'));
+        }
+      } else {
+        let err = {};
+        try { err = JSON.parse(xhr.responseText || '{}'); } catch (_) {}
+        reject(new Error(err.error || `Upload failed: ${xhr.status}`));
+      }
+    };
+
+    xhr.onerror = () => reject(new Error('Network error during upload'));
+    xhr.send(form);
   });
-  if (!res.ok) throw new Error('Upload failed');
-  return res.json();
 }
 
 export async function deleteMedia(filename) {

@@ -7,6 +7,27 @@ const ALERT_ICON = { 'alert-warn': '⚠', 'alert-info': '→', 'alert-note': '�
 
 const INLINE_VOID_TAGS = new Set(['strong', 'em', 'b', 'i', 'u', 's', 'strike']);
 
+function formatBytes(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+function escapeAttr(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function escapeText(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function filterSafeStyleViewer(style) {
   const decls = String(style || '').split(';').map(d => d.trim()).filter(Boolean);
   const safe = [];
@@ -119,6 +140,15 @@ function renderBlocks(blocks, container) {
       continue;
     }
 
+    if (b.type === 'h4') {
+      const h = document.createElement('h4');
+      h.className = 'block-h4';
+      h.innerHTML = safeInline(b.content || '');
+      container.appendChild(h);
+      i++;
+      continue;
+    }
+
     if (b.type === 'letter') {
       const el = document.createElement('div');
       el.className = 'block-letter';
@@ -223,9 +253,116 @@ function renderBlocks(blocks, container) {
         const vid = document.createElement('video');
         vid.src = b.src || '';
         vid.controls = true;
+        vid.addEventListener('error', () => {
+          if (wrap.querySelector('.video-error-msg')) return;
+          const warn = document.createElement('div');
+          warn.className = 'video-error-msg';
+          warn.textContent = 'This video format may not play in all browsers — try MP4.';
+          wrap.appendChild(warn);
+        });
         wrap.appendChild(vid);
       }
       fig.appendChild(wrap);
+      if (b.caption) {
+        const cap = document.createElement('figcaption');
+        cap.textContent = b.caption;
+        fig.appendChild(cap);
+      }
+      container.appendChild(fig);
+      i++;
+      continue;
+    }
+
+    if (b.type === 'pdf') {
+      const fig = document.createElement('figure');
+      fig.className = 'media-figure media-figure-card';
+      const name = escapeText(b.filename || 'document.pdf');
+      const sizeRow = (typeof b.sizeBytes === 'number')
+        ? `<div class="file-card-size">${escapeText(formatBytes(b.sizeBytes))}</div>` : '';
+      fig.innerHTML = `
+        <div class="file-card file-card-pdf">
+          <div class="file-card-icon">📄</div>
+          <div class="file-card-meta">
+            <div class="file-card-name">${name}</div>
+            ${sizeRow}
+          </div>
+          <a class="file-card-btn" href="${escapeAttr(b.src || '')}" target="_blank" rel="noopener">Open</a>
+        </div>
+      `;
+      if (b.caption) {
+        const cap = document.createElement('figcaption');
+        cap.textContent = b.caption;
+        fig.appendChild(cap);
+      }
+      container.appendChild(fig);
+      i++;
+      continue;
+    }
+
+    if (b.type === 'table') {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'block-table-wrap';
+
+      const table = document.createElement('table');
+      table.className = 'block-table';
+
+      if (Array.isArray(b.headers) && b.headers.length > 0) {
+        const thead = document.createElement('thead');
+        const tr = document.createElement('tr');
+        b.headers.forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h;
+          tr.appendChild(th);
+        });
+        thead.appendChild(tr);
+        table.appendChild(thead);
+      }
+
+      if (Array.isArray(b.rows) && b.rows.length > 0) {
+        const tbody = document.createElement('tbody');
+        b.rows.forEach(row => {
+          const tr = document.createElement('tr');
+          row.forEach(cell => {
+            const td = document.createElement('td');
+            td.textContent = cell;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+      }
+
+      wrapper.appendChild(table);
+
+      if (b.caption) {
+        const cap = document.createElement('p');
+        cap.className = 'block-table-caption';
+        cap.textContent = b.caption;
+        wrapper.appendChild(cap);
+      }
+
+      container.appendChild(wrapper);
+      i++;
+      continue;
+    }
+
+    if (b.type === 'doc') {
+      const fig = document.createElement('figure');
+      fig.className = 'media-figure media-figure-card';
+      const filename = b.filename || 'document.docx';
+      const name = escapeText(filename);
+      const sizeRow = (typeof b.sizeBytes === 'number')
+        ? `<div class="file-card-size">${escapeText(formatBytes(b.sizeBytes))}</div>` : '';
+      fig.innerHTML = `
+        <div class="file-card file-card-doc">
+          <div class="file-card-icon">📝</div>
+          <div class="file-card-meta">
+            <div class="file-card-name">${name}</div>
+            ${sizeRow}
+          </div>
+          <a class="file-card-btn" href="${escapeAttr(b.src || '')}" download="${escapeAttr(filename)}">Download</a>
+        </div>
+      `;
       if (b.caption) {
         const cap = document.createElement('figcaption');
         cap.textContent = b.caption;

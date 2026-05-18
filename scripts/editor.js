@@ -4,8 +4,9 @@ import { buildSidebar, getCachedEntries, setActiveNav, TYPE_LABELS } from './sid
 
 const SLASH_COMMANDS = [
   { type: 'p', icon: '¶', label: 'Text', meta: 'Paragraph' },
-  { type: 'h2', icon: 'H2', label: 'Section heading', meta: 'Major section' },
-  { type: 'h3', icon: 'H3', label: 'Subsection heading', meta: 'Subsection label' },
+  { type: 'h3', icon: 'H2', label: 'Section heading — major section' },
+  { type: 'h2', icon: 'H3', label: 'Subsection heading — subsection label' },
+  { type: 'h4', icon: 'H4', label: 'Inline heading — bold label' },
   { type: 'li', icon: '—', label: 'List item', meta: 'Bullet item' },
   { type: 'alert-warn', icon: '⚠', label: 'Warning', meta: 'Warning alert' },
   { type: 'alert-info', icon: '→', label: 'Info', meta: 'Info note' },
@@ -14,12 +15,18 @@ const SLASH_COMMANDS = [
   { type: 'letter', icon: '✉', label: 'Letter template', meta: 'Document-style letter' },
   { type: 'image', icon: '🖼', label: 'Image', meta: 'Image' },
   { type: 'video', icon: '▶', label: 'Video', meta: 'Video or YouTube' },
+  { type: 'pdf', icon: '📄', label: 'PDF document', meta: 'PDF file' },
+  { type: 'doc', icon: '📝', label: 'Word document', meta: '.docx file' },
+  { type: 'table', icon: '⊞', label: 'Table', meta: 'Table with rows and columns' },
 ];
+
+const MEDIA_TYPES = new Set(['image', 'video', 'pdf', 'doc']);
 
 const PLACEHOLDERS = {
   p: 'Type or press / for blocks',
   h2: 'Section heading',
   h3: 'Subsection heading',
+  h4: 'Inline heading',
   li: 'List item',
   'alert-warn': 'Warning text',
   'alert-info': 'Info text',
@@ -220,6 +227,27 @@ function slug(s) {
     .trim()
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-');
+}
+
+function formatBytes(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+function extractYouTubeId(url) {
+  const patterns = [
+    /youtube\.com\/watch\?v=([^&]+)/,
+    /youtube\.com\/embed\/([^?]+)/,
+    /youtube\.com\/shorts\/([^?]+)/,
+    /youtube\.com\/live\/([^?]+)/,
+    /youtu\.be\/([^?]+)/,
+  ];
+  for (const p of patterns) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return null;
 }
 
 // Allowed inline formatting tags. Keep these from contenteditable's HTML; strip everything else.
@@ -468,6 +496,9 @@ function renderBlock(block) {
   if (block.type === 'step') return renderStepBlock(block);
   if (block.type === 'image') return renderImageBlock(block);
   if (block.type === 'video') return renderVideoBlock(block);
+  if (block.type === 'pdf') return renderPdfBlock(block);
+  if (block.type === 'doc') return renderDocBlock(block);
+  if (block.type === 'table') return renderTableBlock(block);
   return renderTextBlock(block);
 }
 
@@ -587,11 +618,22 @@ function buildNoteField(block) {
   return note;
 }
 
-function renderImageBlock(block) {
+// Shared upload-block helper. Powers image, video, pdf, doc blocks.
+// opts: {
+//   accept,           // file input accept attribute
+//   mimes,            // array of allowed mime strings (or 'image/*' wildcard); null = trust accept
+//   maxMB,            // client-side pre-check
+//   hint,             // shown under "Click or drag to upload"
+//   allowUrl,         // show URL input row?
+//   urlPlaceholder,
+//   onUrl(value),     // returns { ...blockUpdates } or null to skip
+//   renderRendered(block) -> Element  // produces the success-state media element
+// }
+function renderUploadBlock(block, opts) {
   const wrap = document.createElement('div');
   wrap.className = 'block';
   wrap.dataset.blockId = block.id;
-  wrap.dataset.type = 'image';
+  wrap.dataset.type = block.type;
 
   const handle = document.createElement('div');
   handle.className = 'block-handle';
@@ -600,69 +642,352 @@ function renderImageBlock(block) {
   attachDrag(handle, wrap, block);
   wrap.appendChild(handle);
 
-  const inner = document.createElement('div');
-  inner.style.flex = '1';
-  if (!block.src) {
-    const empty = document.createElement('div');
-    empty.className = 'image-block-empty';
-    empty.innerHTML = `
-      <div class="image-upload-zone">
-        <p>Click to upload an image</p>
-        <span>PNG, JPG, GIF, WebP</span>
-        <input type="file" accept="image/*" hidden />
-      </div>
-      <div class="image-url-row">
-        <input placeholder="Or paste an image URL…" />
-        <button class="btn">Add</button>
-      </div>
-    `;
-    const zone = empty.querySelector('.image-upload-zone');
-    const fileInput = empty.querySelector('input[type=file]');
-    zone.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      try {
-        const res = await uploadMedia(file);
-        block.src = res.url;
-        wrap.replaceWith(renderImageBlock(block));
-        markDirty();
-      } catch (err) {
-        showToast('Upload failed: ' + err.message, 'error');
-      }
-    });
-    const urlInput = empty.querySelector('.image-url-row input');
-    const addBtn = empty.querySelector('.image-url-row button');
-    addBtn.addEventListener('click', () => {
-      if (!urlInput.value.trim()) return;
-      block.src = urlInput.value.trim();
-      wrap.replaceWith(renderImageBlock(block));
-      markDirty();
-    });
-    inner.appendChild(empty);
-  } else {
-    const fig = document.createElement('figure');
-    fig.className = 'media-figure media-block-rendered';
-    const img = document.createElement('img');
-    img.src = block.src;
-    fig.appendChild(img);
-    const cap = document.createElement('figcaption');
-    cap.className = 'caption-edit';
-    cap.contentEditable = 'true';
-    cap.textContent = block.caption || '';
-    cap.addEventListener('input', () => {
-      block.caption = cap.textContent.trim();
-      markDirty();
-    });
-    fig.appendChild(cap);
-    inner.appendChild(fig);
-  }
-  wrap.appendChild(inner);
+  const body = document.createElement('div');
+  body.className = 'upload-block-body';
+  body.style.flex = '1';
+  wrap.appendChild(body);
 
   const actions = document.createElement('div');
   actions.className = 'block-actions';
   const delBtn = document.createElement('button');
   delBtn.className = 'block-delete-btn';
+  delBtn.textContent = '×';
+  delBtn.addEventListener('click', () => deleteBlock(block));
+  actions.appendChild(delBtn);
+  wrap.appendChild(actions);
+
+  function mimeAllowed(fileType) {
+    if (!opts.mimes || opts.mimes.length === 0) return true;
+    if (opts.mimes.includes(fileType)) return true;
+    return opts.mimes.some(m => m.endsWith('/*') && fileType.startsWith(m.slice(0, -1)));
+  }
+
+  function showZone() {
+    body.innerHTML = '';
+    const empty = document.createElement('div');
+    empty.className = `${block.type}-block-empty upload-block-empty`;
+    const picker = document.createElement('div');
+    picker.className = 'image-upload-zone upload-zone';
+    picker.innerHTML = `
+      <p>Click or drag to upload</p>
+      <span>${opts.hint || ''}</span>
+      <input type="file" accept="${opts.accept || ''}" hidden />
+    `;
+    empty.appendChild(picker);
+
+    const fileInput = picker.querySelector('input[type=file]');
+    picker.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) handleFile(file);
+    });
+
+    // Drag/drop scoped to the zone element only — not to document.
+    picker.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      picker.classList.add('dragging');
+    });
+    picker.addEventListener('dragleave', (e) => {
+      e.stopPropagation();
+      picker.classList.remove('dragging');
+    });
+    picker.addEventListener('drop', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      picker.classList.remove('dragging');
+      const file = e.dataTransfer.files[0];
+      if (file) handleFile(file);
+    });
+
+    if (opts.allowUrl) {
+      const row = document.createElement('div');
+      row.className = 'image-url-row';
+      const urlInput = document.createElement('input');
+      urlInput.placeholder = opts.urlPlaceholder || 'Or paste a URL…';
+      const addBtn = document.createElement('button');
+      addBtn.type = 'button';
+      addBtn.className = 'btn';
+      addBtn.textContent = 'Add';
+      addBtn.addEventListener('click', () => {
+        const v = urlInput.value.trim();
+        if (!v) return;
+        const updates = opts.onUrl ? opts.onUrl(v) : { src: v };
+        if (!updates) return;
+        Object.assign(block, updates);
+        markDirty();
+        showRendered();
+      });
+      row.appendChild(urlInput);
+      row.appendChild(addBtn);
+      empty.appendChild(row);
+    }
+
+    body.appendChild(empty);
+  }
+
+  function showProgress() {
+    body.innerHTML = '';
+    const empty = document.createElement('div');
+    empty.className = `${block.type}-block-empty upload-block-empty`;
+    empty.innerHTML = `
+      <div class="upload-progress-wrap">
+        <div class="upload-progress-label">Uploading… <span class="upload-pct">0%</span></div>
+        <progress class="upload-progress-bar" value="0" max="100"></progress>
+      </div>
+    `;
+    body.appendChild(empty);
+  }
+
+  function updateProgress(pct) {
+    const bar = body.querySelector('.upload-progress-bar');
+    const span = body.querySelector('.upload-pct');
+    if (bar) bar.value = pct;
+    if (span) span.textContent = pct + '%';
+  }
+
+  function showError(msg) {
+    body.innerHTML = '';
+    const empty = document.createElement('div');
+    empty.className = `${block.type}-block-empty upload-block-empty`;
+    empty.innerHTML = `
+      <div class="upload-error-state">
+        <p class="upload-error-msg"></p>
+        <button type="button" class="upload-retry-btn">Try again</button>
+      </div>
+    `;
+    empty.querySelector('.upload-error-msg').textContent = msg;
+    empty.querySelector('.upload-retry-btn').addEventListener('click', () => showZone());
+    body.appendChild(empty);
+  }
+
+  function showRendered() {
+    body.innerHTML = '';
+    const container = document.createElement('div');
+    container.className = 'media-block-rendered';
+
+    const replaceBtn = document.createElement('button');
+    replaceBtn.type = 'button';
+    replaceBtn.className = 'media-replace-btn';
+    replaceBtn.title = 'Replace file';
+    replaceBtn.textContent = '↑ Replace';
+    replaceBtn.addEventListener('click', () => showZone());
+    container.appendChild(replaceBtn);
+
+    const rendered = opts.renderRendered(block);
+    container.appendChild(rendered);
+
+    const cap = document.createElement('input');
+    cap.className = 'media-caption-input';
+    cap.placeholder = 'Add caption…';
+    cap.value = block.caption || '';
+    cap.addEventListener('input', () => {
+      block.caption = cap.value;
+      markDirty();
+    });
+    container.appendChild(cap);
+
+    body.appendChild(container);
+  }
+
+  async function handleFile(file) {
+    if (file.type && !mimeAllowed(file.type)) {
+      showError(`Unsupported file type: ${file.type}`);
+      return;
+    }
+    if (opts.maxMB && file.size > opts.maxMB * 1024 * 1024) {
+      showError(`File too large. Max is ${opts.maxMB} MB for this file type.`);
+      return;
+    }
+    showProgress();
+    try {
+      const res = await uploadMedia(file, { onProgress: updateProgress });
+      block.src = res.url;
+      if (res.filename) block.filename = res.filename;
+      if (typeof res.sizeBytes === 'number') block.sizeBytes = res.sizeBytes;
+      if (res.fileType) block.fileType = res.fileType;
+      if (block.type === 'video') block.isEmbed = false;
+      if (block.type === 'image') block.isUrl = false;
+      markDirty();
+      showRendered();
+    } catch (e) {
+      showError(e.message || 'Upload failed');
+    }
+  }
+
+  if (block.src) showRendered();
+  else showZone();
+
+  return wrap;
+}
+
+function renderImageBlock(block) {
+  return renderUploadBlock(block, {
+    accept: 'image/*',
+    mimes: ['image/png', 'image/jpeg', 'image/gif', 'image/webp'],
+    maxMB: 10,
+    hint: 'PNG, JPG, GIF, WebP — up to 10 MB',
+    allowUrl: true,
+    urlPlaceholder: 'Or paste an image URL…',
+    onUrl: (v) => ({ src: v, isUrl: true }),
+    renderRendered: (b) => {
+      const fig = document.createElement('figure');
+      fig.className = 'media-figure';
+      const img = document.createElement('img');
+      img.src = b.src;
+      img.alt = b.caption || '';
+      fig.appendChild(img);
+      return fig;
+    },
+  });
+}
+
+function renderVideoBlock(block) {
+  return renderUploadBlock(block, {
+    accept: 'video/*',
+    mimes: ['video/mp4', 'video/quicktime', 'video/webm'],
+    maxMB: 100,
+    hint: 'MP4, MOV, WebM — up to 100 MB',
+    allowUrl: true,
+    urlPlaceholder: 'Or paste a YouTube URL…',
+    onUrl: (v) => {
+      const ytId = extractYouTubeId(v);
+      if (ytId) return { src: `https://www.youtube.com/embed/${ytId}`, isEmbed: true };
+      return { src: v, isEmbed: false };
+    },
+    renderRendered: (b) => {
+      const fig = document.createElement('figure');
+      fig.className = 'media-figure';
+      const wrapV = document.createElement('div');
+      wrapV.className = 'video-wrap';
+      if (b.isEmbed) {
+        const f = document.createElement('iframe');
+        f.src = b.src;
+        f.setAttribute('frameborder', '0');
+        f.setAttribute('allowfullscreen', 'true');
+        wrapV.appendChild(f);
+      } else {
+        const v = document.createElement('video');
+        v.src = b.src;
+        v.controls = true;
+        v.addEventListener('error', () => {
+          if (wrapV.querySelector('.video-error-msg')) return;
+          const warn = document.createElement('div');
+          warn.className = 'video-error-msg';
+          warn.textContent = 'This video format may not play in all browsers — try MP4.';
+          wrapV.appendChild(warn);
+        });
+        wrapV.appendChild(v);
+      }
+      fig.appendChild(wrapV);
+      return fig;
+    },
+  });
+}
+
+function renderPdfBlock(block) {
+  return renderUploadBlock(block, {
+    accept: 'application/pdf',
+    mimes: ['application/pdf'],
+    maxMB: 25,
+    hint: 'PDF files up to 25 MB',
+    allowUrl: false,
+    renderRendered: (b) => {
+      const card = document.createElement('div');
+      card.className = 'file-card file-card-pdf';
+      const icon = document.createElement('div');
+      icon.className = 'file-card-icon';
+      icon.textContent = '📄';
+      card.appendChild(icon);
+      const meta = document.createElement('div');
+      meta.className = 'file-card-meta';
+      const name = document.createElement('div');
+      name.className = 'file-card-name';
+      name.textContent = b.filename || 'document.pdf';
+      meta.appendChild(name);
+      if (typeof b.sizeBytes === 'number') {
+        const size = document.createElement('div');
+        size.className = 'file-card-size';
+        size.textContent = formatBytes(b.sizeBytes);
+        meta.appendChild(size);
+      }
+      card.appendChild(meta);
+      const btn = document.createElement('a');
+      btn.className = 'file-card-btn';
+      btn.href = b.src;
+      btn.target = '_blank';
+      btn.rel = 'noopener';
+      btn.textContent = 'Open';
+      card.appendChild(btn);
+      return card;
+    },
+  });
+}
+
+function renderDocBlock(block) {
+  return renderUploadBlock(block, {
+    accept: '.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    mimes: ['application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
+    maxMB: 25,
+    hint: 'Word documents (.docx) up to 25 MB',
+    allowUrl: false,
+    renderRendered: (b) => {
+      const card = document.createElement('div');
+      card.className = 'file-card file-card-doc';
+      const icon = document.createElement('div');
+      icon.className = 'file-card-icon';
+      icon.textContent = '📝';
+      card.appendChild(icon);
+      const meta = document.createElement('div');
+      meta.className = 'file-card-meta';
+      const name = document.createElement('div');
+      name.className = 'file-card-name';
+      name.textContent = b.filename || 'document.docx';
+      meta.appendChild(name);
+      if (typeof b.sizeBytes === 'number') {
+        const size = document.createElement('div');
+        size.className = 'file-card-size';
+        size.textContent = formatBytes(b.sizeBytes);
+        meta.appendChild(size);
+      }
+      card.appendChild(meta);
+      const btn = document.createElement('a');
+      btn.className = 'file-card-btn';
+      btn.href = b.src;
+      btn.download = b.filename || 'document.docx';
+      btn.textContent = 'Download';
+      card.appendChild(btn);
+      return card;
+    },
+  });
+}
+
+function renderTableBlock(block) {
+  if (!block.headers) block.headers = ['Column 1', 'Column 2', 'Column 3'];
+  if (!block.rows) block.rows = [['', '', ''], ['', '', '']];
+
+  const wrap = document.createElement('div');
+  wrap.className = 'block table-block';
+  wrap.dataset.blockId = block.id;
+  wrap.dataset.type = 'table';
+
+  const handle = document.createElement('div');
+  handle.className = 'block-handle';
+  handle.draggable = true;
+  handle.textContent = '⠿';
+  attachDrag(handle, wrap, block);
+  wrap.appendChild(handle);
+
+  const body = document.createElement('div');
+  body.className = 'table-block-body';
+  buildTableEditor(body, block);
+  wrap.appendChild(body);
+
+  const actions = document.createElement('div');
+  actions.className = 'block-actions';
+  const delBtn = document.createElement('button');
+  delBtn.className = 'block-delete-btn';
+  delBtn.title = 'Delete block';
   delBtn.textContent = '×';
   delBtn.addEventListener('click', () => deleteBlock(block));
   actions.appendChild(delBtn);
@@ -671,110 +996,145 @@ function renderImageBlock(block) {
   return wrap;
 }
 
-function renderVideoBlock(block) {
-  const wrap = document.createElement('div');
-  wrap.className = 'block';
-  wrap.dataset.blockId = block.id;
-  wrap.dataset.type = 'video';
+function buildTableEditor(body, block) {
+  body.innerHTML = '';
 
-  const handle = document.createElement('div');
-  handle.className = 'block-handle';
-  handle.draggable = true;
-  handle.textContent = '⠿';
-  attachDrag(handle, wrap, block);
-  wrap.appendChild(handle);
+  const tableWrap = document.createElement('div');
+  tableWrap.className = 'editor-table-wrap';
 
-  const inner = document.createElement('div');
-  inner.style.flex = '1';
+  const table = document.createElement('table');
+  table.className = 'editor-table';
 
-  if (!block.src) {
-    const empty = document.createElement('div');
-    empty.className = 'video-block-empty';
-    empty.innerHTML = `
-      <div class="image-upload-zone">
-        <p>Click to upload a video</p>
-        <span>MP4, WebM, MOV</span>
-        <input type="file" accept="video/*" hidden />
-      </div>
-      <div class="video-url-row">
-        <input placeholder="Or paste a YouTube URL…" />
-        <button class="btn">Add</button>
-      </div>
-    `;
-    const zone = empty.querySelector('.image-upload-zone');
-    const fileInput = empty.querySelector('input[type=file]');
-    zone.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      try {
-        const res = await uploadMedia(file);
-        block.src = res.url;
-        block.isEmbed = false;
-        wrap.replaceWith(renderVideoBlock(block));
+  const thead = document.createElement('thead');
+  const headerTr = document.createElement('tr');
+
+  const ctrlTh = document.createElement('th');
+  ctrlTh.className = 'editor-table-ctrl-col';
+  headerTr.appendChild(ctrlTh);
+
+  block.headers.forEach((header, colIdx) => {
+    const th = document.createElement('th');
+    th.className = 'editor-table-header-cell';
+
+    const input = document.createElement('input');
+    input.className = 'editor-table-cell-input editor-table-header-input';
+    input.value = header;
+    input.placeholder = `Column ${colIdx + 1}`;
+    input.addEventListener('input', () => {
+      block.headers[colIdx] = input.value;
+      markDirty();
+    });
+    th.appendChild(input);
+
+    const delCol = document.createElement('button');
+    delCol.className = 'editor-table-del-col';
+    delCol.textContent = '×';
+    delCol.title = 'Delete column';
+    delCol.addEventListener('click', () => {
+      if (block.headers.length <= 1) return;
+      block.headers.splice(colIdx, 1);
+      block.rows.forEach(row => row.splice(colIdx, 1));
+      buildTableEditor(body, block);
+      markDirty();
+    });
+    th.appendChild(delCol);
+    headerTr.appendChild(th);
+  });
+
+  const addColTh = document.createElement('th');
+  addColTh.className = 'editor-table-add-col-cell';
+  const addColBtn = document.createElement('button');
+  addColBtn.className = 'editor-table-add-col';
+  addColBtn.textContent = '+ Col';
+  addColBtn.addEventListener('click', () => {
+    block.headers.push(`Column ${block.headers.length + 1}`);
+    block.rows.forEach(row => row.push(''));
+    buildTableEditor(body, block);
+    markDirty();
+  });
+  addColTh.appendChild(addColBtn);
+  headerTr.appendChild(addColTh);
+  thead.appendChild(headerTr);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  block.rows.forEach((row, rowIdx) => {
+    const tr = document.createElement('tr');
+
+    const delCell = document.createElement('td');
+    delCell.className = 'editor-table-ctrl-col';
+    const delRow = document.createElement('button');
+    delRow.className = 'editor-table-del-row';
+    delRow.textContent = '×';
+    delRow.title = 'Delete row';
+    delRow.addEventListener('click', () => {
+      if (block.rows.length <= 1) return;
+      block.rows.splice(rowIdx, 1);
+      buildTableEditor(body, block);
+      markDirty();
+    });
+    delCell.appendChild(delRow);
+    tr.appendChild(delCell);
+
+    row.forEach((cell, colIdx) => {
+      const td = document.createElement('td');
+      const input = document.createElement('input');
+      input.className = 'editor-table-cell-input';
+      input.value = cell;
+      input.placeholder = '—';
+      input.addEventListener('input', () => {
+        block.rows[rowIdx][colIdx] = input.value;
         markDirty();
-      } catch (err) {
-        showToast('Upload failed: ' + err.message, 'error');
-      }
+      });
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') {
+          e.preventDefault();
+          const allInputs = [...table.querySelectorAll('.editor-table-cell-input:not(.editor-table-header-input)')];
+          const currentIdx = allInputs.indexOf(input);
+          const next = allInputs[currentIdx + (e.shiftKey ? -1 : 1)];
+          if (next) next.focus();
+        }
+      });
+      td.appendChild(input);
+      tr.appendChild(td);
     });
-    const urlInput = empty.querySelector('.video-url-row input');
-    const addBtn = empty.querySelector('.video-url-row button');
-    addBtn.addEventListener('click', () => {
-      const v = urlInput.value.trim();
-      if (!v) return;
-      const ytId = (v.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/) || [])[1];
-      if (ytId) {
-        block.src = `https://www.youtube.com/embed/${ytId}`;
-        block.isEmbed = true;
-      } else {
-        block.src = v;
-        block.isEmbed = false;
-      }
-      wrap.replaceWith(renderVideoBlock(block));
-      markDirty();
-    });
-    inner.appendChild(empty);
-  } else {
-    const fig = document.createElement('figure');
-    fig.className = 'media-figure media-block-rendered';
-    const wrapV = document.createElement('div');
-    wrapV.className = 'video-wrap';
-    if (block.isEmbed) {
-      const f = document.createElement('iframe');
-      f.src = block.src;
-      f.setAttribute('frameborder', '0');
-      f.setAttribute('allowfullscreen', 'true');
-      wrapV.appendChild(f);
-    } else {
-      const v = document.createElement('video');
-      v.src = block.src;
-      v.controls = true;
-      wrapV.appendChild(v);
-    }
-    fig.appendChild(wrapV);
-    const cap = document.createElement('figcaption');
-    cap.className = 'caption-edit';
-    cap.contentEditable = 'true';
-    cap.textContent = block.caption || '';
-    cap.addEventListener('input', () => {
-      block.caption = cap.textContent.trim();
-      markDirty();
-    });
-    fig.appendChild(cap);
-    inner.appendChild(fig);
-  }
-  wrap.appendChild(inner);
 
-  const actions = document.createElement('div');
-  actions.className = 'block-actions';
-  const delBtn = document.createElement('button');
-  delBtn.className = 'block-delete-btn';
-  delBtn.textContent = '×';
-  delBtn.addEventListener('click', () => deleteBlock(block));
-  actions.appendChild(delBtn);
-  wrap.appendChild(actions);
+    // Trailing cell under the "+ Col" header
+    tr.appendChild(document.createElement('td'));
 
-  return wrap;
+    tbody.appendChild(tr);
+  });
+
+  const addRowTr = document.createElement('tr');
+  const addRowTd = document.createElement('td');
+  addRowTd.colSpan = block.headers.length + 2;
+  addRowTd.className = 'editor-table-add-row-cell';
+  const addRowBtn = document.createElement('button');
+  addRowBtn.className = 'editor-table-add-row';
+  addRowBtn.textContent = '+ Add row';
+  addRowBtn.addEventListener('click', () => {
+    block.rows.push(new Array(block.headers.length).fill(''));
+    buildTableEditor(body, block);
+    markDirty();
+  });
+  addRowTd.appendChild(addRowBtn);
+  addRowTr.appendChild(addRowTd);
+  tbody.appendChild(addRowTr);
+  table.appendChild(tbody);
+
+  tableWrap.appendChild(table);
+
+  const captionInput = document.createElement('input');
+  captionInput.className = 'editor-table-caption-input';
+  captionInput.placeholder = 'Table caption (optional)';
+  captionInput.value = block.caption || '';
+  captionInput.addEventListener('input', () => {
+    block.caption = captionInput.value;
+    markDirty();
+  });
+  tableWrap.appendChild(captionInput);
+
+  body.appendChild(tableWrap);
 }
 
 function deleteBlock(block) {
@@ -859,7 +1219,7 @@ function handleSlash(contentEl, block, wrap) {
   matches.forEach((cmd, i) => {
     const item = document.createElement('div');
     item.className = 'slash-item' + (i === 0 ? ' active' : '');
-    item.innerHTML = `<span class="slash-icon">${cmd.icon}</span><span>${cmd.label}</span><span class="slash-meta">${cmd.meta}</span>`;
+    item.innerHTML = `<span class="slash-icon">${cmd.icon}</span><span>${cmd.label}</span><span class="slash-meta">${cmd.meta || ''}</span>`;
     item.addEventListener('mousedown', (e) => {
       e.preventDefault();
       applySlashCommand(cmd, block, wrap, contentEl);
@@ -870,7 +1230,7 @@ function handleSlash(contentEl, block, wrap) {
 
 function applySlashCommand(cmd, block, wrap, contentEl) {
   closeSlashMenu();
-  if (cmd.type === 'image' || cmd.type === 'video') {
+  if (MEDIA_TYPES.has(cmd.type) || cmd.type === 'table') {
     block.type = cmd.type;
     block.content = '';
     delete block.note;
@@ -1033,14 +1393,17 @@ async function saveEntry({ explicit }) {
   for (const block of state.blocks) {
     const wrap = document.querySelector(`.block[data-block-id="${block.id}"]`);
     if (!wrap) continue;
+    // Table cells write block.headers / block.rows / block.caption directly via input
+    // handlers, so the in-memory state is already current — no DOM sync needed.
+    if (block.type === 'table') continue;
     if (block.type === 'step') {
       const text = wrap.querySelector('.step-text-edit');
       if (text) block.content = decodeHtmlInline(text.innerHTML);
       const note = wrap.querySelector('.step-note-edit');
       if (note) block.note = decodeHtmlInline(note.innerHTML);
-    } else if (block.type === 'image' || block.type === 'video') {
-      const cap = wrap.querySelector('.caption-edit');
-      if (cap) block.caption = cap.textContent.trim();
+    } else if (MEDIA_TYPES.has(block.type)) {
+      const cap = wrap.querySelector('.media-caption-input');
+      if (cap) block.caption = cap.value;
     } else {
       const c = wrap.querySelector('.block-content');
       if (c) block.content = decodeHtmlInline(c.innerHTML);

@@ -8,7 +8,7 @@
     {
       "id": "9a8e6163",
       "type": "p",
-      "content": "Allergic rhinitis (AR) is IgE-mediated inflammation of the nasal mucosa triggered by allergen exposure. It is classified as seasonal (pollens — trees in spring, grasses in summer, ragweed in fall) or perennial (dust mites, mold, pet dander, cockroach). Many patients have both. It affects roughly 20–30% of the general population and is a major driver of CRS, otitis media with effusion, and eustachian tube dysfunction."
+      "content": "Allergic rhinitis (AR) is IgE-mediated inflammation of the nasal mucosa triggered by allergen exposure. It is classified as seasonal (pollens — trees in spring, grasses in summer, ragweed in fall) or perennial (dust mites, mold, pet dander, cockroach). Many patients have both. It affects roughly 20–30% of the general population and is a major driver of CRS, otitis media with effusion, and eustachian tube dysfunction"
     },
     {
       "id": "6268e40d",
@@ -33,32 +33,109 @@
     {
       "id": "81c3a4f2",
       "type": "h3",
-      "content": "Medical treatment"
+      "content": "Medical Treatment"
     },
     {
-      "id": "d7e9c69f",
-      "type": "li",
-      "content": "Intranasal corticosteroids (Ryaltris, Flonase) — first-line, most effective single agent for AR"
-    },
-    {
-      "id": "cae29601",
-      "type": "li",
-      "content": "Oral antihistamines — second-generation preferred: cetirizine (Zyrtec), fexofenadine (Allegra), loratadine (Claritin); first-generation: diphenhydramine (Benadryl), chlorpheniramine (Chlor-Trimeton) — sedating"
-    },
-    {
-      "id": "b9e2cb83",
-      "type": "li",
-      "content": "Intranasal antihistamines — azelastine, olopatadine (Patanase); faster onset than oral"
-    },
-    {
-      "id": "e3473589",
-      "type": "li",
-      "content": "Leukotriene receptor antagonists — montelukast (Singulair); modest efficacy; FDA boxed warning for neuropsychiatric events including depression and suicidal ideation — patients must be counseled before starting"
+      "id": "a3f7d291",
+      "type": "table",
+      "headers": [
+        "Medication Class",
+        "Agents",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Intranasal corticosteroids",
+          "Ryaltris, Flonase",
+          "First-line: most effective single agent for AR"
+        ],
+        [
+          "Oral antihistamines — 2nd gen, sedating",
+          "Levocetirizine (Xyzal), cetirizine (Zyrtec)",
+          "Sedating: recommend once nightly dosing. Xyzal is the active enantiomer of Zyrtec and is more potent at a lower dose."
+        ],
+        [
+          "Oral antihistamines — 2nd gen, non-sedating",
+          "Fexofenadine (Allegra), loratadine (Claritin)",
+          "Minimally to non-sedating: can be taken any time of day"
+        ],
+        [
+          "Oral antihistamines — 1st gen",
+          "Diphenhydramine (Benadryl), chlorpheniramine (Chlor-Trimeton)",
+          "Strongly sedating with anticholinergic effects: use with caution"
+        ],
+        [
+          "Intranasal antihistamines",
+          "Azelastine, olopatadine (Patanase)",
+          "Faster onset than oral antihistamines"
+        ],
+        [
+          "Leukotriene receptor antagonists",
+          "Montelukast (Singulair)",
+          "Modest efficacy: non-sedating, not an antihistamine"
+        ]
+      ],
+      "caption": ""
     },
     {
       "id": "46be1251",
       "type": "alert-warn",
-      "content": "Montelukast (Singulair) carries an FDA boxed warning for neuropsychiatric events including depression and suicidal ideation — patients must be counseled before starting."
+      "content": "Montelukast (Singulair) carries an FDA boxed warning for neuropsychiatric events including depression and suicidal ideation."
+    },
+    {
+      "id": "c4e8a112",
+      "type": "h3",
+      "content": "Medication Notes"
+    },
+    {
+      "id": "d1f3b204",
+      "type": "h2",
+      "content": "How antihistamines work"
+    },
+    {
+      "id": "e8a27f93",
+      "type": "p",
+      "content": "During an allergic reaction, IgE-sensitized mast cells and basophils release histamine upon allergen exposure. Histamine binds to H1 receptors in the nasal mucosa, causing vasodilation, increased vascular permeability, mucus secretion, sneezing, and itch. Antihistamines competitively block H1 receptors, preventing histamine from binding and blunting these effects."
+    },
+    {
+      "id": "f7c39d51",
+      "type": "p",
+      "content": "First-generation antihistamines (Benadryl, Chlor-Trimeton) cross the blood-brain barrier readily, causing significant CNS sedation and anticholinergic effects such as dry mouth, urinary retention, and blurred vision. Second-generation antihistamines (Zyrtec, Xyzal, Allegra, Claritin) are designed to minimize CNS penetration. However, within the second generation there is a meaningful sedation gradient — Xyzal and Zyrtec cause more sedation than Allegra and Claritin and are best taken at night. Xyzal (levocetirizine) is the pharmacologically active enantiomer of cetirizine (Zyrtec), meaning it achieves equivalent or greater receptor binding at a lower dose."
+    },
+    {
+      "id": "b2d84e67",
+      "type": "h2",
+      "content": "How montelukast works — and why it is not an antihistamine"
+    },
+    {
+      "id": "a9c15f38",
+      "type": "p",
+      "content": "Histamine is not the only inflammatory mediator released during an allergic reaction. Mast cells and eosinophils also release leukotrienes — specifically LTC4, LTD4, and LTE4 — which are potent lipid mediators that act independently of histamine. Leukotrienes cause nasal congestion, mucus hypersecretion, and airway inflammation through their own receptor pathway (CysLT1 receptors). Antihistamines have no effect on leukotrienes whatsoever."
+    },
+    {
+      "id": "c7e42a19",
+      "type": "p",
+      "content": "Montelukast (Singulair) is a leukotriene receptor antagonist. It selectively blocks CysLT1 receptors, preventing leukotrienes from binding and reducing their downstream inflammatory effects. Because it acts on a completely separate receptor class from histamine receptors and has no affinity for CNS receptors, it is fully non-sedating. Its efficacy in allergic rhinitis is considered modest. It works best as an add-on to intranasal corticosteroids or antihistamines rather than as monotherapy. It is particularly useful in patients who have both allergic rhinitis and asthma, since leukotrienes are a primary driver of bronchoconstriction as well."
+    },
+    {
+      "id": "d3f56b82",
+      "type": "h2",
+      "content": "How intranasal corticosteroids work"
+    },
+    {
+      "id": "e1a78c34",
+      "type": "p",
+      "content": "Intranasal corticosteroids (Flonase, Ryaltris, Nasonex, Nasacort) are the most effective single class of medication for allergic rhinitis. They act locally on the nasal mucosa to suppress the entire inflammatory cascade, reducing mast cell and eosinophil activity, decreasing vascular permeability, and reducing mucus gland secretion. Unlike antihistamines which only block the effects of histamine after it is released, intranasal corticosteroids work upstream to suppress the inflammation itself. Systemic absorption is minimal at standard doses. They require consistent daily use to reach full effect — typically 1 to 2 weeks of regular use before maximum benefit is seen. Patients who use them only on symptom days will underperform compared to those who use them consistently throughout the allergy season."
+    },
+    {
+      "id": "f9b23d47",
+      "type": "h2",
+      "content": "How intranasal antihistamines work"
+    },
+    {
+      "id": "a4c67e91",
+      "type": "p",
+      "content": "Intranasal antihistamines (azelastine, olopatadine/Patanase) deliver H1 receptor blockade directly to the nasal mucosa, achieving local concentrations much higher than oral antihistamines can produce systemically. Their onset of action is faster than oral antihistamines, typically within 15 to 30 minutes. They are particularly useful for patients with intermittent or breakthrough symptoms. Some patients experience a bitter taste or mild local sedation due to partial systemic absorption. Ryaltris is a combination product that contains both an intranasal corticosteroid and an intranasal antihistamine in a single spray, making it useful for patients who need both mechanisms."
     },
     {
       "id": "302da527",
@@ -89,6 +166,179 @@
       "id": "1f125f04",
       "type": "li",
       "content": "Extremely severe: 5 years or longer, individualized"
+    },
+    {
+      "id": "b3e7a291",
+      "type": "h2",
+      "content": "Overview"
+    },
+    {
+      "id": "c4f8b382",
+      "type": "p",
+      "content": "Allergen immunotherapy is the only treatment for allergic rhinitis that modifies the underlying immune response rather than suppressing symptoms. By introducing gradually increasing allergen doses over time, it shifts the immune system away from the IgE-mediated type-2 allergic pathway. The mechanisms include induction of regulatory T cells, generation of allergen-specific IgG4 blocking antibodies that compete with IgE at the mast cell surface, and a reduction in mast cell and basophil reactivity to allergen challenge. The clinical result is progressive reduction in symptom severity, decreased dependence on pharmacotherapy, and in many patients a durable tolerance that persists after therapy is completed — which no medication class achieves."
+    },
+    {
+      "id": "d5a9c473",
+      "type": "p",
+      "content": "Immunotherapy is indicated in patients with moderate to severe allergic rhinitis who have inadequate symptom control on pharmacotherapy, significant medication burden, or who prefer a long-term solution over indefinite daily medication use. It requires a confirmed allergen sensitization profile from skin prick testing or specific IgE blood testing before a patient-specific extract can be formulated."
+    },
+    {
+      "id": "e6b0d564",
+      "type": "h2",
+      "content": "SCIT — Subcutaneous Immunotherapy"
+    },
+    {
+      "id": "f7c1e655",
+      "type": "p",
+      "content": "SCIT is the most established form of allergen immunotherapy with the largest evidence base. Allergen extract is injected subcutaneously, typically in the upper arm, in progressively increasing doses during a build-up phase until a maintenance dose is reached. The build-up phase involves weekly injections over several months. Once at maintenance, frequency decreases to every 2 to 4 weeks depending on clinical response."
+    },
+    {
+      "id": "a8d2f746",
+      "type": "h3",
+      "content": "Mechanism"
+    },
+    {
+      "id": "b9e3a837",
+      "type": "p",
+      "content": "Repeated subcutaneous antigen exposure drives a shift from Th2-dominant (allergic) to Th1-dominant immune responses. IgE production decreases over time while IgG4 blocking antibody levels rise. Mast cell and basophil threshold for degranulation increases, meaning the patient can tolerate greater allergen exposure without triggering symptoms."
+    },
+    {
+      "id": "c0f4b928",
+      "type": "h3",
+      "content": "Efficacy"
+    },
+    {
+      "id": "d1a5c019",
+      "type": "p",
+      "content": "SCIT has robust clinical evidence for reducing symptom scores, medication use, and the development of new allergen sensitizations. It also reduces the risk of progression from allergic rhinitis to asthma in children. Effects persist for years after completing therapy."
+    },
+    {
+      "id": "e2b6d100",
+      "type": "h3",
+      "content": "Duration"
+    },
+    {
+      "id": "f3c7e191",
+      "type": "p",
+      "content": "Typically 3 to 5 years total depending on disease severity. Shorter courses are associated with faster relapse."
+    },
+    {
+      "id": "a4d8f282",
+      "type": "h3",
+      "content": "Risks"
+    },
+    {
+      "id": "b5e9a373",
+      "type": "p",
+      "content": "Anaphylaxis is the primary risk — rare but possible, particularly with dose increases. This is why a 30-minute post-injection observation period is required and epinephrine must be available at every visit. Local reactions (swelling, redness at the injection site) are common and generally not concerning."
+    },
+    {
+      "id": "c6f0b464",
+      "type": "h2",
+      "content": "SLIT — Sublingual Immunotherapy"
+    },
+    {
+      "id": "d7a1c555",
+      "type": "p",
+      "content": "SLIT delivers allergen extract to the oral mucosa, where specialized antigen-presenting cells — particularly oral Langerhans cells and dendritic cells in the sublingual tissue — process the allergen and initiate immune tolerance through a mucosal pathway. The immune mechanisms are similar to SCIT — induction of regulatory T cells and IgG4 blocking antibodies — but the route of sensitization engages the mucosal immune system differently, which accounts for its significantly lower anaphylaxis risk."
+    },
+    {
+      "id": "e8b2d646",
+      "type": "h3",
+      "content": "FDA-approved SLIT tablets"
+    },
+    {
+      "id": "f9c3e737",
+      "type": "p",
+      "content": "FDA-approved sublingual tablets exist for specific single allergens — grass pollen (Grastek), ragweed (Ragwitek), and house dust mite (Odactra). These are indicated for monosensitized patients and have a well-established evidence base."
+    },
+    {
+      "id": "a0d4f828",
+      "type": "h3",
+      "content": "Custom SLIT drops"
+    },
+    {
+      "id": "b1e5a919",
+      "type": "p",
+      "content": "Custom SLIT drops are formulated from patient-specific allergen mixes for patients sensitized to multiple allergens. In the US these are prescribed off-label, which is standard practice across ENT and allergy. Evidence is strong but the regulatory status differs from the FDA-approved tablets."
+    },
+    {
+      "id": "c2f6b000",
+      "type": "h4",
+      "content": "Mechanism"
+    },
+    {
+      "id": "d3a7c091",
+      "type": "p",
+      "content": "Sublingual administration exposes allergen to oral tolerogenic dendritic cells before systemic distribution, promoting a regulatory rather than inflammatory immune response. The oral mucosal route avoids the mast cell-rich subcutaneous tissue, which accounts for the significantly lower anaphylaxis risk compared to SCIT."
+    },
+    {
+      "id": "e4b8d182",
+      "type": "h4",
+      "content": "Efficacy"
+    },
+    {
+      "id": "f5c9e273",
+      "type": "p",
+      "content": "Robust evidence exists for grass, ragweed, and dust mite. Evidence for tree pollens and multi-allergen mixes is growing. Generally considered slightly less potent than SCIT for heavily sensitized patients but the difference is modest and the convenience advantage is significant."
+    },
+    {
+      "id": "a6d0f364",
+      "type": "h4",
+      "content": "Risks"
+    },
+    {
+      "id": "b7e1a455",
+      "type": "p",
+      "content": "Significantly lower anaphylaxis risk than SCIT. Local oral reactions — itching or tingling under the tongue — are the most common side effect and typically resolve within the first few weeks of use. Systemic reactions are rare. Epinephrine should still be available for the first dose of each new concentration."
+    },
+    {
+      "id": "c8f2b546",
+      "type": "h2",
+      "content": "SCIT vs SLIT — Clinical Comparison"
+    },
+    {
+      "id": "d9a3c637",
+      "type": "table",
+      "headers": ["", "SCIT", "SLIT"],
+      "rows": [
+        [
+          "Route",
+          "Subcutaneous injection",
+          "Sublingual drops or tablet"
+        ],
+        [
+          "Evidence base",
+          "Extensive, decades of data",
+          "Strong and growing"
+        ],
+        [
+          "Efficacy",
+          "Well-established, robust",
+          "Slightly lower for multi-allergen; equivalent for single allergen tablets"
+        ],
+        [
+          "Anaphylaxis risk",
+          "Low but present — requires office observation",
+          "Very low — safe for home use"
+        ],
+        [
+          "Administration",
+          "Weekly office visits (build-up), then every 2–4 weeks",
+          "Daily at home"
+        ],
+        [
+          "Insurance",
+          "Mostly covered",
+          "Custom drops not covered; FDA-approved tablets may be covered"
+        ],
+        [
+          "Best for",
+          "Multiple sensitizations, severe disease, office-based care preference",
+          "Home therapy preference, busy schedules, lower anaphylaxis risk tolerance"
+        ]
+      ],
+      "caption": ""
     }
   ],
   "related": [
@@ -98,5 +348,5 @@
     "steroid-inj"
   ],
   "createdAt": "2024-01-01T00:00:00.000Z",
-  "updatedAt": "2024-01-01T00:00:00.000Z"
+  "updatedAt": "2026-05-18T01:41:02.478Z"
 }
