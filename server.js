@@ -75,8 +75,6 @@ function rowToTemplate(row) {
   };
 }
 
-await ensureSchema();
-
 const app = express();
 app.use(express.json({ limit: '8mb' }));
 app.use('/styles', express.static(path.join(__dirname, 'styles')));
