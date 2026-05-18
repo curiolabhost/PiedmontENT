@@ -2,7 +2,7 @@
   "id": "ma-allergic-rhinitis",
   "type": "ma",
   "region": "nose",
-  "title": "MA Protocol: Allergic Rhinitis — Initial Presentation",
+  "title": "Allergic Rhinitis — Initial Presentation",
   "desc": "MA workflow for rooming a patient presenting with allergic rhinitis: contraindications, skin testing setup, and SLIT vs SCIT immunotherapy counseling.",
   "blocks": [
     {

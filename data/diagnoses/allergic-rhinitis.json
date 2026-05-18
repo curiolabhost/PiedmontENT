@@ -190,11 +190,11 @@
     {
       "id": "f7c1e655",
       "type": "p",
-      "content": "SCIT is the most established form of allergen immunotherapy with the largest evidence base. Allergen extract is injected subcutaneously, typically in the upper arm, in progressively increasing doses during a build-up phase until a maintenance dose is reached. The build-up phase involves weekly injections over several months. Once at maintenance, frequency decreases to every 2 to 4 weeks depending on clinical response."
+      "content": "SCIT is the most established form of allergen immunotherapy with the largest evidence base. Allergen extract is injected subcutaneously, typically in the upper arm, in progressively increasing doses during a build-up phase until a maintenance dose is reached. The build-up phase involves weekly injections over several months. Once completion of therapy, frequency decreases to every 2 to 4 weeks for taper off depending on clinical response."
     },
     {
       "id": "a8d2f746",
-      "type": "h3",
+      "type": "h4",
       "content": "Mechanism"
     },
     {
@@ -204,7 +204,7 @@
     },
     {
       "id": "c0f4b928",
-      "type": "h3",
+      "type": "h4",
       "content": "Efficacy"
     },
     {
@@ -214,7 +214,7 @@
     },
     {
       "id": "e2b6d100",
-      "type": "h3",
+      "type": "h4",
       "content": "Duration"
     },
     {
@@ -224,13 +224,13 @@
     },
     {
       "id": "a4d8f282",
-      "type": "h3",
+      "type": "h4",
       "content": "Risks"
     },
     {
       "id": "b5e9a373",
       "type": "p",
-      "content": "Anaphylaxis is the primary risk — rare but possible, particularly with dose increases. This is why a 30-minute post-injection observation period is required and epinephrine must be available at every visit. Local reactions (swelling, redness at the injection site) are common and generally not concerning."
+      "content": "Anaphylaxis is the primary risk, rare but possible, particularly with dose increases. This is why a 30-minute post-injection observation period is required and epinephrine must be available at every visit. Local reactions (swelling, redness at the injection site) are common and generally not concerning."
     },
     {
       "id": "c6f0b464",
@@ -240,27 +240,7 @@
     {
       "id": "d7a1c555",
       "type": "p",
-      "content": "SLIT delivers allergen extract to the oral mucosa, where specialized antigen-presenting cells — particularly oral Langerhans cells and dendritic cells in the sublingual tissue — process the allergen and initiate immune tolerance through a mucosal pathway. The immune mechanisms are similar to SCIT — induction of regulatory T cells and IgG4 blocking antibodies — but the route of sensitization engages the mucosal immune system differently, which accounts for its significantly lower anaphylaxis risk."
-    },
-    {
-      "id": "e8b2d646",
-      "type": "h3",
-      "content": "FDA-approved SLIT tablets"
-    },
-    {
-      "id": "f9c3e737",
-      "type": "p",
-      "content": "FDA-approved sublingual tablets exist for specific single allergens — grass pollen (Grastek), ragweed (Ragwitek), and house dust mite (Odactra). These are indicated for monosensitized patients and have a well-established evidence base."
-    },
-    {
-      "id": "a0d4f828",
-      "type": "h3",
-      "content": "Custom SLIT drops"
-    },
-    {
-      "id": "b1e5a919",
-      "type": "p",
-      "content": "Custom SLIT drops are formulated from patient-specific allergen mixes for patients sensitized to multiple allergens. In the US these are prescribed off-label, which is standard practice across ENT and allergy. Evidence is strong but the regulatory status differs from the FDA-approved tablets."
+      "content": "SLIT delivers allergen extract to the oral mucosa, where specialized antigen-presenting cells, particularly oral Langerhans cells and dendritic cells in the sublingual tissue, process the allergen and initiate immune tolerance through a mucosal pathway. The immune mechanisms are similar to SCIT: induction of regulatory T cells and IgG4 blocking antibodies, but the route of sensitization engages the mucosal immune system differently, which accounts for its significantly lower anaphylaxis risk."
     },
     {
       "id": "c2f6b000",
@@ -300,7 +280,11 @@
     {
       "id": "d9a3c637",
       "type": "table",
-      "headers": ["", "SCIT", "SLIT"],
+      "headers": [
+        "",
+        "SCIT",
+        "SLIT"
+      ],
       "rows": [
         [
           "Route",
@@ -315,26 +299,26 @@
         [
           "Efficacy",
           "Well-established, robust",
-          "Slightly lower for multi-allergen; equivalent for single allergen tablets"
+          "Well-established, but not FDA-approved"
         ],
         [
           "Anaphylaxis risk",
-          "Low but present — requires office observation",
+          "Low but present — requires test wheal and 4-week in-office administration",
           "Very low — safe for home use"
         ],
         [
           "Administration",
-          "Weekly office visits (build-up), then every 2–4 weeks",
+          "Weekly office visits (build-up) for first 4 weeks, then every 1 week",
           "Daily at home"
         ],
         [
           "Insurance",
           "Mostly covered",
-          "Custom drops not covered; FDA-approved tablets may be covered"
+          "Not covered"
         ],
         [
           "Best for",
-          "Multiple sensitizations, severe disease, office-based care preference",
+          "Office-based care preference, patients with GI intolerance to SLIT",
           "Home therapy preference, busy schedules, lower anaphylaxis risk tolerance"
         ]
       ],
@@ -348,5 +332,5 @@
     "steroid-inj"
   ],
   "createdAt": "2024-01-01T00:00:00.000Z",
-  "updatedAt": "2026-05-18T01:41:02.478Z"
+  "updatedAt": "2026-05-18T16:59:24.330Z"
 }

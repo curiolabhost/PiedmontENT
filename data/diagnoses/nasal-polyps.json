@@ -8,12 +8,12 @@
     {
       "id": "e88b14b0",
       "type": "p",
-      "content": "Nasal polyps are benign, non-cancerous, grape-like outgrowths of the sinonasal mucosa that develop in the setting of chronic inflammation. They are almost always bilateral — a unilateral polyp should raise concern and warrants further workup to rule out inverted papilloma or malignancy. Polyps are the hallmark of CRSwNP and represent a more severe, eosinophilic, type-2 inflammatory phenotype. Patients with nasal polyps frequently have comorbid allergic rhinitis and asthma."
+      "content": "Nasal polyps are benign, non-cancerous, grape-like outgrowths of the sinonasal mucosa that develop in the setting of chronic inflammation. They are almost always bilateral. A unilateral polyp should raise concern and warrants further workup to rule out inverted papilloma or malignancy. Polyps are the hallmark of CRSwNP and represent a more severe, eosinophilic, type-2 inflammatory phenotype. Patients with nasal polyps frequently have comorbid allergic rhinitis and asthma."
     },
     {
       "id": "7bc8dc9d",
       "type": "alert-warn",
-      "content": "A unilateral polyp should raise concern and warrants further workup to rule out inverted papilloma or malignancy."
+      "content": "A unilateral polyp raises concern and may warrant further workup to rule out inverted papilloma or malignancy."
     },
     {
       "id": "6c914843",
@@ -23,7 +23,7 @@
     {
       "id": "3d625386",
       "type": "p",
-      "content": "Nasal obstruction is often profound and bilateral. Loss of smell (anosmia) is a prominent feature — more so than in CRS without polyps. Patients frequently describe not being able to smell anything for months or years. Postnasal drip, facial pressure, and recurrent infections are also common."
+      "content": "Nasal obstruction is often profound and bilateral. Loss of smell (anosmia) is a prominent feature, more so than in CRS without polyps. Patients frequently describe not being able to smell anything for months or years. Postnasal drip, facial pressure, and recurrent infections are also common."
     },
     {
       "id": "1015acb0",
@@ -43,7 +43,7 @@
     {
       "id": "d2dcd13b",
       "type": "p",
-      "content": "Intranasal corticosteroids are the backbone of maintenance therapy. Oral steroid bursts (Medrol dose packs or prednisone tapers) provide temporary reduction but polyps regrow. When polyps are severe, refractory, or unresponsive to both systemic steroids and topical steroid treatment — including budesonide irrigation and intranasal sprays like Flonase — biologics are the next step. Surgery (FESS) is appropriate for debulking but polyps recur without addressing the underlying inflammation. Biologics are significantly changing the long-term management picture."
+      "content": "Intranasal corticosteroids are the backbone of maintenance therapy. Oral steroid bursts (Medrol dose packs or prednisone tapers) provide temporary reduction but polyps can regrow. When polyps are severe, refractory, or unresponsive to both systemic steroids and topical steroid treatment, including budesonide irrigation and intranasal sprays like Flonase, biologics are the next step. Surgery (FESS) is appropriate for debulking but polyps recur without addressing the underlying inflammation or continued use of biologics. Biologics are significantly changing the long-term management picture."
     },
     {
       "id": "2a02caea",
@@ -53,7 +53,7 @@
     {
       "id": "6e422f86",
       "type": "p",
-      "content": "<strong>Dupilumab (Dupixent)</strong> is the most established biologic for CRSwNP and the one most commonly used in ENT. It is a monoclonal antibody targeting the IL-4 receptor alpha subunit, blocking both IL-4 and IL-13 signaling — the central drivers of type-2 eosinophilic inflammation. FDA-approved for CRSwNP, atopic dermatitis, and asthma, making it particularly useful for patients carrying all three diagnoses. Administered subcutaneously — 600 mg loading dose (two 300 mg injections at the first visit), then 300 mg every 2 weeks. Patients self-inject at home after initial training. Clinical trials showed significant polyp reduction, improvement in nasal obstruction, and meaningful recovery of smell. It does not cure polyps — patients must stay on it to maintain benefit."
+      "content": "<strong>Dupilumab (Dupixent)</strong> is the most established biologic for CRSwNP and the one most commonly used in ENT. It is a monoclonal antibody targeting the IL-4 receptor alpha subunit, blocking both IL-4 and IL-13 signaling — the central drivers of type-2 eosinophilic inflammation. FDA-approved for CRSwNP, atopic dermatitis, and asthma, making it particularly useful for patients carrying all three diagnoses. Administered subcutaneously: 600 mg loading dose (two 300 mg injections at the first visit), then 300 mg every 2 weeks. Patients self-inject at home after initial training. Clinical trials showed significant polyp reduction, improvement in nasal obstruction, and meaningful recovery of smell. It does not cure polyps, so patients must stay on it to maintain benefit."
     },
     {
       "id": "32b8c9b5",
@@ -78,5 +78,5 @@
     "steroid-inj"
   ],
   "createdAt": "2024-01-01T00:00:00.000Z",
-  "updatedAt": "2024-01-01T00:00:00.000Z"
+  "updatedAt": "2026-05-18T16:40:57.034Z"
 }

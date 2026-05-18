@@ -1,6 +1,7 @@
 import { Router } from './router.js';
-import { buildSidebar, setActiveNav, getCachedEntries, TYPE_LABELS, TYPE_HEADINGS, TYPE_PILL, REGION_LABELS, REGION_ORDER, TYPE_ORDER } from './sidebar.js';
+import { buildSidebar, setActiveNav, getCachedEntries, getDisplayTitle, TYPE_LABELS, TYPE_HEADINGS, TYPE_PILL, REGION_LABELS, REGION_ORDER, TYPE_ORDER } from './sidebar.js';
 import { showEntry } from './viewer.js';
+import { openEditor } from './editor.js';
 import { doSearch, attachSearchInput } from './search.js';
 import { showPasswordModal, disableEditMode, restoreEditModeSilently } from './auth.js';
 import { exportAll, openImport } from './ioutils.js';
@@ -84,10 +85,23 @@ function buildTopbar() {
   }
 
   document.getElementById('lock-toggle').addEventListener('click', () => {
-    if (document.body.classList.contains('edit-mode')) {
-      disableEditMode();
+    // If currently viewing an entry, the Edit button opens the editor for it.
+    const m = location.hash.match(/^#\/entry\/(.+)$/);
+    const entryId = m ? decodeURIComponent(m[1]) : null;
+
+    if (!document.body.classList.contains('edit-mode')) {
+      // Need auth first; after unlock, open editor if on an entry page.
+      showPasswordModal(() => {
+        if (entryId) openEditor(entryId);
+      });
+      return;
+    }
+    // Already authed — open editor for current entry, or just stay in edit mode.
+    if (entryId) {
+      openEditor(entryId);
     } else {
-      showPasswordModal();
+      // Off-entry click toggles the lock as before.
+      disableEditMode();
     }
   });
 
@@ -127,6 +141,17 @@ function toggleMenu() {
   });
   dd.appendChild(importBtn);
 
+  if (document.body.classList.contains('edit-mode')) {
+    const lockBtn = document.createElement('button');
+    lockBtn.className = 'menu-item';
+    lockBtn.textContent = '🔒 Lock edit mode';
+    lockBtn.addEventListener('click', () => {
+      closeMenu();
+      disableEditMode();
+    });
+    dd.appendChild(lockBtn);
+  }
+
   wrap.appendChild(dd);
 }
 function closeMenu() {
@@ -134,7 +159,14 @@ function closeMenu() {
   if (existing) existing.remove();
 }
 
+function clearEditorChrome() {
+  document.body.classList.remove('editor-active');
+  const editHeader = document.getElementById('edit-header');
+  if (editHeader) editHeader.style.display = 'none';
+}
+
 function showHome() {
+  clearEditorChrome();
   setActiveNav(null);
   setBreadcrumb([{ label: 'Home' }]);
   const list = getCachedEntries();
@@ -215,7 +247,7 @@ function showHome() {
       for (const e of items) {
         const b = document.createElement('span');
         b.className = `related-bubble ${t}`;
-        b.textContent = e.title;
+        b.textContent = getDisplayTitle(e);
         b.addEventListener('click', () => router.navigate('/entry/' + e.id));
         bubbles.appendChild(b);
       }
@@ -230,6 +262,7 @@ function showHome() {
 
 function showCategory(type) {
   if (!TYPE_LABELS[type]) return showHome();
+  clearEditorChrome();
   setActiveNav(null);
   setBreadcrumb([
     { label: 'Home', onClick: () => router.navigate('/') },
@@ -267,7 +300,7 @@ function showCategory(type) {
     for (const e of items) {
       const b = document.createElement('span');
       b.className = `related-bubble ${type}`;
-      b.textContent = e.title;
+      b.textContent = getDisplayTitle(e);
       b.addEventListener('click', () => router.navigate('/entry/' + e.id));
       bubbles.appendChild(b);
     }

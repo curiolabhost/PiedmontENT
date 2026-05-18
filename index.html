@@ -14,6 +14,18 @@
 </head>
 <body>
   <div id="topbar"></div>
+  <div id="edit-header" class="edit-header" style="display:none;">
+    <div class="edit-header-left">
+      <span class="edit-header-indicator">✏ Editing</span>
+      <span class="edit-header-title" id="editHeaderTitle"></span>
+    </div>
+    <div class="edit-header-right">
+      <span class="edit-header-autosave" id="editAutoSave"></span>
+      <button class="edit-header-btn edit-header-delete" id="editHeaderDelete" style="display:none;">Delete</button>
+      <button class="edit-header-btn edit-header-cancel" id="editHeaderCancel">Cancel</button>
+      <button class="edit-header-btn edit-header-save" id="editHeaderSave">Save</button>
+    </div>
+  </div>
   <div id="layout">
     <div id="sidebar"></div>
     <div id="main">

@@ -2,7 +2,7 @@
   "id": "ma-cautery",
   "type": "ma",
   "region": "nose",
-  "title": "MA Protocol: Nasal Cauterization Setup",
+  "title": "Nasal Cauterization Setup",
   "desc": "MA setup checklist for chemical and electrical cautery procedures and patient discharge instructions.",
   "blocks": [
     {

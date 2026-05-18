@@ -2,7 +2,7 @@ import { auth, setToken, clearToken, isAuthenticated } from './db.js';
 import { showToast } from './app.js';
 import { buildSidebar } from './sidebar.js';
 
-export function showPasswordModal() {
+export function showPasswordModal(onSuccess) {
   const root = document.getElementById('modal-root');
   root.innerHTML = '';
 
@@ -46,7 +46,8 @@ export function showPasswordModal() {
       const res = await auth.verify(input.value);
       setToken(res.token);
       close();
-      enableEditMode();
+      await enableEditMode();
+      if (typeof onSuccess === 'function') onSuccess();
     } catch (e) {
       err.textContent = e.message || 'Incorrect password';
       card.classList.remove('shake');
@@ -62,8 +63,6 @@ export function showPasswordModal() {
 
 export async function enableEditMode() {
   document.body.classList.add('edit-mode');
-  const lock = document.getElementById('lock-toggle');
-  if (lock) lock.textContent = '🔒 Lock';
   await buildSidebar();
   showToast('Edit mode enabled', 'info');
 }
@@ -71,8 +70,6 @@ export async function enableEditMode() {
 export async function disableEditMode() {
   document.body.classList.remove('edit-mode');
   clearToken();
-  const lock = document.getElementById('lock-toggle');
-  if (lock) lock.textContent = '✏ Edit';
   await buildSidebar();
   showToast('Edit mode disabled', 'info');
 }
@@ -80,7 +77,5 @@ export async function disableEditMode() {
 export function restoreEditModeSilently() {
   if (isAuthenticated()) {
     document.body.classList.add('edit-mode');
-    const lock = document.getElementById('lock-toggle');
-    if (lock) lock.textContent = '🔒 Lock';
   }
 }

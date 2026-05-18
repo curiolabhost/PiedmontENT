@@ -2,7 +2,7 @@
   "id": "ma-allergy-followup",
   "type": "ma",
   "region": "nose",
-  "title": "MA Protocol: Allergic Rhinitis — Immunotherapy Follow-Up",
+  "title": "Allergic Rhinitis — Immunotherapy Follow-Up",
   "desc": "MA workflow for follow-up visits after initiation of allergy immunotherapy.",
   "blocks": [
     {

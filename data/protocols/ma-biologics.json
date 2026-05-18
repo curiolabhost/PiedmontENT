@@ -2,7 +2,7 @@
   "id": "ma-biologics",
   "type": "ma",
   "region": "nose",
-  "title": "MA Protocol: Biologics — Prior Authorization and Enrollment",
+  "title": "Biologics — Prior Authorization and Enrollment",
   "desc": "Step-by-step workflow for enrolling patients in biologic therapy and managing prior authorization through CoverMyMeds.",
   "blocks": [
     {

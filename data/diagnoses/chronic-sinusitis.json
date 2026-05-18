@@ -18,7 +18,7 @@
     {
       "id": "377c5689",
       "type": "p",
-      "content": "The sinuses are air-filled cavities lined with mucosa that drain through small openings called ostia into the nasal cavity. When those ostia get blocked — by swelling, polyps, deviated septum, or thickened mucus — drainage fails, mucus stagnates, and infection or inflammation becomes chronic. There are two major subtypes: CRS with nasal polyps (CRSwNP) and CRS without nasal polyps (CRSsNP). Polyp patients are covered in the Nasal Polyps entry below."
+      "content": "The sinuses are air-filled cavities lined with mucosa that drain through small openings called ostia into the nasal cavity. When those ostia get blocked by swelling, polyps, deviated septum, or thickened mucus, drainage fails, mucus stagnates, and infection or inflammation becomes chronic. There are two major subtypes: CRS with nasal polyps (CRSwNP) and CRS without nasal polyps (CRSsNP). Polyp patients are covered in the Nasal Polyps entry below."
     },
     {
       "id": "2331e221",
@@ -28,7 +28,7 @@
     {
       "id": "1dc820f6",
       "type": "p",
-      "content": "The four cardinal symptoms are nasal obstruction, nasal discharge (anterior or posterior), facial pain/pressure, and reduction or loss of smell. Diagnosis requires two or more of these lasting 12+ weeks, plus objective evidence — either nasal endoscopy findings or CT changes. Patients will also complain of fatigue, headache, ear pressure, and postnasal drip. Facial pain alone, without other sinonasal symptoms, is rarely sinusitis — more often migraine or trigeminal neuralgia."
+      "content": "The four cardinal symptoms are nasal obstruction, nasal discharge (anterior or posterior), facial pain or pressure, and reduction or loss of smell. Diagnosis requires two or more of these lasting 12 or more weeks, plus objective evidence from either nasal endoscopy findings or CT changes. Patients will also complain of fatigue, headache, ear pressure, and postnasal drip. Facial pain alone without other sinonasal symptoms is rarely sinusitis and is more often migraine or trigeminal neuralgia."
     },
     {
       "id": "f528296a",
@@ -38,37 +38,37 @@
     {
       "id": "bc93ef98",
       "type": "p",
-      "content": "In-office nasal endoscopy is the primary diagnostic tool. If the presentation is acute, antibiotics are started empirically. If the patient is chronic and has already failed one or two rounds of antibiotics without improvement, the next step is culture and/or MicroGen PCR testing to identify the organism and resistance pattern — this is how you stop guessing and start treating specifically."
+      "content": "In-office nasal endoscopy is the primary diagnostic tool. If the presentation is acute, antibiotics are started empirically. If the patient is chronic and has already failed one or two rounds of antibiotics without improvement, the next step is culture and/or MicroGen PCR testing to identify the organism and resistance pattern. This is how you stop guessing and start treating specifically."
     },
     {
       "id": "f16751f2",
       "type": "p",
-      "content": "CT sinuses (non-contrast) is ordered after failed medical management, not at the first visit. The CT tells us whether the sinuses are significantly diseased enough to warrant surgical intervention. Surgery becomes the conversation when the CT shows persistent opacification, OMC obstruction, or anatomic obstruction that medical therapy cannot fix — the sinuses physically cannot drain no matter how many antibiotics the patient takes if the drainage pathway is structurally blocked. We do not use MRI for routine sinusitis evaluation. For patients who have recurrent infections despite appropriate treatment, workup for immunodeficiency is appropriate — specifically IgA and IgG subclasses."
+      "content": "CT sinuses (non-contrast, image-guided sinus scan) is ordered after a course of medical management. The CT tells us whether the sinuses are significantly diseased enough to warrant surgical intervention despite a trial of medical therapy. Surgery becomes the conversation when the CT shows persistent opacification, OMC obstruction, or anatomic obstruction that medical therapy cannot fix. The sinuses physically cannot drain no matter how many antibiotics the patient takes if the drainage pathway is structurally blocked. MRI is not used for routine sinusitis evaluation. For patients who have recurrent infections despite appropriate treatment, workup for immunodeficiency is appropriate, specifically IgA and IgG subclasses."
     },
     {
       "id": "54550652",
       "type": "h3",
-      "content": "Medical treatment ladder"
+      "content": "Medical Treatment Ladder"
     },
     {
       "id": "32501e86",
       "type": "li",
-      "content": "First line: intranasal corticosteroid sprays (Flonase, Nasacort, Nasonex, Budesonide) — teach patients proper technique; the nozzle should angle toward the outer wall, not the septum"
+      "content": "First line: intranasal corticosteroid sprays (Flonase, Nasacort, Nasonex, Budesonide)."
     },
     {
       "id": "5f3a99b4",
       "type": "li",
-      "content": "Nasal saline irrigation — large-volume, low-pressure (NeilMed or neti pot); saline sprays are inadequate volume and do not count"
+      "content": "Nasal saline irrigation using large-volume low-pressure devices such as NeilMed or neti pot. Saline sprays deliver inadequate volume and do not count as irrigation."
     },
     {
       "id": "279451ac",
       "type": "li",
-      "content": "Short courses of oral steroids (prednisone) for acute exacerbations"
+      "content": "Short courses of oral steroids (prednisone) for acute exacerbations."
     },
     {
       "id": "f4d04bcc",
       "type": "li",
-      "content": "Antibiotics — typically a 3–6 week course for CRS, often doxycycline or amoxicillin-clavulanate; culture-directed when possible and preferred in refractory cases"
+      "content": "Antibiotics, typically a 2 (oral) to 4 (topical) week course for CRS."
     }
   ],
   "related": [
@@ -80,5 +80,5 @@
     "steroid-inj"
   ],
   "createdAt": "2024-01-01T00:00:00.000Z",
-  "updatedAt": "2024-01-01T00:00:00.000Z"
+  "updatedAt": "2026-05-18T16:35:12.802Z"
 }

@@ -17,29 +17,15 @@
 .entry-eyebrow.proc { background: var(--orange-bg); color: var(--orange); border-color: var(--orange-border); }
 .entry-eyebrow.ma { background: var(--purple-bg); color: var(--purple); border-color: var(--purple-border); }
 
-.entry-header-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 8px;
-}
-
 .entry-title {
   font-family: 'Lora', serif;
   font-size: 28px;
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--text);
-  margin: 0;
+  margin: 0 0 8px;
   line-height: 1.2;
 }
-
-.entry-edit-btn {
-  display: none;
-  flex-shrink: 0;
-}
-body.edit-mode .entry-edit-btn { display: inline-flex; }
 
 .entry-desc {
   font-size: 13px;
@@ -57,7 +43,7 @@ body.edit-mode .entry-edit-btn { display: inline-flex; }
 .block-h2 {
   font-family: var(--font-mono);
   font-size: 13px;
-  font-weight: 550;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--blue);
@@ -69,7 +55,7 @@ body.edit-mode .entry-edit-btn { display: inline-flex; }
 
 .block-h3 {
   font-family: 'DM Mono', monospace;
-  font-size: 14px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #050d14;
@@ -81,7 +67,7 @@ body.edit-mode .entry-edit-btn { display: inline-flex; }
 
 .block-h4 {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text);
   text-transform: none;
@@ -94,7 +80,7 @@ body.edit-mode .entry-edit-btn { display: inline-flex; }
 
 .block-p {
   font-size: 13px;
-  color: #212121;
+  color: var(--text);
   line-height: 1.85;
   max-width: 660px;
   margin: 0 0 12px;

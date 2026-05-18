@@ -18,7 +18,7 @@
     {
       "id": "ef679222",
       "type": "p",
-      "content": "Anterior bleeds come from Little's area and are manageable in office with silver nitrate or electrocautery under local anesthesia. Posterior bleeds originate from the sphenopalatine artery territory — they do not respond to silver nitrate, tend to be more severe, and may require OR-level electrocautery, endoscopic sphenopalatine artery ligation, or interventional radiology embolization in recurrent or uncontrolled cases."
+      "content": "Anterior bleeds come from Little's area and are manageable in office with silver nitrate or electrocautery under local anesthesia. Posterior bleeds originate from the sphenopalatine artery territory. They do not respond to silver nitrate, tend to be more severe, and may require OR-level electrocautery, endoscopic sphenopalatine artery ligation, or interventional radiology embolization in recurrent or uncontrolled cases."
     },
     {
       "id": "573c3eb3",
@@ -33,7 +33,7 @@
     {
       "id": "12434b5d",
       "type": "alert-warn",
-      "content": "<strong>Never cauterize both sides of the septum in the same session</strong> — bilateral cautery risks septal perforation from bilateral ischemia of the septal tissue. If the contralateral side needs attention, it must be done at a separate visit after the first side has healed."
+      "content": "<strong>Never cauterize both sides of the septum in the same session</strong> — bilateral cautery risks septal perforation from bilateral ischemia of the septal tissue."
     },
     {
       "id": "64c1231e",
@@ -43,7 +43,7 @@
     {
       "id": "a9ec31b4",
       "type": "p",
-      "content": "No nose blowing for 24–48 hours, no nose picking, apply nasal gel spray to keep the area moist, no strenuous activity or anything that increases head or facial pressure — this includes massage and chiropractic manipulation."
+      "content": "No nose blowing for 24–48 hours, no nose picking, apply nasal gel or gel spray to keep the area moist, no strenuous activity or anything that increases head or facial pressure. This includes massage and chiropractic manipulation."
     }
   ],
   "related": [
@@ -51,5 +51,5 @@
     "ma-cautery"
   ],
   "createdAt": "2024-01-01T00:00:00.000Z",
-  "updatedAt": "2024-01-01T00:00:00.000Z"
+  "updatedAt": "2026-05-18T16:38:30.261Z"
 }

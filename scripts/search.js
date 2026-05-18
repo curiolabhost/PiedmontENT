@@ -28,6 +28,9 @@ function highlight(text, q) {
 }
 
 export async function doSearch(query) {
+  document.body.classList.remove('editor-active');
+  const editHeader = document.getElementById('edit-header');
+  if (editHeader) editHeader.style.display = 'none';
   const q = String(query || '').trim();
   setBreadcrumb([
     { label: 'Home', onClick: () => router.navigate('/') },

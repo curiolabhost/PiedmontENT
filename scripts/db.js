@@ -25,6 +25,16 @@ async function request(method, path, body = null, auth = false) {
   const opts = { method, headers: headers(auth) };
   if (body) opts.body = JSON.stringify(body);
   const res = await fetch(API + path, opts);
+
+  // Handle expired/invalid JWT
+  if (res.status === 401 && auth) {
+    clearToken();
+    document.body.classList.remove('edit-mode');
+    const { showToast } = await import('./app.js');
+    showToast('Session expired. Please log in again.', 'info');
+    return null;
+  }
+
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Request failed' }));
     throw new Error(err.error || `HTTP ${res.status}`);

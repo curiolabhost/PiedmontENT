@@ -1,7 +1,6 @@
 import { entries as entriesApi } from './db.js';
 import { router, setBreadcrumb } from './app.js';
 import { setActiveNav, getCachedEntries, TYPE_LABELS } from './sidebar.js';
-import { openEditor } from './editor.js';
 
 const ALERT_ICON = { 'alert-warn': '⚠', 'alert-info': '→', 'alert-note': '→' };
 
@@ -411,6 +410,8 @@ function renderRelated(related, container) {
 
 export async function showEntry(id) {
   document.body.classList.remove('editor-active');
+  const editHeader = document.getElementById('edit-header');
+  if (editHeader) editHeader.style.display = 'none';
   let entry;
   try {
     entry = await entriesApi.get(id);
@@ -440,18 +441,10 @@ export async function showEntry(id) {
   eyebrow.textContent = TYPE_LABELS[entry.type] || entry.type;
   view.appendChild(eyebrow);
 
-  const headerRow = document.createElement('div');
-  headerRow.className = 'entry-header-row';
   const h1 = document.createElement('h1');
   h1.className = 'entry-title';
   h1.textContent = entry.title;
-  headerRow.appendChild(h1);
-  const editBtn = document.createElement('button');
-  editBtn.className = 'btn entry-edit-btn';
-  editBtn.textContent = '✏ Edit this page';
-  editBtn.addEventListener('click', () => openEditor(entry.id));
-  headerRow.appendChild(editBtn);
-  view.appendChild(headerRow);
+  view.appendChild(h1);
 
   if (entry.desc) {
     const p = document.createElement('p');

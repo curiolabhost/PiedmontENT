@@ -14,6 +14,13 @@ let cachedList = [];
 
 export function getCachedEntries() { return cachedList; }
 
+export function getDisplayTitle(entry) {
+  if (entry.type !== 'ma') return entry.title;
+  return entry.title
+    .replace(/^MA Protocol:\s*/i, '')
+    .replace(/^MA Protocol\s*[—–-]\s*/i, '');
+}
+
 function regionOf(entry) {
   return REGION_LABELS[entry.region] ? entry.region : 'general';
 }
@@ -101,7 +108,7 @@ function renderSidebar() {
 
         const lbl = document.createElement('span');
         lbl.className = 'nav-label';
-        lbl.textContent = entry.title;
+        lbl.textContent = getDisplayTitle(entry);
         item.appendChild(lbl);
 
         const editBtn = document.createElement('button');

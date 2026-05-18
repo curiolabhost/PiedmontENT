@@ -222,6 +222,11 @@ body.edit-mode .lock-toggle { color: var(--amber); border-color: var(--amber-bor
   top: var(--topbar-h);
   left: 0; right: 0; bottom: 0;
   display: flex;
+  transition: top 0.15s ease;
+}
+
+body.editor-active #layout {
+  top: calc(var(--topbar-h) + 44px);
 }
 
 #sidebar {
@@ -314,7 +319,6 @@ body.edit-mode .lock-toggle { color: var(--amber); border-color: var(--amber-bor
   #layout { display: block; position: static; }
   #main { overflow: visible; height: auto; }
   #content { overflow: visible; padding: 0; }
-  .entry-header-row button { display: none !important; }
   body { background: white; overflow: visible; height: auto; }
   html { overflow: visible; height: auto; }
 }
