@@ -286,6 +286,46 @@ app.post('/api/media/upload', requireAuth, (req, res) => {
   });
 });
 
+// Direct-to-Cloudinary upload: browser asks for a signature, uploads to
+// Cloudinary, then notifies us via /api/media/record. This bypasses Vercel's
+// 4.5MB function body limit so we can still accept the 25MB PDFs / 100MB videos
+// the file-type limits allow.
+app.get('/api/media/sign', requireAuth, (req, res) => {
+  const timestamp = Math.round(Date.now() / 1000);
+  const params = {
+    folder: 'ent-reference',
+    timestamp,
+  };
+  const signature = cloudinary.utils.api_sign_request(
+    params,
+    process.env.CLOUDINARY_API_SECRET
+  );
+  res.json({
+    signature,
+    timestamp,
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    apiKey: process.env.CLOUDINARY_API_KEY,
+    folder: 'ent-reference',
+  });
+});
+
+app.post('/api/media/record', requireAuth, async (req, res) => {
+  try {
+    const { filename, url, kind, mime, sizeBytes } = req.body || {};
+    if (!filename || !url || !kind) {
+      return res.status(400).json({ error: 'filename, url, and kind are required' });
+    }
+    await sql`
+      INSERT INTO media (filename, url, kind, mime, size_bytes)
+      VALUES (${filename}, ${url}, ${kind}, ${mime}, ${sizeBytes})
+      ON CONFLICT (filename) DO UPDATE SET url = EXCLUDED.url
+    `;
+    res.json({ ok: true });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
 app.delete('/api/media/:filename', requireAuth, async (req, res) => {
   try {
     const filename = path.basename(req.params.filename);
@@ -363,6 +403,10 @@ app.get(/^\/(?!api\/|styles\/|scripts\/|media\/).*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`ENT Reference running at http://localhost:${PORT}`);
-});
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`ENT Reference running at http://localhost:${PORT}`);
+  });
+}
+
+export default app;

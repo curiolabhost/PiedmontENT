@@ -58,14 +58,26 @@ export const search = {
   query: (q) => request('GET', `/search?q=${encodeURIComponent(q)}`),
 };
 
-export function uploadMedia(file, { onProgress } = {}) {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    const form = new FormData();
-    form.append('file', file);
+// Direct-to-Cloudinary upload. Vercel functions cap request bodies at 4.5MB,
+// so we sign on the server and stream the file straight from browser to
+// Cloudinary, then notify the server to record metadata.
+export async function uploadMedia(file, { onProgress } = {}) {
+  const signRes = await fetch(API + '/media/sign', {
+    headers: { Authorization: `Bearer ${authToken}` },
+  });
+  if (!signRes.ok) throw new Error('Could not get upload signature');
+  const { signature, timestamp, cloudName, apiKey, folder } = await signRes.json();
 
-    xhr.open('POST', API + '/media/upload');
-    xhr.setRequestHeader('Authorization', `Bearer ${authToken}`);
+  const form = new FormData();
+  form.append('file', file);
+  form.append('signature', signature);
+  form.append('timestamp', timestamp);
+  form.append('api_key', apiKey);
+  form.append('folder', folder);
+
+  const uploadResult = await new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', `https://api.cloudinary.com/v1_1/${cloudName}/auto/upload`);
 
     if (onProgress) {
       xhr.upload.addEventListener('progress', (e) => {
@@ -80,18 +92,53 @@ export function uploadMedia(file, { onProgress } = {}) {
         try {
           resolve(JSON.parse(xhr.responseText));
         } catch (e) {
-          reject(new Error('Invalid server response'));
+          reject(new Error('Invalid Cloudinary response'));
         }
       } else {
-        let err = {};
-        try { err = JSON.parse(xhr.responseText || '{}'); } catch (_) {}
-        reject(new Error(err.error || `Upload failed: ${xhr.status}`));
+        let msg = `Cloudinary upload failed: ${xhr.status}`;
+        try {
+          const err = JSON.parse(xhr.responseText || '{}');
+          if (err.error && err.error.message) msg = err.error.message;
+        } catch (_) {}
+        reject(new Error(msg));
       }
     };
 
     xhr.onerror = () => reject(new Error('Network error during upload'));
     xhr.send(form);
   });
+
+  const format = uploadResult.format || '';
+  const baseName = String(uploadResult.public_id || '').split('/').pop();
+  const filename = format ? `${baseName}.${format}` : baseName;
+  const url = uploadResult.secure_url;
+
+  let kind;
+  if (uploadResult.resource_type === 'video') kind = 'video';
+  else if (format === 'pdf') kind = 'pdf';
+  else if (format === 'docx' || (file.type || '').includes('wordprocessingml')) kind = 'doc';
+  else kind = 'image';
+
+  const record = {
+    filename,
+    url,
+    kind,
+    mime: file.type,
+    sizeBytes: file.size,
+  };
+
+  await fetch(API + '/media/record', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`,
+    },
+    body: JSON.stringify(record),
+  });
+
+  const response = { ...record };
+  if (kind === 'doc') response.fileType = 'docx';
+  return response;
 }
 
 export async function deleteMedia(filename) {
