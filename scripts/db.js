@@ -62,10 +62,19 @@ export const search = {
 // so we sign on the server and stream the file straight from browser to
 // Cloudinary, then notify the server to record metadata.
 export async function uploadMedia(file, { onProgress } = {}) {
+  console.log('uploadMedia called, authToken present:', !!authToken);
+
   const signRes = await fetch(API + '/media/sign', {
     headers: { Authorization: `Bearer ${authToken}` },
   });
-  if (!signRes.ok) throw new Error('Could not get upload signature');
+
+  console.log('Sign response status:', signRes.status);
+
+  if (!signRes.ok) {
+    const errText = await signRes.text();
+    console.error('Sign error response:', errText);
+    throw new Error('Could not get upload signature');
+  }
   const { signature, timestamp, cloudName, apiKey, folder } = await signRes.json();
 
   const form = new FormData();

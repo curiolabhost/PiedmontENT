@@ -289,22 +289,32 @@ app.post('/api/media/upload', requireAuth, (req, res) => {
 // 4.5MB function body limit so we can still accept the 25MB PDFs / 100MB videos
 // the file-type limits allow.
 app.get('/api/media/sign', requireAuth, (req, res) => {
-  const timestamp = Math.round(Date.now() / 1000);
-  const params = {
-    folder: 'ent-reference',
-    timestamp,
-  };
-  const signature = cloudinary.utils.api_sign_request(
-    params,
-    process.env.CLOUDINARY_API_SECRET
-  );
-  res.json({
-    signature,
-    timestamp,
-    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    apiKey: process.env.CLOUDINARY_API_KEY,
-    folder: 'ent-reference',
-  });
+  try {
+    const timestamp = Math.round(Date.now() / 1000);
+    const params = { folder: 'ent-reference', timestamp };
+
+    console.log('Cloudinary config check:', {
+      cloud_name: !!process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: !!process.env.CLOUDINARY_API_KEY,
+      api_secret: !!process.env.CLOUDINARY_API_SECRET,
+    });
+
+    const signature = cloudinary.utils.api_sign_request(
+      params,
+      process.env.CLOUDINARY_API_SECRET
+    );
+
+    res.json({
+      signature,
+      timestamp,
+      cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+      apiKey: process.env.CLOUDINARY_API_KEY,
+      folder: 'ent-reference',
+    });
+  } catch (err) {
+    console.error('Sign route error:', err.message);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 app.post('/api/media/record', requireAuth, async (req, res) => {

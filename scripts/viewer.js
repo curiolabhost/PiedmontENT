@@ -90,15 +90,17 @@ function renderBlocks(blocks, container) {
       const card = document.createElement('div');
       card.className = 'steps-card';
       const stepType = b.type;
-      let n = 1;
+      let n = 0;
       while (i < blocks.length && blocks[i].type === stepType) {
         const cur = blocks[i];
+        n++;
+        const displayNumber = (stepType === 'checklist-step' && cur.number != null) ? cur.number : n;
         const row = document.createElement('div');
         row.className = 'step-row';
 
         const num = document.createElement('div');
         num.className = 'step-num';
-        num.textContent = String(n++);
+        num.textContent = String(displayNumber);
         row.appendChild(num);
 
         const body = document.createElement('div');

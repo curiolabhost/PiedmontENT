@@ -107,6 +107,59 @@ body.editor-active .menu-btn { display: none !important; }
 /* Allow the drag handle to escape the steps-card's rounded clip while editing */
 body.editor-active .steps-card { overflow: visible; }
 
+/* Checklist-step editor controls — number override + insert-below button */
+body.editor-active .edit-block-wrap[data-type="checklist-step"] {
+  flex-wrap: wrap;
+}
+
+.cl-num-input {
+  width: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 6px;
+  text-align: center;
+  outline: none;
+  flex-shrink: 0;
+  -moz-appearance: textfield;
+}
+.cl-num-input::-webkit-outer-spin-button,
+.cl-num-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.cl-num-input:focus { border-color: var(--accent-border); }
+.cl-num-input::placeholder { color: var(--text3); font-style: italic; }
+
+.cl-insert-btn {
+  display: none;
+  width: 100%;
+  flex-basis: 100%;
+  margin: 8px -16px -12px;
+  padding: 4px 16px;
+  border: none;
+  border-top: 1px dashed var(--border);
+  background: transparent;
+  color: var(--text3);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: 0.04em;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.edit-block-wrap[data-type="checklist-step"]:hover .cl-insert-btn {
+  display: block;
+}
+.cl-insert-btn:hover {
+  color: var(--accent);
+  background: var(--accent-light);
+  border-color: var(--accent-border);
+}
+
 /* ── EDITOR BLOCK CHROME ──
    Each editable block is wrapped in .edit-block-wrap to host the drag handle
    and delete button without affecting layout. The wrapper uses display:contents

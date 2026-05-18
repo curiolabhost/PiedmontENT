@@ -715,11 +715,34 @@ function renderStepBlock(block, num) {
   wrap.classList.add('step-row');
   addHandle(wrap, block);
 
-  const numEl = document.createElement('div');
-  numEl.className = 'step-num';
-  numEl.textContent = String(num);
-  numEl.contentEditable = 'false';
-  wrap.appendChild(numEl);
+  const isCheckStep = block.type === 'checklist-step';
+
+  if (isCheckStep) {
+    const numInput = document.createElement('input');
+    numInput.className = 'cl-num-input';
+    numInput.type = 'number';
+    numInput.min = '1';
+    numInput.value = block.number != null ? String(block.number) : '';
+    numInput.placeholder = String(num);
+    numInput.title = 'Override step number (leave blank for auto)';
+    numInput.contentEditable = 'false';
+    numInput.addEventListener('input', () => {
+      const val = parseInt(numInput.value, 10);
+      if (isNaN(val)) {
+        delete block.number;
+      } else {
+        block.number = val;
+      }
+      markDirty();
+    });
+    wrap.appendChild(numInput);
+  } else {
+    const numEl = document.createElement('div');
+    numEl.className = 'step-num';
+    numEl.textContent = String(num);
+    numEl.contentEditable = 'false';
+    wrap.appendChild(numEl);
+  }
 
   const body = document.createElement('div');
   body.className = 'step-body';
@@ -751,8 +774,34 @@ function renderStepBlock(block, num) {
     body.appendChild(addNote);
   }
   wrap.appendChild(body);
+
+  if (isCheckStep) {
+    const insertBtn = document.createElement('button');
+    insertBtn.type = 'button';
+    insertBtn.className = 'cl-insert-btn';
+    insertBtn.textContent = '+ Add step below';
+    insertBtn.title = 'Insert a new step after this one';
+    insertBtn.contentEditable = 'false';
+    insertBtn.addEventListener('mousedown', (e) => e.preventDefault());
+    insertBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      insertChecklistStepAfter(block);
+    });
+    wrap.appendChild(insertBtn);
+  }
+
   addDelete(wrap, block);
   return wrap;
+}
+
+function insertChecklistStepAfter(block) {
+  const idx = state.blocks.findIndex(b => b.id === block.id);
+  if (idx < 0) return;
+  const newStep = { id: uid(), type: 'checklist-step', content: '', note: null };
+  state.blocks.splice(idx + 1, 0, newStep);
+  rerenderBlocks();
+  markDirty();
+  setTimeout(() => focusBlock(newStep.id), 20);
 }
 
 function buildNoteField(block) {
@@ -1348,9 +1397,10 @@ function onBlockKeydown(e, block, wrap, contentEl) {
     e.preventDefault();
     const idx = state.blocks.indexOf(block);
     const isStep = block.type === 'step';
-    const newType = isStep ? 'step' : 'p';
+    const isCheckStep = block.type === 'checklist-step';
+    const newType = isStep ? 'step' : isCheckStep ? 'checklist-step' : 'p';
     const nb = { id: uid(), type: newType, content: '' };
-    if (isStep) nb.note = null;
+    if (isStep || isCheckStep) nb.note = null;
     state.blocks.splice(idx + 1, 0, nb);
     rerenderBlocks();
     markDirty();
